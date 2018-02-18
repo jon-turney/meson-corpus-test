@@ -1,3 +1,12 @@
+before_script:
+- touch script
+- if test -n "${BUILDDEP}" ; then echo "apt-get -y build-dep ${BUILDDEP}" >>script ; fi
+- if test -n "${ALSOINSTALL}" ; then echo "apt-get -y install ${ALSOINSTALL}" >>script ; fi
+- echo "pip3 install git+https://github.com/mesonbuild/meson.git" >>script
+- echo "git clone --depth=50 --branch ${BRANCH:-master} ${REPO} ${NAME}" >>script
+- echo "cd ${NAME}" >>script
+- if test -n "${HACKS}" ; then echo "${HACKS}" >>script ; fi
+- echo "meson _build ${SOURCEDIR}" >>script
 cache:
   apt: true
 install:
@@ -8,278 +17,219 @@ matrix:
   - env:
     - NAME=aqemu
     - REPO=https://github.com/tobimensch/aqemu
-    - BRANCH=master
     - BUILDDEP=aqemu
   - env:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
-    - BRANCH=master
-    - ALSOINSTALL=valac libgtk-3-dev libwnck-3-dev
+    - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
+      intltool"
   - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
-    - BRANCH=master
     - BUILDDEP=casync
+    - ALSOINSTALL="libudev-dev"
   - env:
     - NAME=cinnamon-desktop
     - REPO=https://github.com/linuxmint/cinnamon-desktop
-    - BRANCH=master
     - BUILDDEP=cinnamon-desktop
+  - env:
+    - NAME=dbus-broker
+    - REPO=https://github.com/bus1/dbus-broker
+    - ALSOINSTALL="python-docutils"
   - env:
     - NAME=dpdk
     - REPO=git://dpdk.org/dpdk
-    - BRANCH=master
   - env:
     - NAME=emeus
     - REPO=https://github.com/ebassi/emeus
-    - BRANCH=master
+    - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
-    - BRANCH=master
     - BUILDDEP=fwupd
+    - ALSOINSTALL="libjson-glib-dev help2man"
   - env:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
-    - BRANCH=master
     - BUILDDEP=geary
+    - ALSOINSTALL="libunwind-dev"
   - env:
     - NAME=glib
     - REPO=https://git.gnome.org/browse/glib/
-    - BRANCH=master
     - BUILDDEP=glib2.0
-  - env:
-    - NAME=gnome-builder
-    - REPO=https://git.gnome.org/browse/gnome-builder/
-    - BRANCH=master
-    - BUILDDEP=gnome-builder
   - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
-    - BRANCH=master
     - BUILDDEP=gnome-mpv
   - env:
-    - NAME=gnome-software
-    - REPO=https://git.gnome.org//browse/gnome-software
-    - BRANCH=master
-    - BUILDDEP=gnome-software
+    - NAME=gnome-recipes
+    - REPO=https://github.com/matthiasclasen/gr
+    - BUILDDEP=gnome-recipes
   - env:
     - NAME=gnome-twitch
     - REPO=https://github.com/vinszent/gnome-twitch
-    - BRANCH=master
     - BUILDDEP=gnome-twitch
   - env:
     - NAME=graphene
     - REPO=git://github.com/ebassi/graphene
-    - BRANCH=master
     - BUILDDEP=graphene
   - env:
     - NAME=grilo
     - REPO=https://git.gnome.org/browse/grilo
-    - BRANCH=master
     - BUILDDEP=grilo
   - env:
     - NAME=grilo-plugins
     - REPO=https://git.gnome.org/browse/grilo-plugins
-    - BRANCH=master
     - BUILDDEP=grilo-plugins
   - env:
     - NAME=gstreamer
-    - REPO=https://cgit.freedesktop.org/gstreamer/gstreamer/
-    - BRANCH=master
+    - REPO=git://anongit.freedesktop.org/gstreamer/gstreamer/
     - BUILDDEP=gstreamer1.0
-  - env:
-    - NAME=gtk+
-    - REPO=https://git.gnome.org/browse/gtk+/
-    - BRANCH=master
-    - BUILDDEP=gtk+4.0
   - env:
     - NAME=gtkdapp
     - REPO=https://gitlab.com/csoriano/GtkDApp
-    - BRANCH=master
-    - ALSOINSTALL=libgtkd-3-dev gdc-7
+    - ALSOINSTALL="libgtkd-3-dev gdc gsettings-desktop-schemas-dev libglib2.0-dev gettext"
   - env:
     - NAME=hardcode-tray
     - REPO=https://github.com/bil-elmoussaoui/Hardcode-Tray
-    - BRANCH=master
-    - ALSOINSTALL=libgirepository1.0-dev libgtk-3-dev
+    - ALSOINSTALL="libgirepository1.0-dev libgtk-3-dev"
   - env:
     - NAME=hexchat
     - REPO=https://github.com/hexchat/hexchat
-    - BRANCH=master
     - BUILDDEP=hexchat
-    - ALSOINSTALL=libluajit-5.1-dev
+    - ALSOINSTALL="libluajit-5.1-dev"
   - env:
     - NAME=igt
-    - REPO=https://cgit.freedesktop.org/xorg/app/intel-gpu-tools/
-    - BRANCH=master
+    - REPO=git://anongit.freedesktop.org/xorg/app/intel-gpu-tools/
     - BUILDDEP=intel-gpu-tools
   - env:
     - NAME=jsoncpp
     - REPO=https://github.com/open-source-parsers/jsoncpp
-    - BRANCH=master
   - env:
     - NAME=json-glib
     - REPO=https://git.gnome.org/browse/json-glib
-    - BRANCH=master
     - BUILDDEP=json-glib
   - env:
     - NAME=ksh
     - REPO=https://github.com/att/ast
-    - BRANCH=master
     - BUILDDEP=ksh
   - env:
     - NAME=libdrm
-    - REPO=https://cgit.freedesktop.org/drm/libdrm/
-    - BRANCH=master
+    - REPO=git://anongit.freedesktop.org/drm/libdrm/
     - BUILDDEP=libdrm
   - env:
     - NAME=libepoxy
     - REPO=https://github.com/anholt/libepoxy/
-    - BRANCH=master
     - BUILDDEP=libepoxy
   - env:
     - NAME=libfuse
     - REPO=https://github.com/libfuse/libfuse
-    - BRANCH=master
     - BUILDDEP=fuse
-    - ALSOINSTALL=udev
+    - ALSOINSTALL="udev"
   - env:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
-    - BRANCH=master
-    - ALSOINSTALL=valac libjson-glib-dev libsoup2.4-dev libgee-0.8-dev libarchive-dev gobject-introspection
+    - ALSOINSTALL="valac libjson-glib-dev libsoup2.4-dev libgee-0.8-dev libarchive-dev gobject-introspection"
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
-    - BRANCH=master
   - env:
     - NAME=libva
     - REPO=https://github.com/intel/libva
-    - BRANCH=master
     - BUILDDEP=libva
   - env:
     - NAME=lightdm-webkit2-greeter
     - REPO=https://github.com/Antergos/lightdm-webkit2-greeter
     - BRANCH=stable
-    - ALSOINSTALL=libdbus-glib-1-dev liblightdm-gobject-1-dev libgtk-3-dev
-  - env:
-    - NAME=kiwix-libraries
-    - REPO=https://github.com/kiwix/kiwix-lib
-    - BRANCH=master
-    - ALSOINSTALL=libzim-dev
-  - env:
-    - NAME=mesa
-    - REPO=git://anongit.freedesktop.org/mesa/mesa
-    - BRANCH=master
-    - BUILDDEP=mesa
-    - ALSOINSTALL=libxvmc-dev
+    - ALSOINSTALL="libdbus-glib-1-dev liblightdm-gobject-1-dev libgtk-3-dev libwebkit2gtk-4.0-dev"
+    - HACKS="sed -i "s#'@0@/utils.sh'.format(meson.build_root())#join_paths(meson.source_root(), 'build/utils.sh')#" src/meson.build"
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
-    - BRANCH=master
-    - ALSOINSTALL=libudev-dev
+    - ALSOINSTALL="libudev-dev libglib2.0-dev libsystemd-dev"
+  - env:
+    - NAME=nautilus
+    - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
+    - BUILDDEP=nautilus
   - env:
     - NAME=nemo
     - REPO=https://github.com/linuxmint/nemo
-    - BRANCH=master
-    - ALSOINSTALL=libxapp-dev
+    - BUILDDEP=nemo
+    - ALSOINSTALL="libxapp-dev"
   - env:
     - NAME=orc
-    - REPO=http://cgit.freedesktop.org/gstreamer/orc/
-    - BRANCH=master
+    - REPO=git://anongit.freedesktop.org/gstreamer/orc/
     - BUILDDEP=orc
   - env:
     - NAME=outlier
     - REPO=https://github.com/kerolasa/outlier
-    - BRANCH=master
   - env:
     - NAME=pango
     - REPO=https://git.gnome.org/browse/pango/
-    - BRANCH=master
     - BUILDDEP=pango1.0
-    - ALSOINSTALL=libfribidi-dev
+    - ALSOINSTALL="libfribidi-dev"
   - env:
     - NAME=parzip
     - REPO=https://github.com/jpakkane/parzip
-    - BRANCH=master
+    - HACKS="meson wrap update zlib"
   - env:
     - NAME=pipewire
     - REPO=https://github.com/PipeWire/pipewire.git
-    - BRANCH=master
-    - ALSOINSTALL=libdbus-1-dev libasound2-dev libv4l-dev libudev-dev
+    - ALSOINSTALL="libdbus-1-dev libasound2-dev libv4l-dev libudev-dev"
   - env:
     - NAME=pithos
     - REPO=https://github.com/pithos/pithos
-    - BRANCH=master
     - BUILDDEP=pithos
+    - ALSOINSTALL="libglib2.0-dev"
   - env:
     - NAME=polari
     - REPO=https://git.gnome.org/browse/polari
-    - BRANCH=master
     - BUILDDEP=polari
   - env:
     - NAME=radare2
     - REPO=https://github.com/radare/radare2
-    - BRANCH=master
     - BUILDDEP=radare2
-    - ALSOINSTALL=libcapstone-dev
+    - HACKS="(cd shlr; ./capstone.sh https://github.com/aquynh/capstone.git next)"
   - env:
     - NAME=sysprof
     - REPO=git://git.gnome.org/sysprof
-    - BRANCH=master
     - BUILDDEP=sysprof
+    - ALSOINSTALL="systemd"
   - env:
     - NAME=systemd
     - REPO=https://github.com/systemd/systemd
-    - BRANCH=master
     - BUILDDEP=systemd
   - env:
     - NAME=szl
     - REPO=https://github.com/dimkr/szl
-    - BRANCH=master
     - HACKS="git submodule update --init"
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
-    - BRANCH=master
-    - ALSOINSTALL=libsdl2-dev libsdl2-ttf-dev
+    - ALSOINSTALL="libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libpng-dev python-docutils"
   - env:
     - NAME=xi-gtk
     - REPO=https://github.com/eyelash/xi-gtk
-    - BRANCH=master
-    - ALSOINSTALL=valac libgtk-3-dev
+    - ALSOINSTALL="valac libgtk-3-dev libjson-glib-dev"
   - env:
     - NAME=xorg
-    - REPO=https://cgit.freedesktop.org/xorg/xserver/
-    - BRANCH=master
+    - REPO=git://anongit.freedesktop.org/xorg/xserver/
     - BUILDDEP=xorg-server
   - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
-    - BRANCH=master
-    - ALSOINSTALL=valac libsoup2.4-dev
+    - ALSOINSTALL="valac libsoup2.4-dev libssl-dev"
   - env:
     - NAME=wayland-and-weston
     - REPO=git://anongit.freedesktop.org/wayland/libinput
-    - BRANCH=master
-    - ALSOINSTALL=libudev-dev libmtdev-dev libevdev-dev libwacom-dev doxygen
+    - ALSOINSTALL="libudev-dev libmtdev-dev libevdev-dev libwacom-dev doxygen graphviz libgtk-3-dev check valgrind"
   - env:
     - NAME=zstandard
     - REPO=https://github.com/facebook/zstd.git
-    - BRANCH=master
     - BUILDDEP=zstd
     - SOURCEDIR=contrib/meson
 python: 3.6
 script:
-- touch script
-- if test -n "${BUILDDEP}" ; then echo "apt-get -y build-dep ${BUILDDEP}" >>script ; fi
-- if test -n "${ALSOINSTALL}" ; then echo "apt-get -y install ${ALSOINSTALL}" >>script ; fi
-- echo "pip3 install git+https://github.com/mesonbuild/meson.git" >>script
-- echo "git clone --depth=50 --branch ${BRANCH:-master} ${REPO} ${NAME}" >>script
-- echo "cd ${NAME}" >>script
-- if test -n "${HACKS}" ; then echo "${HACKS}" >>script ; fi
-- echo "meson _build ${SOURCEDIR}" >>script
 - cat script
 - docker run jturney/mesoncorpusci /bin/sh -c "$(cat script)"
 services:
