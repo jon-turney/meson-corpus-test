@@ -3,7 +3,8 @@ before_script:
 - if test -n "${BUILDDEP}" ; then echo "apt-get -y build-dep ${BUILDDEP}" >>script ; fi
 - if test -n "${ALSOINSTALL}" ; then echo "apt-get -y install ${ALSOINSTALL}" >>script ; fi
 - echo "pip3 install git+https://github.com/mesonbuild/meson.git" >>script
-- echo "git clone --depth=50 --branch ${BRANCH:-master} ${REPO} ${NAME}" >>script
+- if test -n "${COMMIT}" ; then echo "git clone ${REPO} ${NAME}; git -C ${NAME} checkout ${COMMIT}" >>script ; fi
+- if test -z "${COMMIT}" ; then echo "git clone --depth=10 --branch ${BRANCH:-master} ${REPO} ${NAME}" >>script ; fi
 - echo "cd ${NAME}" >>script
 - if test -n "${HACKS}" ; then echo "${HACKS}" >>script ; fi
 - echo "meson _build ${SOURCEDIR}" >>script
@@ -22,7 +23,7 @@ matrix:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
     - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
-      intltool"
+      intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-1-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev"
   - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
@@ -35,7 +36,7 @@ matrix:
   - env:
     - NAME=dbus-broker
     - REPO=https://github.com/bus1/dbus-broker
-    - ALSOINSTALL="python-docutils"
+    - ALSOINSTALL="python-docutils libdbus-1-dev libglib2.0-dev libsystemd-dev systemd"
   - env:
     - NAME=dpdk
     - REPO=git://dpdk.org/dpdk
@@ -55,7 +56,7 @@ matrix:
     - ALSOINSTALL="libunwind-dev"
   - env:
     - NAME=glib
-    - REPO=https://git.gnome.org/browse/glib/
+    - REPO=https://gitlab.gnome.org/GNOME/glib
     - BUILDDEP=glib2.0
   - env:
     - NAME=gnome-mpv
@@ -63,8 +64,9 @@ matrix:
     - BUILDDEP=gnome-mpv
   - env:
     - NAME=gnome-recipes
-    - REPO=https://github.com/matthiasclasen/gr
+    - REPO=https://gitlab.gnome.org/GNOME/recipes
     - BUILDDEP=gnome-recipes
+    - ALSOINSTALL="libgoa-1.0-dev libjson-glib-dev"
   - env:
     - NAME=gnome-twitch
     - REPO=https://github.com/vinszent/gnome-twitch
@@ -107,7 +109,7 @@ matrix:
     - REPO=https://github.com/open-source-parsers/jsoncpp
   - env:
     - NAME=json-glib
-    - REPO=https://git.gnome.org/browse/json-glib
+    - REPO=https://gitlab.gnome.org/GNOME/json-glib
     - BUILDDEP=json-glib
   - env:
     - NAME=ksh
@@ -142,7 +144,7 @@ matrix:
     - REPO=https://github.com/Antergos/lightdm-webkit2-greeter
     - BRANCH=stable
     - ALSOINSTALL="libdbus-glib-1-dev liblightdm-gobject-1-dev libgtk-3-dev libwebkit2gtk-4.0-dev"
-    - HACKS="sed -i "s#'@0@/utils.sh'.format(meson.build_root())#join_paths(meson.source_root(), 'build/utils.sh')#" src/meson.build"
+    - HACKS="sed -i \"s!'@0@/utils.sh'.format(meson.build_root())!join_paths(meson.source_root(), 'build/utils.sh')!\" src/meson.build"
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
@@ -150,7 +152,9 @@ matrix:
   - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
+    - COMMIT=d5e7c6234e33905f30d474240f6c327a278ca470
     - BUILDDEP=nautilus
+    - ALSOINSTALL="libgexiv2-dev"
   - env:
     - NAME=nemo
     - REPO=https://github.com/linuxmint/nemo
@@ -183,7 +187,7 @@ matrix:
     - ALSOINSTALL="libglib2.0-dev"
   - env:
     - NAME=polari
-    - REPO=https://git.gnome.org/browse/polari
+    - REPO=https://gitlab.gnome.org/GNOME/polari
     - BUILDDEP=polari
   - env:
     - NAME=radare2
