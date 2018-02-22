@@ -60,6 +60,11 @@ matrix:
     - REPO=https://gitlab.gnome.org/GNOME/glib
     - BUILDDEP=glib2.0
   - env:
+    - NAME=gnome-boxes
+    - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
+    - BUILDDEP=gnome-boxes
+    - ALSOINSTALL="libwebkit2gtk-4.0-dev"
+  - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
     - BUILDDEP=gnome-mpv
@@ -72,6 +77,10 @@ matrix:
     - NAME=gnome-twitch
     - REPO=https://github.com/vinszent/gnome-twitch
     - BUILDDEP=gnome-twitch
+  - env:
+    - NAME=gnome-usage
+    - REPO=https://gitlab.gnome.org/GNOME/gnome-usage
+    - ALSOINSTALL="libaccountsservice-dev libgtk-3-dev libgtop2-dev valac"
   - env:
     - NAME=graphene
     - REPO=git://github.com/ebassi/graphene
@@ -92,6 +101,11 @@ matrix:
     - NAME=gtkdapp
     - REPO=https://gitlab.com/csoriano/GtkDApp
     - ALSOINSTALL="libgtkd-3-dev gdc gsettings-desktop-schemas-dev libglib2.0-dev gettext"
+  - env:
+    - NAME=gvfs
+    - REPO=https://git.gnome.org/browse/gvfs/
+    - BUILDDEP=gvfs
+    - ALSOINSTALL="libbluray-dev libnfs-dev"
   - env:
     - NAME=hardcode-tray
     - REPO=https://github.com/bil-elmoussaoui/Hardcode-Tray
@@ -143,7 +157,7 @@ matrix:
   - env:
     - NAME=libzim
     - REPO=https://github.com/openzim/libzim
-    - BUILDDEP=libzim
+    - BUILDDEP=zimlib
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
