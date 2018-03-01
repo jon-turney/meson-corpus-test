@@ -231,6 +231,7 @@ matrix:
   - env:
     - NAME=xorg
     - REPO=git://anongit.freedesktop.org/xorg/xserver/
+    - COMMIT=fabbaa8d6260da14fe5b7ca0f3f8748af16253a2
     - BUILDDEP=xorg-server
   - env:
     - NAME=valum
