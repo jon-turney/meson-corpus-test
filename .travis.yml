@@ -2,7 +2,9 @@ before_script:
 - touch script
 - if test -n "${BUILDDEP}" ; then echo "apt-get -y build-dep ${BUILDDEP} &&" >>script ; fi
 - if test -n "${ALSOINSTALL}" ; then echo "apt-get -y install ${ALSOINSTALL} &&" >>script ; fi
-- echo "pip3 install git+https://github.com/mesonbuild/meson.git &&" >>script
+- if test -z "${MESON_COMMIT}" ; then echo "pip3 install git+https://github.com/mesonbuild/meson.git &&" >>script ; fi
+- if test -n "${MESON_COMMIT}" ; then echo "git clone https://github.com/mesonbuild/meson.git && git -C meson fetch origin ${MESON_COMMIT}
+  && git -C meson checkout FETCH_HEAD && pip3 install ./meson &&" >>script ; fi
 - if test -n "${COMMIT}" ; then echo "git clone ${REPO} ${NAME} && git -C ${NAME} checkout ${COMMIT} &&" >>script ; fi
 - if test -z "${COMMIT}" ; then echo "git clone --depth=10 --branch ${BRANCH:-master} ${REPO} ${NAME} &&" >>script ; fi
 - echo "cd ${NAME} && " >>script
@@ -18,231 +20,286 @@ matrix:
   - env:
     - NAME=aqemu
     - REPO=https://github.com/tobimensch/aqemu
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=aqemu
   - env:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
       intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-1-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev
       gtk-doc-tools"
   - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=casync
     - ALSOINSTALL="libudev-dev"
   - env:
     - NAME=cinnamon-desktop
     - REPO=https://github.com/linuxmint/cinnamon-desktop
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=cinnamon-desktop
   - env:
     - NAME=dbus-broker
     - REPO=https://github.com/bus1/dbus-broker
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="python-docutils libdbus-1-dev libglib2.0-dev libsystemd-dev systemd"
   - env:
     - NAME=dpdk
     - REPO=git://dpdk.org/dpdk
+    - MESON_COMMIT=pull/3188/head
   - env:
     - NAME=emeus
     - REPO=https://github.com/ebassi/emeus
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=fwupd
     - ALSOINSTALL="libjson-glib-dev help2man valac"
   - env:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=geary
     - ALSOINSTALL="libunwind-dev"
   - env:
     - NAME=glib
     - REPO=https://gitlab.gnome.org/GNOME/glib
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=glib2.0
   - env:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=gnome-boxes
     - ALSOINSTALL="libwebkit2gtk-4.0-dev"
   - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=gnome-mpv
   - env:
     - NAME=gnome-recipes
     - REPO=https://gitlab.gnome.org/GNOME/recipes
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=gnome-recipes
     - ALSOINSTALL="libgoa-1.0-dev libjson-glib-dev"
   - env:
     - NAME=gnome-twitch
     - REPO=https://github.com/vinszent/gnome-twitch
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=gnome-twitch
   - env:
     - NAME=gnome-usage
     - REPO=https://gitlab.gnome.org/GNOME/gnome-usage
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="libaccountsservice-dev libgtk-3-dev libgtop2-dev valac"
   - env:
     - NAME=graphene
     - REPO=git://github.com/ebassi/graphene
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=graphene
   - env:
     - NAME=grilo
     - REPO=https://git.gnome.org/browse/grilo
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=grilo
   - env:
     - NAME=grilo-plugins
     - REPO=https://git.gnome.org/browse/grilo-plugins
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=grilo-plugins
   - env:
     - NAME=gstreamer
     - REPO=git://anongit.freedesktop.org/gstreamer/gstreamer/
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=gstreamer1.0
   - env:
     - NAME=gtkdapp
     - REPO=https://gitlab.com/csoriano/GtkDApp
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="libgtkd-3-dev gdc gsettings-desktop-schemas-dev libglib2.0-dev gettext"
   - env:
     - NAME=gvfs
     - REPO=https://git.gnome.org/browse/gvfs/
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=gvfs
     - ALSOINSTALL="libbluray-dev libnfs-dev"
   - env:
     - NAME=hardcode-tray
     - REPO=https://github.com/bil-elmoussaoui/Hardcode-Tray
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="libgirepository1.0-dev libgtk-3-dev"
   - env:
     - NAME=hexchat
     - REPO=https://github.com/hexchat/hexchat
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=hexchat
     - ALSOINSTALL="libluajit-5.1-dev"
   - env:
     - NAME=igt
     - REPO=git://anongit.freedesktop.org/xorg/app/intel-gpu-tools/
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=intel-gpu-tools
   - env:
     - NAME=jsoncpp
     - REPO=https://github.com/open-source-parsers/jsoncpp
+    - MESON_COMMIT=pull/3188/head
   - env:
     - NAME=json-glib
     - REPO=https://gitlab.gnome.org/GNOME/json-glib
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=json-glib
   - env:
     - NAME=ksh
     - REPO=https://github.com/att/ast
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=ksh
   - env:
     - NAME=libdrm
     - REPO=git://anongit.freedesktop.org/drm/libdrm/
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=libdrm
   - env:
     - NAME=libepoxy
     - REPO=https://github.com/anholt/libepoxy/
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=libepoxy
   - env:
     - NAME=libfuse
     - REPO=https://github.com/libfuse/libfuse
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=fuse
     - ALSOINSTALL="udev"
   - env:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="valac libjson-glib-dev libsoup2.4-dev libgee-0.8-dev libarchive-dev gobject-introspection"
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
+    - MESON_COMMIT=pull/3188/head
   - env:
     - NAME=libva
     - REPO=https://github.com/intel/libva
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=libva
   - env:
     - NAME=libzim
     - REPO=https://github.com/openzim/libzim
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=zimlib
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="libudev-dev libglib2.0-dev libsystemd-dev"
   - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
+    - MESON_COMMIT=pull/3188/head
     - COMMIT=d5e7c6234e33905f30d474240f6c327a278ca470
     - BUILDDEP=nautilus
     - ALSOINSTALL="libgexiv2-dev"
   - env:
     - NAME=nemo
     - REPO=https://github.com/linuxmint/nemo
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=nemo
     - ALSOINSTALL="libxapp-dev"
   - env:
     - NAME=orc
     - REPO=git://anongit.freedesktop.org/gstreamer/orc/
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=orc
   - env:
     - NAME=outlier
     - REPO=https://github.com/kerolasa/outlier
+    - MESON_COMMIT=pull/3188/head
   - env:
     - NAME=pango
     - REPO=https://git.gnome.org/browse/pango/
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=pango1.0
     - ALSOINSTALL="libfribidi-dev"
   - env:
     - NAME=parzip
     - REPO=https://github.com/jpakkane/parzip
+    - MESON_COMMIT=pull/3188/head
     - HACKS="meson wrap update zlib"
   - env:
     - NAME=pipewire
     - REPO=https://github.com/PipeWire/pipewire.git
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="libdbus-1-dev libasound2-dev libv4l-dev libudev-dev"
   - env:
     - NAME=pithos
     - REPO=https://github.com/pithos/pithos
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=pithos
     - ALSOINSTALL="libglib2.0-dev"
   - env:
     - NAME=polari
     - REPO=https://gitlab.gnome.org/GNOME/polari
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=polari
   - env:
     - NAME=radare2
     - REPO=https://github.com/radare/radare2
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=radare2
     - HACKS="(cd shlr; ./capstone.sh https://github.com/aquynh/capstone.git next)"
   - env:
     - NAME=sysprof
     - REPO=git://git.gnome.org/sysprof
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=sysprof
     - ALSOINSTALL="systemd"
   - env:
     - NAME=systemd
     - REPO=https://github.com/systemd/systemd
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=systemd
   - env:
     - NAME=szl
     - REPO=https://github.com/dimkr/szl
+    - MESON_COMMIT=pull/3188/head
     - HACKS="git submodule update --init"
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libpng-dev python-docutils"
   - env:
     - NAME=xi-gtk
     - REPO=https://github.com/eyelash/xi-gtk
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="valac libgtk-3-dev libjson-glib-dev"
   - env:
     - NAME=xorg
     - REPO=git://anongit.freedesktop.org/xorg/xserver/
+    - MESON_COMMIT=pull/3188/head
+    - COMMIT=fabbaa8d6260da14fe5b7ca0f3f8748af16253a2
     - BUILDDEP=xorg-server
   - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="valac libsoup2.4-dev libssl-dev"
   - env:
     - NAME=wayland-and-weston
     - REPO=git://anongit.freedesktop.org/wayland/libinput
+    - MESON_COMMIT=pull/3188/head
     - ALSOINSTALL="libudev-dev libmtdev-dev libevdev-dev libwacom-dev doxygen graphviz libgtk-3-dev check valgrind"
   - env:
     - NAME=zstandard
     - REPO=https://github.com/facebook/zstd.git
+    - MESON_COMMIT=pull/3188/head
     - BUILDDEP=zstd
     - SOURCEDIR=contrib/meson
 python: 3.6
