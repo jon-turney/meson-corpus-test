@@ -21,6 +21,10 @@ matrix:
     - REPO=https://github.com/tobimensch/aqemu
     - BUILDDEP=aqemu
   - env:
+    - NAME=bolt
+    - REPO=https://gitlab.freedesktop.org/bolt/bolt
+    - BUILDDEP=bolt
+  - env:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
     - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
