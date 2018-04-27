@@ -23,7 +23,7 @@ matrix:
   - env:
     - NAME=bolt
     - REPO=https://gitlab.freedesktop.org/bolt/bolt
-    - BUILDDEP=bolt
+    - ALSOINSTALL="libglib2.0-dev libudev-dev udev libpolkit-gobject-1-dev systemd libsystemd-dev"
   - env:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
@@ -53,6 +53,7 @@ matrix:
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
+    - COMMIT=693497b961803f776110dad0267627d871720dd6
     - BUILDDEP=fwupd
     - ALSOINSTALL="libjson-glib-dev help2man valac"
   - env:
@@ -109,6 +110,7 @@ matrix:
   - env:
     - NAME=gvfs
     - REPO=https://git.gnome.org/browse/gvfs/
+    - COMMIT=3a7bb06be72fc62b4ec524afe67febf0f529066d
     - BUILDDEP=gvfs
     - ALSOINSTALL="libbluray-dev libnfs-dev"
   - env:
