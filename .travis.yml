@@ -69,7 +69,7 @@ matrix:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
     - BUILDDEP=gnome-boxes
-    - ALSOINSTALL="libwebkit2gtk-4.0-dev"
+    - ALSOINSTALL="libwebkit2gtk-4.0-dev freerdp2-dev"
   - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
