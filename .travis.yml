@@ -59,6 +59,7 @@ matrix:
   - env:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
+    - COMMIT=43341cd3e399155c38afb9efa630b5d48988ee5d
     - BUILDDEP=geary
     - ALSOINSTALL="libunwind-dev"
   - env:
