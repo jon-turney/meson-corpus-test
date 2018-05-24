@@ -159,6 +159,10 @@ matrix:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
   - env:
+    - NAME=libspng
+    - REPO=https://gitlab.com/randy408/libspng
+    - ALSOINSTALL="zlib1g-dev libpng-dev"
+  - env:
     - NAME=libva
     - REPO=https://github.com/intel/libva
     - BUILDDEP=libva
