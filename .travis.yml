@@ -27,6 +27,7 @@ matrix:
   - env:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
+    - COMMIT=c5295589049f7b76f1ff2aea28c84e4ed78897b5
     - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
       intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-1-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev
       gtk-doc-tools gnome-settings-daemon-dev"
