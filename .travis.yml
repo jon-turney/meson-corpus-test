@@ -30,7 +30,6 @@ matrix:
   - env:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
-    - COMMIT=c5295589049f7b76f1ff2aea28c84e4ed78897b5
     - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
       intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-2-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev
       gtk-doc-tools gnome-settings-daemon-dev"
@@ -57,15 +56,13 @@ matrix:
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
-    - COMMIT=693497b961803f776110dad0267627d871720dd6
     - BUILDDEP=fwupd
     - ALSOINSTALL="libjson-glib-dev help2man valac"
   - env:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
-    - COMMIT=43341cd3e399155c38afb9efa630b5d48988ee5d
     - BUILDDEP=geary
-    - ALSOINSTALL="libunwind-dev"
+    - ALSOINSTALL="libunwind-dev libgoa-1.0-dev"
   - env:
     - NAME=glib
     - REPO=https://gitlab.gnome.org/GNOME/glib
@@ -75,7 +72,7 @@ matrix:
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
     - BUILDDEP=gnome-boxes
     - ALSOINSTALL="libwebkit2gtk-4.0-dev freerdp2-dev"
-    - HACKS="sed -i -E 's!pkg(data|lib)dir=!\1dir=!' src/meson.build"
+    - HACKS='sed -i -E '"'"'s!pkg(data|lib)dir=!\1dir=!'"'"' src/meson.build'
   - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
@@ -85,6 +82,10 @@ matrix:
     - REPO=https://gitlab.gnome.org/GNOME/recipes
     - BUILDDEP=gnome-recipes
     - ALSOINSTALL="libgoa-1.0-dev libjson-glib-dev"
+  - env:
+    - NAME=gnome-software
+    - REPO=https://gitlab.gnome.org/GNOME/gnome-software
+    - BUILDDEP=gnome-software
   - env:
     - NAME=gnome-twitch
     - REPO=https://github.com/vinszent/gnome-twitch
@@ -110,6 +111,11 @@ matrix:
     - REPO=git://anongit.freedesktop.org/gstreamer/gstreamer/
     - BUILDDEP=gstreamer1.0
   - env:
+    - NAME=gtk+
+    - REPO=https://gitlab.gnome.org/GNOME/gtk
+    - COMMIT=894a0c0f
+    - BUILDDEP=libgtk-3-dev
+  - env:
     - NAME=gtkdapp
     - REPO=https://gitlab.com/csoriano/GtkDApp
     - ALSOINSTALL="libgtkd-3-dev gdc gsettings-desktop-schemas-dev libglib2.0-dev gettext"
@@ -133,12 +139,12 @@ matrix:
     - REPO=git://anongit.freedesktop.org/xorg/app/intel-gpu-tools/
     - BUILDDEP=intel-gpu-tools
   - env:
-    - NAME=jsoncpp
-    - REPO=https://github.com/open-source-parsers/jsoncpp
-  - env:
     - NAME=json-glib
     - REPO=https://gitlab.gnome.org/GNOME/json-glib
     - BUILDDEP=json-glib
+  - env:
+    - NAME=jsoncpp
+    - REPO=https://github.com/open-source-parsers/jsoncpp
   - env:
     - NAME=ksh
     - REPO=https://github.com/att/ast
@@ -156,6 +162,11 @@ matrix:
     - REPO=https://github.com/libfuse/libfuse
     - BUILDDEP=fuse
     - ALSOINSTALL="udev"
+  - env:
+    - NAME=libgit2-glib
+    - REPO=https://git.gnome.org/browse/libgit2-glib
+    - BUILDDEP=libgit2-glib
+    - ALSOINSTALL="python-gi-dev"
   - env:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
@@ -176,15 +187,21 @@ matrix:
     - REPO=https://github.com/openzim/libzim
     - BUILDDEP=zimlib
   - env:
+    - NAME=lightdm-webkit2-greeter
+    - REPO=https://github.com/Antergos/lightdm-webkit2-greeter
+    - BRANCH=stable
+    - ALSOINSTALL="libdbus-glib-1-dev liblightdm-gobject-1-dev libgtk-3-dev libwebkit2gtk-4.0-dev"
+    - HACKS='sed -i "s!'"'"'@0@/utils.sh'"'"'.format(meson.build_root())!join_paths(meson.source_root(), '"'"'build/utils.sh'"'"')!"
+      src/meson.build'
+  - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
     - ALSOINSTALL="libudev-dev libglib2.0-dev libsystemd-dev"
   - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
-    - COMMIT=d5e7c6234e33905f30d474240f6c327a278ca470
     - BUILDDEP=nautilus
-    - ALSOINSTALL="libgexiv2-dev"
+    - ALSOINSTALL="libgexiv2-dev libseccomp-dev"
   - env:
     - NAME=nemo
     - REPO=https://github.com/linuxmint/nemo
@@ -205,7 +222,7 @@ matrix:
   - env:
     - NAME=parzip
     - REPO=https://github.com/jpakkane/parzip
-    - HACKS="meson wrap update zlib"
+    - HACKS='meson wrap update zlib'
   - env:
     - NAME=pipewire
     - REPO=https://github.com/PipeWire/pipewire.git
@@ -216,6 +233,10 @@ matrix:
     - BUILDDEP=pithos
     - ALSOINSTALL="libglib2.0-dev"
   - env:
+    - NAME=pitivi
+    - REPO=https://github.com/pitivi/pitivi/
+    - BUILDDEP=pitivi
+  - env:
     - NAME=polari
     - REPO=https://gitlab.gnome.org/GNOME/polari
     - BUILDDEP=polari
@@ -224,6 +245,11 @@ matrix:
     - REPO=https://github.com/radare/radare2
     - BUILDDEP=radare2
     - HACKS="(cd shlr; ./capstone.sh https://github.com/aquynh/capstone.git next)"
+  - env:
+    - NAME=sshfs
+    - REPO=https://github.com/libfuse/sshfs
+    - COMMIT=6cc86fc0bdaaeacfb1bd5e4336f2a2d1e5b189b8
+    - BUILDDEP=sshfs
   - env:
     - NAME=sysprof
     - REPO=git://git.gnome.org/sysprof
@@ -236,20 +262,11 @@ matrix:
   - env:
     - NAME=szl
     - REPO=https://github.com/dimkr/szl
-    - HACKS="git submodule update --init"
+    - HACKS='git submodule update --init'
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
     - ALSOINSTALL="libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libpng-dev python-docutils"
-  - env:
-    - NAME=xi-gtk
-    - REPO=https://github.com/eyelash/xi-gtk
-    - ALSOINSTALL="valac libgtk-3-dev libjson-glib-dev"
-  - env:
-    - NAME=xorg
-    - REPO=git://anongit.freedesktop.org/xorg/xserver/
-    - COMMIT=fabbaa8d6260da14fe5b7ca0f3f8748af16253a2
-    - BUILDDEP=xorg-server
   - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
@@ -258,6 +275,20 @@ matrix:
     - NAME=wayland-and-weston
     - REPO=git://anongit.freedesktop.org/wayland/libinput
     - ALSOINSTALL="libudev-dev libmtdev-dev libevdev-dev libwacom-dev doxygen graphviz libgtk-3-dev check valgrind"
+  - env:
+    - NAME=wlroots
+    - REPO=https://github.com/swaywm/wlroots
+    - COMMIT=f1fcc685b62d5c37c3b99ce6bfeb11ac1fa59ea6
+    - ALSOINSTALL="libegl1-mesa-dev libgbm-dev libgles2-mesa-dev libinput-dev libpixman-1-dev libwayland-dev libxcb-composite0-dev
+      libxcb-image0-dev libxkbcommon-dev wayland-protocols"
+  - env:
+    - NAME=xi-gtk
+    - REPO=https://github.com/eyelash/xi-gtk
+    - ALSOINSTALL="valac libgtk-3-dev libjson-glib-dev"
+  - env:
+    - NAME=xorg
+    - REPO=git://anongit.freedesktop.org/xorg/xserver/
+    - BUILDDEP=xorg-server
   - env:
     - NAME=zstandard
     - REPO=https://github.com/facebook/zstd.git
