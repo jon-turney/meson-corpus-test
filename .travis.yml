@@ -23,286 +23,351 @@ matrix:
     - NAME=aqemu
     - REPO=https://github.com/tobimensch/aqemu
     - BUILDDEP=aqemu
+    - BUILD=yes
   - env:
     - NAME=bolt
     - REPO=https://gitlab.freedesktop.org/bolt/bolt
     - ALSOINSTALL="libglib2.0-dev libudev-dev udev libpolkit-gobject-1-dev systemd libsystemd-dev"
+    - BUILD=yes
   - env:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
     - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
       intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-2-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev
       gtk-doc-tools gnome-settings-daemon-dev"
+    - BUILD=yes
   - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
     - BUILDDEP=casync
     - ALSOINSTALL="libudev-dev"
+    - BUILD=yes
   - env:
     - NAME=cinnamon-desktop
     - REPO=https://github.com/linuxmint/cinnamon-desktop
     - BUILDDEP=cinnamon-desktop
+    - BUILD=yes
   - env:
     - NAME=dbus-broker
     - REPO=https://github.com/bus1/dbus-broker
     - ALSOINSTALL="python-docutils libdbus-1-dev libglib2.0-dev libsystemd-dev systemd"
+    - BUILD=yes
   - env:
     - NAME=dpdk
     - REPO=git://dpdk.org/dpdk
+    - BUILD=yes
   - env:
     - NAME=emeus
     - REPO=https://github.com/ebassi/emeus
     - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
+    - BUILD=yes
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
     - BUILDDEP=fwupd
     - ALSOINSTALL="libjson-glib-dev help2man valac"
+    - BUILD=yes
   - env:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
     - BUILDDEP=geary
     - ALSOINSTALL="libunwind-dev libgoa-1.0-dev"
+    - BUILD=yes
   - env:
     - NAME=glib
     - REPO=https://gitlab.gnome.org/GNOME/glib
     - BUILDDEP=glib2.0
+    - BUILD=yes
   - env:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
     - BUILDDEP=gnome-boxes
     - ALSOINSTALL="libwebkit2gtk-4.0-dev freerdp2-dev"
+    - BUILD=yes
   - env:
     - NAME=gnome-builder
     - REPO=https://gitlab.gnome.org/GNOME/gnome-builder
     - BRANCH=3.28.3
     - BUILDDEP=gnome-builder
+    - BUILD=yes
     - CONFIG="-Dwith_spellcheck=false"
   - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
     - BUILDDEP=gnome-mpv
+    - BUILD=yes
   - env:
     - NAME=gnome-recipes
     - REPO=https://gitlab.gnome.org/GNOME/recipes
     - BUILDDEP=gnome-recipes
     - ALSOINSTALL="libgoa-1.0-dev libjson-glib-dev"
+    - BUILD=yes
   - env:
     - NAME=gnome-software
     - REPO=https://gitlab.gnome.org/GNOME/gnome-software
     - BUILDDEP=gnome-software
+    - BUILD=yes
   - env:
     - NAME=gnome-twitch
     - REPO=https://github.com/vinszent/gnome-twitch
     - BUILDDEP=gnome-twitch
+    - BUILD=yes
   - env:
     - NAME=gnome-usage
     - REPO=https://gitlab.gnome.org/GNOME/gnome-usage
     - ALSOINSTALL="libaccountsservice-dev libgtk-3-dev libgtop2-dev valac"
+    - BUILD=yes
   - env:
     - NAME=graphene
     - REPO=git://github.com/ebassi/graphene
     - BUILDDEP=graphene
+    - BUILD=yes
   - env:
     - NAME=grilo
     - REPO=https://git.gnome.org/browse/grilo
     - BUILDDEP=grilo
+    - BUILD=yes
   - env:
     - NAME=grilo-plugins
     - REPO=https://git.gnome.org/browse/grilo-plugins
     - BUILDDEP=grilo-plugins
+    - BUILD=yes
   - env:
     - NAME=gstreamer
     - REPO=git://anongit.freedesktop.org/gstreamer/gstreamer/
     - BUILDDEP=gstreamer1.0
+    - BUILD=yes
   - env:
     - NAME=gtk+
     - REPO=https://gitlab.gnome.org/GNOME/gtk
     - COMMIT=894a0c0f
     - BUILDDEP=libgtk-3-dev
+    - BUILD=yes
   - env:
     - NAME=gtkdapp
     - REPO=https://gitlab.com/csoriano/GtkDApp
     - ALSOINSTALL="libgtkd-3-dev gdc gsettings-desktop-schemas-dev libglib2.0-dev gettext"
+    - BUILD=yes
   - env:
     - NAME=gvfs
     - REPO=https://git.gnome.org/browse/gvfs/
     - COMMIT=3a7bb06be72fc62b4ec524afe67febf0f529066d
     - BUILDDEP=gvfs
     - ALSOINSTALL="libbluray-dev libnfs-dev"
+    - BUILD=yes
   - env:
     - NAME=hardcode-tray
     - REPO=https://github.com/bil-elmoussaoui/Hardcode-Tray
     - ALSOINSTALL="libgirepository1.0-dev libgtk-3-dev"
+    - BUILD=yes
   - env:
     - NAME=hexchat
     - REPO=https://github.com/hexchat/hexchat
     - BUILDDEP=hexchat
     - ALSOINSTALL="libluajit-5.1-dev"
+    - BUILD=yes
   - env:
     - NAME=igt
     - REPO=git://anongit.freedesktop.org/xorg/app/intel-gpu-tools/
     - BUILDDEP=intel-gpu-tools
+    - BUILD=yes
   - env:
     - NAME=json-glib
     - REPO=https://gitlab.gnome.org/GNOME/json-glib
     - BUILDDEP=json-glib
+    - BUILD=yes
   - env:
     - NAME=jsoncpp
     - REPO=https://github.com/open-source-parsers/jsoncpp
+    - BUILD=yes
   - env:
     - NAME=ksh
     - REPO=https://github.com/att/ast
     - BUILDDEP=ksh
+    - BUILD=yes
   - env:
     - NAME=libdrm
     - REPO=git://anongit.freedesktop.org/drm/libdrm/
     - BUILDDEP=libdrm
+    - BUILD=yes
   - env:
     - NAME=libepoxy
     - REPO=https://github.com/anholt/libepoxy/
     - BUILDDEP=libepoxy
+    - BUILD=yes
   - env:
     - NAME=libfuse
     - REPO=https://github.com/libfuse/libfuse
     - BUILDDEP=fuse
     - ALSOINSTALL="udev"
+    - BUILD=yes
   - env:
     - NAME=libgit2-glib
     - REPO=https://git.gnome.org/browse/libgit2-glib
     - BUILDDEP=libgit2-glib
     - ALSOINSTALL="python-gi-dev"
+    - BUILD=yes
   - env:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
     - ALSOINSTALL="valac libjson-glib-dev libsoup2.4-dev libgee-0.8-dev libarchive-dev gobject-introspection"
+    - BUILD=yes
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
+    - BUILD=yes
   - env:
     - NAME=libspng
     - REPO=https://gitlab.com/randy408/libspng
     - ALSOINSTALL="zlib1g-dev libpng-dev"
+    - BUILD=yes
   - env:
     - NAME=libva
     - REPO=https://github.com/intel/libva
     - BUILDDEP=libva
+    - BUILD=yes
   - env:
     - NAME=libzim
     - REPO=https://github.com/openzim/libzim
     - BUILDDEP=zimlib
+    - BUILD=yes
   - env:
     - NAME=lightdm-webkit2-greeter
     - REPO=https://github.com/Antergos/lightdm-webkit2-greeter
     - BRANCH=stable
     - ALSOINSTALL="libdbus-glib-1-dev liblightdm-gobject-1-dev libgtk-3-dev libwebkit2gtk-4.0-dev"
+    - BUILD=yes
   - env:
     - NAME=mesa
     - REPO=git://anongit.freedesktop.org/mesa/mesa/
     - COMMIT=cb03803253b026d5f4c1e0fef431a12df461e6d8
     - BUILDDEP=mesa
     - ALSOINSTALL="libegl1-mesa-dev libxvmc-dev"
+    - BUILD=yes
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
     - ALSOINSTALL="libudev-dev libglib2.0-dev libsystemd-dev"
+    - BUILD=yes
   - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
     - BUILDDEP=nautilus
     - ALSOINSTALL="libgexiv2-dev libseccomp-dev"
+    - BUILD=yes
   - env:
     - NAME=nemo
     - REPO=https://github.com/linuxmint/nemo
     - BUILDDEP=nemo
     - ALSOINSTALL="libxapp-dev"
+    - BUILD=yes
   - env:
     - NAME=orc
     - REPO=git://anongit.freedesktop.org/gstreamer/orc/
     - BUILDDEP=orc
+    - BUILD=yes
   - env:
     - NAME=outlier
     - REPO=https://github.com/kerolasa/outlier
+    - BUILD=yes
   - env:
     - NAME=pango
     - REPO=https://git.gnome.org/browse/pango/
     - BUILDDEP=pango1.0
     - ALSOINSTALL="libfribidi-dev"
+    - BUILD=yes
   - env:
     - NAME=parzip
     - REPO=https://github.com/jpakkane/parzip
+    - BUILD=yes
     - HACKS='meson wrap update zlib'
   - env:
     - NAME=pipewire
     - REPO=https://github.com/PipeWire/pipewire.git
     - ALSOINSTALL="libdbus-1-dev libasound2-dev libv4l-dev libudev-dev"
+    - BUILD=yes
   - env:
     - NAME=pithos
     - REPO=https://github.com/pithos/pithos
     - BUILDDEP=pithos
     - ALSOINSTALL="libglib2.0-dev"
+    - BUILD=yes
   - env:
     - NAME=pitivi
     - REPO=https://github.com/pitivi/pitivi/
     - BUILDDEP=pitivi
+    - BUILD=yes
   - env:
     - NAME=polari
     - REPO=https://gitlab.gnome.org/GNOME/polari
     - BUILDDEP=polari
+    - BUILD=yes
   - env:
     - NAME=radare2
     - REPO=https://github.com/radare/radare2
     - BUILDDEP=radare2
+    - BUILD=yes
     - HACKS="(cd shlr; ./capstone.sh https://github.com/aquynh/capstone.git next)"
   - env:
     - NAME=sshfs
     - REPO=https://github.com/libfuse/sshfs
     - COMMIT=6cc86fc0bdaaeacfb1bd5e4336f2a2d1e5b189b8
     - BUILDDEP=sshfs
+    - BUILD=yes
   - env:
     - NAME=sysprof
     - REPO=git://git.gnome.org/sysprof
     - BUILDDEP=sysprof
     - ALSOINSTALL="systemd"
+    - BUILD=yes
   - env:
     - NAME=systemd
     - REPO=https://github.com/systemd/systemd
     - BUILDDEP=systemd
+    - BUILD=yes
   - env:
     - NAME=szl
     - REPO=https://github.com/dimkr/szl
+    - BUILD=yes
     - HACKS='git submodule update --init'
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
     - ALSOINSTALL="libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libpng-dev python-docutils"
+    - BUILD=yes
   - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
     - ALSOINSTALL="valac libsoup2.4-dev libssl-dev"
+    - BUILD=yes
   - env:
     - NAME=wayland-and-weston
     - REPO=git://anongit.freedesktop.org/wayland/libinput
     - ALSOINSTALL="libudev-dev libmtdev-dev libevdev-dev libwacom-dev doxygen graphviz libgtk-3-dev check valgrind"
+    - BUILD=yes
   - env:
     - NAME=wlroots
     - REPO=https://github.com/swaywm/wlroots
     - COMMIT=f1fcc685b62d5c37c3b99ce6bfeb11ac1fa59ea6
     - ALSOINSTALL="libegl1-mesa-dev libgbm-dev libgles2-mesa-dev libinput-dev libpixman-1-dev libwayland-dev libxcb-composite0-dev
       libxcb-image0-dev libxkbcommon-dev wayland-protocols"
+    - BUILD=yes
   - env:
     - NAME=xi-gtk
     - REPO=https://github.com/eyelash/xi-gtk
     - ALSOINSTALL="valac libgtk-3-dev libjson-glib-dev"
+    - BUILD=yes
   - env:
     - NAME=xorg
     - REPO=git://anongit.freedesktop.org/xorg/xserver/
     - BUILDDEP=xorg-server
+    - BUILD=yes
   - env:
     - NAME=zstandard
     - REPO=https://github.com/facebook/zstd.git
     - BUILDDEP=zstd
     - SOURCEDIR=contrib/meson
+    - BUILD=yes
 python: 3.6
 script:
 - cat script
