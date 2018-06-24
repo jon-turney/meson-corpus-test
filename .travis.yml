@@ -35,7 +35,6 @@ matrix:
     - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
       intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-2-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev
       gtk-doc-tools gnome-settings-daemon-dev"
-    - BUILD=yes
   - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
@@ -55,12 +54,10 @@ matrix:
   - env:
     - NAME=dpdk
     - REPO=git://dpdk.org/dpdk
-    - BUILD=yes
   - env:
     - NAME=emeus
     - REPO=https://github.com/ebassi/emeus
     - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
-    - BUILD=yes
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
@@ -72,12 +69,10 @@ matrix:
     - REPO=https://git.gnome.org/browse/geary
     - BUILDDEP=geary
     - ALSOINSTALL="libunwind-dev libgoa-1.0-dev"
-    - BUILD=yes
   - env:
     - NAME=glib
     - REPO=https://gitlab.gnome.org/GNOME/glib
     - BUILDDEP=glib2.0
-    - BUILD=yes
   - env:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
@@ -89,7 +84,6 @@ matrix:
     - REPO=https://gitlab.gnome.org/GNOME/gnome-builder
     - BRANCH=3.28.3
     - BUILDDEP=gnome-builder
-    - BUILD=yes
     - CONFIG="-Dwith_spellcheck=false"
   - env:
     - NAME=gnome-mpv
@@ -106,12 +100,10 @@ matrix:
     - NAME=gnome-software
     - REPO=https://gitlab.gnome.org/GNOME/gnome-software
     - BUILDDEP=gnome-software
-    - BUILD=yes
   - env:
     - NAME=gnome-twitch
     - REPO=https://github.com/vinszent/gnome-twitch
     - BUILDDEP=gnome-twitch
-    - BUILD=yes
   - env:
     - NAME=gnome-usage
     - REPO=https://gitlab.gnome.org/GNOME/gnome-usage
@@ -131,23 +123,19 @@ matrix:
     - NAME=grilo-plugins
     - REPO=https://git.gnome.org/browse/grilo-plugins
     - BUILDDEP=grilo-plugins
-    - BUILD=yes
   - env:
     - NAME=gstreamer
     - REPO=git://anongit.freedesktop.org/gstreamer/gstreamer/
     - BUILDDEP=gstreamer1.0
-    - BUILD=yes
   - env:
     - NAME=gtk+
     - REPO=https://gitlab.gnome.org/GNOME/gtk
     - COMMIT=894a0c0f
     - BUILDDEP=libgtk-3-dev
-    - BUILD=yes
   - env:
     - NAME=gtkdapp
     - REPO=https://gitlab.com/csoriano/GtkDApp
     - ALSOINSTALL="libgtkd-3-dev gdc gsettings-desktop-schemas-dev libglib2.0-dev gettext"
-    - BUILD=yes
   - env:
     - NAME=gvfs
     - REPO=https://git.gnome.org/browse/gvfs/
@@ -184,23 +172,19 @@ matrix:
     - NAME=ksh
     - REPO=https://github.com/att/ast
     - BUILDDEP=ksh
-    - BUILD=yes
   - env:
     - NAME=libdrm
     - REPO=git://anongit.freedesktop.org/drm/libdrm/
     - BUILDDEP=libdrm
-    - BUILD=yes
   - env:
     - NAME=libepoxy
     - REPO=https://github.com/anholt/libepoxy/
     - BUILDDEP=libepoxy
-    - BUILD=yes
   - env:
     - NAME=libfuse
     - REPO=https://github.com/libfuse/libfuse
     - BUILDDEP=fuse
     - ALSOINSTALL="udev"
-    - BUILD=yes
   - env:
     - NAME=libgit2-glib
     - REPO=https://git.gnome.org/browse/libgit2-glib
@@ -211,16 +195,13 @@ matrix:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
     - ALSOINSTALL="valac libjson-glib-dev libsoup2.4-dev libgee-0.8-dev libarchive-dev gobject-introspection"
-    - BUILD=yes
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
-    - BUILD=yes
   - env:
     - NAME=libspng
     - REPO=https://gitlab.com/randy408/libspng
     - ALSOINSTALL="zlib1g-dev libpng-dev"
-    - BUILD=yes
   - env:
     - NAME=libva
     - REPO=https://github.com/intel/libva
@@ -243,12 +224,10 @@ matrix:
     - COMMIT=cb03803253b026d5f4c1e0fef431a12df461e6d8
     - BUILDDEP=mesa
     - ALSOINSTALL="libegl1-mesa-dev libxvmc-dev"
-    - BUILD=yes
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
     - ALSOINSTALL="libudev-dev libglib2.0-dev libsystemd-dev"
-    - BUILD=yes
   - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
@@ -260,7 +239,6 @@ matrix:
     - REPO=https://github.com/linuxmint/nemo
     - BUILDDEP=nemo
     - ALSOINSTALL="libxapp-dev"
-    - BUILD=yes
   - env:
     - NAME=orc
     - REPO=git://anongit.freedesktop.org/gstreamer/orc/
@@ -279,7 +257,6 @@ matrix:
   - env:
     - NAME=parzip
     - REPO=https://github.com/jpakkane/parzip
-    - BUILD=yes
     - HACKS='meson wrap update zlib'
   - env:
     - NAME=pipewire
@@ -296,7 +273,6 @@ matrix:
     - NAME=pitivi
     - REPO=https://github.com/pitivi/pitivi/
     - BUILDDEP=pitivi
-    - BUILD=yes
   - env:
     - NAME=polari
     - REPO=https://gitlab.gnome.org/GNOME/polari
@@ -313,7 +289,6 @@ matrix:
     - REPO=https://github.com/libfuse/sshfs
     - COMMIT=6cc86fc0bdaaeacfb1bd5e4336f2a2d1e5b189b8
     - BUILDDEP=sshfs
-    - BUILD=yes
   - env:
     - NAME=sysprof
     - REPO=git://git.gnome.org/sysprof
@@ -324,7 +299,6 @@ matrix:
     - NAME=systemd
     - REPO=https://github.com/systemd/systemd
     - BUILDDEP=systemd
-    - BUILD=yes
   - env:
     - NAME=szl
     - REPO=https://github.com/dimkr/szl
@@ -339,7 +313,6 @@ matrix:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
     - ALSOINSTALL="valac libsoup2.4-dev libssl-dev"
-    - BUILD=yes
   - env:
     - NAME=wayland-and-weston
     - REPO=git://anongit.freedesktop.org/wayland/libinput
@@ -361,13 +334,11 @@ matrix:
     - NAME=xorg
     - REPO=git://anongit.freedesktop.org/xorg/xserver/
     - BUILDDEP=xorg-server
-    - BUILD=yes
   - env:
     - NAME=zstandard
     - REPO=https://github.com/facebook/zstd.git
     - BUILDDEP=zstd
     - SOURCEDIR=contrib/meson
-    - BUILD=yes
 python: 3.6
 script:
 - cat script
