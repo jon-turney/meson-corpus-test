@@ -10,7 +10,7 @@ before_script:
 - if test -z "${COMMIT}" ; then echo "retry -- git clone --depth=1 --branch ${BRANCH:-master} ${REPO} ${NAME} &&" >>script ; fi
 - echo "cd ${NAME} && " >>script
 - if test -n "${HACKS}" ; then echo "${HACKS} &&" >>script ; fi
-- echo "meson _build ${SOURCEDIR}" >>script
+- echo "meson _build ${SOURCEDIR} ${CONFIG}" >>script
 - if test -n "${BUILD}" ; then echo "DESTDIR=/install ninja -C _build all test install" >>script ; fi
 cache:
   apt: true
@@ -72,7 +72,12 @@ matrix:
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
     - BUILDDEP=gnome-boxes
     - ALSOINSTALL="libwebkit2gtk-4.0-dev freerdp2-dev"
-    - HACKS='sed -i -E '"'"'s!pkg(data|lib)dir=!\1dir=!'"'"' src/meson.build'
+  - env:
+    - NAME=gnome-builder
+    - REPO=https://gitlab.gnome.org/GNOME/gnome-builder
+    - BRANCH=3.28.3
+    - BUILDDEP=gnome-builder
+    - CONFIG="-Dwith_spellcheck=false"
   - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
@@ -191,8 +196,12 @@ matrix:
     - REPO=https://github.com/Antergos/lightdm-webkit2-greeter
     - BRANCH=stable
     - ALSOINSTALL="libdbus-glib-1-dev liblightdm-gobject-1-dev libgtk-3-dev libwebkit2gtk-4.0-dev"
-    - HACKS='sed -i "s!'"'"'@0@/utils.sh'"'"'.format(meson.build_root())!join_paths(meson.source_root(), '"'"'build/utils.sh'"'"')!"
-      src/meson.build'
+  - env:
+    - NAME=mesa
+    - REPO=git://anongit.freedesktop.org/mesa/mesa/
+    - COMMIT=cb03803253b026d5f4c1e0fef431a12df461e6d8
+    - BUILDDEP=mesa
+    - ALSOINSTALL="libegl1-mesa-dev libxvmc-dev"
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
