@@ -69,7 +69,7 @@ matrix:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
     - BUILDDEP=geary
-    - ALSOINSTALL="libunwind-dev libgoa-1.0-dev"
+    - ALSOINSTALL="libunwind-dev libgoa-1.0-dev itstool"
     - BUILD="all install"
   - env:
     - NAME=glib
