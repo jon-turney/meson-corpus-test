@@ -62,8 +62,9 @@ matrix:
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
+    - COMMIT=cff980cfda882939b5a3a5c2baadb657d5dbb051
     - BUILDDEP=fwupd
-    - ALSOINSTALL="libjson-glib-dev help2man valac"
+    - ALSOINSTALL="gnu-efi libjson-glib-dev help2man valac"
     - BUILD="all install"
   - env:
     - NAME=geary
@@ -131,7 +132,7 @@ matrix:
     - NAME=gstreamer
     - REPO=git://anongit.freedesktop.org/gstreamer/gstreamer/
     - BUILDDEP=gstreamer1.0
-    - BUILD="all install"
+    - BUILD="all"
   - env:
     - NAME=gtk+
     - REPO=https://gitlab.gnome.org/GNOME/gtk
@@ -322,7 +323,7 @@ matrix:
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
-    - ALSOINSTALL="libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libpng-dev python-docutils"
+    - ALSOINSTALL="libfreetype6-dev libsdl2-dev libsdl2-image-dev libpng-dev python-docutils"
     - BUILD="all install"
   - env:
     - NAME=valum
@@ -354,6 +355,7 @@ matrix:
   - env:
     - NAME=zstandard
     - REPO=https://github.com/facebook/zstd.git
+    - BRANCH=v1.3.4
     - BUILDDEP=zstd
     - SOURCEDIR=contrib/meson
     - BUILD="all install"
