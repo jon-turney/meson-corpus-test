@@ -60,6 +60,11 @@ matrix:
     - REPO=https://github.com/ebassi/emeus
     - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
   - env:
+    - NAME=fedora-project
+    - REPO=https://getfedora.org/
+    - BUILDDEP=fedora-project
+    - BUILD="all install"
+  - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
     - COMMIT=cff980cfda882939b5a3a5c2baadb657d5dbb051
@@ -204,6 +209,11 @@ matrix:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
     - ALSOINSTALL="valac libjson-glib-dev libsoup2.4-dev libgee-0.8-dev libarchive-dev gobject-introspection"
+  - env:
+    - NAME=libmodulemd
+    - REPO=https://github.com/fedora-modularity/libmodulemd
+    - BUILDDEP=libmodulemd
+    - BUILD="all install"
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
