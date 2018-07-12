@@ -60,6 +60,11 @@ matrix:
     - REPO=https://github.com/ebassi/emeus
     - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
   - env:
+    - NAME=esp8266-arduino-sample-project
+    - REPO=https://github.com/trilader/arduino-esp8266-meson
+    - BUILDDEP=esp8266-arduino-sample-project
+    - BUILD="all install"
+  - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
     - COMMIT=cff980cfda882939b5a3a5c2baadb657d5dbb051
