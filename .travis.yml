@@ -164,6 +164,7 @@ matrix:
     - NAME=igt
     - REPO=git://anongit.freedesktop.org/xorg/app/intel-gpu-tools/
     - BUILDDEP=intel-gpu-tools
+    - ALSOINSTALL="libssl-dev"
     - BUILD="all install"
   - env:
     - NAME=json-glib
