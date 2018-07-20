@@ -102,6 +102,7 @@ matrix:
   - env:
     - NAME=gnome-software
     - REPO=https://gitlab.gnome.org/GNOME/gnome-software
+    - COMMIT=12031b42109892e50b38f4037b923335fdfb0fd0
     - BUILDDEP=gnome-software
     - BUILD="all install"
   - env:
