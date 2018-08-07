@@ -127,6 +127,7 @@ matrix:
   - env:
     - NAME=grilo-plugins
     - REPO=https://git.gnome.org/browse/grilo-plugins
+    - COMMIT=770b11088c1b99ec979015faf95078c1e0dfe69e
     - BUILDDEP=grilo-plugins
     - BUILD="all install"
   - env:
@@ -291,13 +292,9 @@ matrix:
     - ALSOINSTALL="libglib2.0-dev"
     - BUILD="all install"
   - env:
-    - NAME=pitivi
-    - REPO=https://github.com/pitivi/pitivi/
-    - BUILDDEP=pitivi
-    - BUILD="all install"
-  - env:
     - NAME=polari
     - REPO=https://gitlab.gnome.org/GNOME/polari
+    - COMMIT=c97477b23361855e22619546a297d7513163bb76
     - BUILDDEP=polari
     - BUILD="all install"
   - env:
@@ -341,7 +338,8 @@ matrix:
   - env:
     - NAME=wayland-and-weston
     - REPO=git://anongit.freedesktop.org/wayland/libinput
-    - ALSOINSTALL="libudev-dev libmtdev-dev libevdev-dev libwacom-dev doxygen graphviz libgtk-3-dev check valgrind"
+    - ALSOINSTALL="libudev-dev libmtdev-dev libevdev-dev libwacom-dev doxygen graphviz libgtk-3-dev check valgrind python-sphinx python-sphinx-rtd-theme
+      python-recommonmark"
     - BUILD="all install"
   - env:
     - NAME=wlroots
