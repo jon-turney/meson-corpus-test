@@ -166,7 +166,7 @@ matrix:
     - NAME=igt
     - REPO=git://anongit.freedesktop.org/xorg/app/intel-gpu-tools/
     - BUILDDEP=intel-gpu-tools
-    - ALSOINSTALL="libssl-dev"
+    - ALSOINSTALL="libssl-dev libdw-dev"
     - BUILD="all install"
   - env:
     - NAME=json-glib
@@ -311,7 +311,7 @@ matrix:
     - BUILD="all install"
   - env:
     - NAME=sysprof
-    - REPO=git://git.gnome.org/sysprof
+    - REPO=https://git.gnome.org/browse/sysprof
     - BUILDDEP=sysprof
     - ALSOINSTALL="systemd"
     - BUILD="all install"
