@@ -56,6 +56,11 @@ matrix:
     - NAME=dpdk
     - REPO=git://dpdk.org/dpdk
   - env:
+    - NAME=elementary-os
+    - REPO=https://github.com/elementary/
+    - BUILDDEP=elementary-os
+    - BUILD="all install"
+  - env:
     - NAME=emeus
     - REPO=https://github.com/ebassi/emeus
     - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
@@ -313,7 +318,7 @@ matrix:
     - NAME=sysprof
     - REPO=https://git.gnome.org/browse/sysprof
     - BUILDDEP=sysprof
-    - ALSOINSTALL="systemd"
+    - ALSOINSTALL="systemd policykit-1"
     - BUILD="all install"
   - env:
     - NAME=systemd
