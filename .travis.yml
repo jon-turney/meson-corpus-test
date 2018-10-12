@@ -79,6 +79,7 @@ matrix:
   - env:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
+    - BRANCH=v3.31.1
     - BUILDDEP=gnome-boxes
     - ALSOINSTALL="libwebkit2gtk-4.0-dev freerdp2-dev"
     - BUILD="all install"
