@@ -329,7 +329,7 @@ matrix:
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
-    - ALSOINSTALL="libfreetype6-dev libsdl2-dev libsdl2-image-dev libpng-dev python-docutils"
+    - ALSOINSTALL="libfreetype6-dev libsdl2-dev libsdl2-image-dev libpng-dev libwebp-dev python-docutils"
     - BUILD="all install"
   - env:
     - NAME=valum
