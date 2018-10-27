@@ -214,6 +214,7 @@ matrix:
     - ALSOINSTALL="clang-format gobject-introspection gtk-doc-tools libgirepository1.0-dev libglib2.0-dev libyaml-dev python-autopep8
       valgrind"
     - BUILD="all install"
+    - HACKS='sed -i s!usr/bin/sh!bin/sh! spec_tmpl.sh'
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
