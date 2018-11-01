@@ -259,6 +259,7 @@ matrix:
   - env:
     - NAME=nemo
     - REPO=https://github.com/linuxmint/nemo
+    - COMMIT=80672f071742453ec0e84e4a46ec1ab28fe62379
     - BUILDDEP=nemo
     - ALSOINSTALL="libxapp-dev"
     - BUILD="all install"
