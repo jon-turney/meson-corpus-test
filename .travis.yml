@@ -161,7 +161,7 @@ matrix:
     - NAME=hexchat
     - REPO=https://github.com/hexchat/hexchat
     - BUILDDEP=hexchat
-    - ALSOINSTALL="libluajit-5.1-dev"
+    - ALSOINSTALL="libluajit-5.1-dev python3-cffi"
     - BUILD="all install"
   - env:
     - NAME=igt
