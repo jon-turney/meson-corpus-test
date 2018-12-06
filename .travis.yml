@@ -40,7 +40,7 @@ matrix:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
     - BUILDDEP=casync
-    - ALSOINSTALL="libudev-dev"
+    - ALSOINSTALL="libudev-dev udev"
     - BUILD="all install"
   - env:
     - NAME=cinnamon-desktop
