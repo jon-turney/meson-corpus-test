@@ -113,6 +113,7 @@ matrix:
   - env:
     - NAME=gnome-usage
     - REPO=https://gitlab.gnome.org/GNOME/gnome-usage
+    - COMMIT=4272da4d89f3baccf821805fce72e2098579e9db
     - ALSOINSTALL="libaccountsservice-dev libgtk-3-dev libgtop2-dev valac"
     - BUILD="all install"
   - env:
