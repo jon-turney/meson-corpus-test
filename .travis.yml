@@ -21,6 +21,16 @@ language: python
 matrix:
   include:
   - env:
+    - NAME=2048.cpp
+    - REPO=https://github.com/plibither8/2048.cpp
+    - BUILDDEP=2048.cpp
+    - BUILD="all install"
+  - env:
+    - NAME=akira
+    - REPO=https://github.com/akiraux/Akira
+    - BUILDDEP=akira
+    - BUILD="all install"
+  - env:
     - NAME=aqemu
     - REPO=https://github.com/tobimensch/aqemu
     - BUILDDEP=aqemu
@@ -65,6 +75,11 @@ matrix:
     - COMMIT=cff980cfda882939b5a3a5c2baadb657d5dbb051
     - BUILDDEP=fwupd
     - ALSOINSTALL="gnu-efi libjson-glib-dev help2man valac"
+    - BUILD="all install"
+  - env:
+    - NAME=gamemode
+    - REPO=https://github.com/FeralInteractive/gamemode
+    - BUILDDEP=gamemode
     - BUILD="all install"
   - env:
     - NAME=geary
@@ -171,6 +186,16 @@ matrix:
     - ALSOINSTALL="libssl-dev libdw-dev"
     - BUILD="all install"
   - env:
+    - NAME=ish
+    - REPO=https://github.com/tbodt/ish
+    - BUILDDEP=ish
+    - BUILD="all install"
+  - env:
+    - NAME=json
+    - REPO=https://github.com/nlohmann/json
+    - BUILDDEP=json
+    - BUILD="all install"
+  - env:
     - NAME=json-glib
     - REPO=https://gitlab.gnome.org/GNOME/json-glib
     - BUILDDEP=json-glib
@@ -265,6 +290,16 @@ matrix:
     - ALSOINSTALL="libxapp-dev"
     - BUILD="all install"
   - env:
+    - NAME=oomd
+    - REPO=https://github.com/facebookincubator/oomd
+    - BUILDDEP=oomd
+    - BUILD="all install"
+  - env:
+    - NAME=openh264
+    - REPO=https://github.com/cisco/openh264
+    - BUILDDEP=openh264
+    - BUILD="all install"
+  - env:
     - NAME=orc
     - REPO=git://anongit.freedesktop.org/gstreamer/orc/
     - BUILDDEP=orc
@@ -284,6 +319,11 @@ matrix:
     - REPO=https://github.com/jpakkane/parzip
     - BUILD="all install"
     - HACKS='meson wrap update zlib'
+  - env:
+    - NAME=peek
+    - REPO=https://github.com/phw/peek
+    - BUILDDEP=peek
+    - BUILD="all install"
   - env:
     - NAME=pipewire
     - REPO=https://github.com/PipeWire/pipewire.git
@@ -314,6 +354,11 @@ matrix:
     - BUILDDEP=sshfs
     - BUILD="all install"
   - env:
+    - NAME=sway
+    - REPO=https://github.com/swaywm/sway
+    - BUILDDEP=sway
+    - BUILD="all install"
+  - env:
     - NAME=sysprof
     - REPO=https://git.gnome.org/browse/sysprof
     - BUILDDEP=sysprof
@@ -333,6 +378,11 @@ matrix:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
     - ALSOINSTALL="libfreetype6-dev libsdl2-dev libsdl2-image-dev libpng-dev libwebp-dev python-docutils"
+    - BUILD="all install"
+  - env:
+    - NAME=tilix
+    - REPO=https://github.com/gnunn1/tilix
+    - BUILDDEP=tilix
     - BUILD="all install"
   - env:
     - NAME=valum
