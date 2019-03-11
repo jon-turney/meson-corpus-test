@@ -47,6 +47,11 @@ matrix:
       intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-2-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev
       gtk-doc-tools gnome-settings-daemon-dev libasound2-dev"
   - env:
+    - NAME=cage
+    - REPO=https://github.com/Hjdskes/cage
+    - BUILDDEP=cage
+    - BUILD="all install"
+  - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
     - BUILDDEP=casync
@@ -56,6 +61,11 @@ matrix:
     - NAME=cinnamon-desktop
     - REPO=https://github.com/linuxmint/cinnamon-desktop
     - BUILDDEP=cinnamon-desktop
+    - BUILD="all install"
+  - env:
+    - NAME=dav1d
+    - REPO=https://code.videolan.org/videolan/dav1d
+    - BUILDDEP=dav1d
     - BUILD="all install"
   - env:
     - NAME=dbus-broker
@@ -69,6 +79,11 @@ matrix:
     - NAME=emeus
     - REPO=https://github.com/ebassi/emeus
     - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
+  - env:
+    - NAME=feedreader
+    - REPO=https://github.com/jangernert/FeedReader
+    - BUILDDEP=feedreader
+    - BUILD="all install"
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
@@ -210,6 +225,11 @@ matrix:
     - BUILDDEP=ksh
     - BUILD="all install"
   - env:
+    - NAME=lc0
+    - REPO=https://github.com/LeelaChessZero/lc0
+    - BUILDDEP=lc0
+    - BUILD="all install"
+  - env:
     - NAME=libdrm
     - REPO=git://anongit.freedesktop.org/drm/libdrm/
     - BUILDDEP=libdrm
@@ -267,6 +287,11 @@ matrix:
     - ALSOINSTALL="libdbus-glib-1-dev liblightdm-gobject-1-dev libgtk-3-dev libwebkit2gtk-4.0-dev"
     - BUILD="all install"
   - env:
+    - NAME=marker
+    - REPO=https://github.com/fabiocolacio/Marker
+    - BUILDDEP=marker
+    - BUILD="all install"
+  - env:
     - NAME=mesa
     - REPO=git://anongit.freedesktop.org/mesa/mesa/
     - COMMIT=cb03803253b026d5f4c1e0fef431a12df461e6d8
@@ -300,9 +325,19 @@ matrix:
     - BUILDDEP=openh264
     - BUILD="all install"
   - env:
+    - NAME=openhmd
+    - REPO=https://github.com/OpenHMD/OpenHMD
+    - BUILDDEP=openhmd
+    - BUILD="all install"
+  - env:
     - NAME=orc
     - REPO=git://anongit.freedesktop.org/gstreamer/orc/
     - BUILDDEP=orc
+    - BUILD="all install"
+  - env:
+    - NAME=ots
+    - REPO=https://github.com/khaledhosny/ots
+    - BUILDDEP=ots
     - BUILD="all install"
   - env:
     - NAME=outlier
@@ -334,6 +369,11 @@ matrix:
     - REPO=https://github.com/pithos/pithos
     - BUILDDEP=pithos
     - ALSOINSTALL="libglib2.0-dev"
+    - BUILD="all install"
+  - env:
+    - NAME=playerctl
+    - REPO=https://github.com/acrisci/playerctl
+    - BUILDDEP=playerctl
     - BUILD="all install"
   - env:
     - NAME=polari
@@ -380,6 +420,11 @@ matrix:
     - ALSOINSTALL="libfreetype6-dev libsdl2-dev libsdl2-image-dev libpng-dev libwebp-dev python-docutils"
     - BUILD="all install"
   - env:
+    - NAME=terminology
+    - REPO=https://github.com/billiob/terminology
+    - BUILDDEP=terminology
+    - BUILD="all install"
+  - env:
     - NAME=tilix
     - REPO=https://github.com/gnunn1/tilix
     - BUILDDEP=tilix
@@ -403,6 +448,11 @@ matrix:
       libxcb-image0-dev libxkbcommon-dev wayland-protocols"
     - BUILD="all install"
   - env:
+    - NAME=wxformbuilder
+    - REPO=https://github.com/wxFormBuilder/wxFormBuilder
+    - BUILDDEP=wxformbuilder
+    - BUILD="all install"
+  - env:
     - NAME=xi-gtk
     - REPO=https://github.com/eyelash/xi-gtk
     - ALSOINSTALL="valac libgtk-3-dev libjson-glib-dev"
@@ -411,6 +461,11 @@ matrix:
     - NAME=xorg
     - REPO=git://anongit.freedesktop.org/xorg/xserver/
     - BUILDDEP=xorg-server
+    - BUILD="all install"
+  - env:
+    - NAME=zathura
+    - REPO=https://github.com/pwmt/zathura
+    - BUILDDEP=zathura
     - BUILD="all install"
   - env:
     - NAME=zstandard
