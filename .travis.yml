@@ -220,6 +220,11 @@ matrix:
     - REPO=https://github.com/open-source-parsers/jsoncpp
     - BUILD="all install"
   - env:
+    - NAME=knot-resolver
+    - REPO=https://gitlab.labs.nic.cz/knot/knot-resolver
+    - BUILDDEP=knot-resolver
+    - BUILD="all install"
+  - env:
     - NAME=ksh
     - REPO=https://github.com/att/ast
     - BUILDDEP=ksh
