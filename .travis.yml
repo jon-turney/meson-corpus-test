@@ -235,6 +235,11 @@ matrix:
     - BUILDDEP=lc0
     - BUILD="all install"
   - env:
+    - NAME=libcamera
+    - REPO=https://git.linuxtv.org/libcamera.git/
+    - BUILDDEP=libcamera
+    - BUILD="all install"
+  - env:
     - NAME=libdrm
     - REPO=git://anongit.freedesktop.org/drm/libdrm/
     - BUILDDEP=libdrm
