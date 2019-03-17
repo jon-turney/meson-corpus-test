@@ -23,12 +23,6 @@ matrix:
   - env:
     - NAME=2048.cpp
     - REPO=https://github.com/plibither8/2048.cpp
-    - BUILDDEP=2048.cpp
-    - BUILD="all install"
-  - env:
-    - NAME=akira
-    - REPO=https://github.com/akiraux/Akira
-    - BUILDDEP=akira
     - BUILD="all install"
   - env:
     - NAME=aqemu
@@ -65,7 +59,7 @@ matrix:
   - env:
     - NAME=dav1d
     - REPO=https://code.videolan.org/videolan/dav1d
-    - BUILDDEP=dav1d
+    - ALSOINSTALL="nasm"
     - BUILD="all install"
   - env:
     - NAME=dbus-broker
@@ -82,7 +76,8 @@ matrix:
   - env:
     - NAME=feedreader
     - REPO=https://github.com/jangernert/FeedReader
-    - BUILDDEP=feedreader
+    - ALSOINSTALL="libcurl4-openssl-dev libgdk-pixbuf2.0-dev libgee-0.8-dev libgoa-1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
+      libgumbo-dev libjson-glib-dev libnotify-dev libpeas-dev libsecret-1-dev libsqlite3-dev libwebkit2gtk-4.0-dev valac"
     - BUILD="all install"
   - env:
     - NAME=fwupd
@@ -94,7 +89,7 @@ matrix:
   - env:
     - NAME=gamemode
     - REPO=https://github.com/FeralInteractive/gamemode
-    - BUILDDEP=gamemode
+    - ALSOINSTALL="libsystemd-dev systemd"
     - BUILD="all install"
   - env:
     - NAME=geary
@@ -203,12 +198,12 @@ matrix:
   - env:
     - NAME=ish
     - REPO=https://github.com/tbodt/ish
-    - BUILDDEP=ish
+    - ALSOINSTALL="clang libsqlite3-dev lld"
     - BUILD="all install"
+    - HACKS='apt-get purge gcc'
   - env:
     - NAME=json
     - REPO=https://github.com/nlohmann/json
-    - BUILDDEP=json
     - BUILD="all install"
   - env:
     - NAME=json-glib
@@ -220,11 +215,6 @@ matrix:
     - REPO=https://github.com/open-source-parsers/jsoncpp
     - BUILD="all install"
   - env:
-    - NAME=knot-resolver
-    - REPO=https://gitlab.labs.nic.cz/knot/knot-resolver
-    - BUILDDEP=knot-resolver
-    - BUILD="all install"
-  - env:
     - NAME=ksh
     - REPO=https://github.com/att/ast
     - BUILDDEP=ksh
@@ -232,12 +222,13 @@ matrix:
   - env:
     - NAME=lc0
     - REPO=https://github.com/LeelaChessZero/lc0
-    - BUILDDEP=lc0
+    - ALSOINSTALL="libopenblas-dev"
     - BUILD="all install"
+    - HACKS='sed -i s!python!python3! checkdir.py'
   - env:
     - NAME=libcamera
-    - REPO=https://git.linuxtv.org/libcamera.git/
-    - BUILDDEP=libcamera
+    - REPO=git://linuxtv.org/libcamera.git
+    - ALSOINSTALL="libudev-dev"
     - BUILD="all install"
   - env:
     - NAME=libdrm
@@ -299,8 +290,9 @@ matrix:
   - env:
     - NAME=marker
     - REPO=https://github.com/fabiocolacio/Marker
-    - BUILDDEP=marker
+    - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgtksourceview-3.0-dev libgtkspell3-3-dev libwebkit2gtk-4.0-dev"
     - BUILD="all install"
+    - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=mesa
     - REPO=git://anongit.freedesktop.org/mesa/mesa/
@@ -327,17 +319,17 @@ matrix:
   - env:
     - NAME=oomd
     - REPO=https://github.com/facebookincubator/oomd
-    - BUILDDEP=oomd
+    - ALSOINSTALL="libjsoncpp-dev"
     - BUILD="all install"
   - env:
     - NAME=openh264
     - REPO=https://github.com/cisco/openh264
-    - BUILDDEP=openh264
+    - ALSOINSTALL="nasm"
     - BUILD="all install"
   - env:
     - NAME=openhmd
     - REPO=https://github.com/OpenHMD/OpenHMD
-    - BUILDDEP=openhmd
+    - ALSOINSTALL="libhidapi-dev"
     - BUILD="all install"
   - env:
     - NAME=orc
@@ -348,6 +340,7 @@ matrix:
     - NAME=ots
     - REPO=https://github.com/khaledhosny/ots
     - BUILDDEP=ots
+    - ALSOINSTALL="libfreetype6-dev"
     - BUILD="all install"
   - env:
     - NAME=outlier
@@ -367,7 +360,7 @@ matrix:
   - env:
     - NAME=peek
     - REPO=https://github.com/phw/peek
-    - BUILDDEP=peek
+    - ALSOINSTALL="gettext libgtk-3-dev valac"
     - BUILD="all install"
   - env:
     - NAME=pipewire
@@ -383,7 +376,7 @@ matrix:
   - env:
     - NAME=playerctl
     - REPO=https://github.com/acrisci/playerctl
-    - BUILDDEP=playerctl
+    - ALSOINSTALL="gtk-doc-tools libgirepository1.0-dev libglib2.0-dev"
     - BUILD="all install"
   - env:
     - NAME=polari
@@ -402,11 +395,6 @@ matrix:
     - REPO=https://github.com/libfuse/sshfs
     - COMMIT=6cc86fc0bdaaeacfb1bd5e4336f2a2d1e5b189b8
     - BUILDDEP=sshfs
-    - BUILD="all install"
-  - env:
-    - NAME=sway
-    - REPO=https://github.com/swaywm/sway
-    - BUILDDEP=sway
     - BUILD="all install"
   - env:
     - NAME=sysprof
@@ -430,16 +418,6 @@ matrix:
     - ALSOINSTALL="libfreetype6-dev libsdl2-dev libsdl2-image-dev libpng-dev libwebp-dev python-docutils"
     - BUILD="all install"
   - env:
-    - NAME=terminology
-    - REPO=https://github.com/billiob/terminology
-    - BUILDDEP=terminology
-    - BUILD="all install"
-  - env:
-    - NAME=tilix
-    - REPO=https://github.com/gnunn1/tilix
-    - BUILDDEP=tilix
-    - BUILD="all install"
-  - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
     - ALSOINSTALL="valac libsoup2.4-dev libssl-dev"
@@ -460,7 +438,7 @@ matrix:
   - env:
     - NAME=wxformbuilder
     - REPO=https://github.com/wxFormBuilder/wxFormBuilder
-    - BUILDDEP=wxformbuilder
+    - ALSOINSTALL="libwxgtk3.0-dev"
     - BUILD="all install"
   - env:
     - NAME=xi-gtk
@@ -471,11 +449,6 @@ matrix:
     - NAME=xorg
     - REPO=git://anongit.freedesktop.org/xorg/xserver/
     - BUILDDEP=xorg-server
-    - BUILD="all install"
-  - env:
-    - NAME=zathura
-    - REPO=https://github.com/pwmt/zathura
-    - BUILDDEP=zathura
     - BUILD="all install"
   - env:
     - NAME=zstandard
