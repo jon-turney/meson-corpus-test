@@ -32,6 +32,7 @@ matrix:
   - env:
     - NAME=bolt
     - REPO=https://gitlab.freedesktop.org/bolt/bolt
+    - COMMIT=95388c0845340564c8c517b86134eede3bd880ba
     - ALSOINSTALL="libglib2.0-dev libudev-dev udev libpolkit-gobject-1-dev systemd libsystemd-dev"
     - BUILD="all install"
   - env:
@@ -40,11 +41,6 @@ matrix:
     - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
       intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-2-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev
       gtk-doc-tools gnome-settings-daemon-dev libasound2-dev"
-  - env:
-    - NAME=cage
-    - REPO=https://github.com/Hjdskes/cage
-    - BUILDDEP=cage
-    - BUILD="all install"
   - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
@@ -78,7 +74,6 @@ matrix:
     - REPO=https://github.com/jangernert/FeedReader
     - ALSOINSTALL="libcurl4-openssl-dev libgdk-pixbuf2.0-dev libgee-0.8-dev libgoa-1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
       libgumbo-dev libjson-glib-dev libnotify-dev libpeas-dev libsecret-1-dev libsqlite3-dev libwebkit2gtk-4.0-dev valac"
-    - BUILD="all install"
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
@@ -95,7 +90,7 @@ matrix:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
     - BUILDDEP=geary
-    - ALSOINSTALL="libunwind-dev libgoa-1.0-dev itstool libjson-glib-dev"
+    - ALSOINSTALL="itstool libfolks-dev libgoa-1.0-dev libjson-glib-dev libunwind-dev"
     - BUILD="all install"
   - env:
     - NAME=glib
@@ -117,6 +112,7 @@ matrix:
   - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
+    - COMMIT=47de9c9588651486fac8499ef849ee7375ebe2e6
     - BUILDDEP=gnome-mpv
     - BUILD="all install"
   - env:
@@ -200,7 +196,7 @@ matrix:
     - REPO=https://github.com/tbodt/ish
     - ALSOINSTALL="clang libsqlite3-dev lld"
     - BUILD="all install"
-    - HACKS='apt-get purge gcc'
+    - HACKS='apt-get purge -y gcc'
   - env:
     - NAME=json
     - REPO=https://github.com/nlohmann/json
@@ -258,8 +254,8 @@ matrix:
   - env:
     - NAME=libmodulemd
     - REPO=https://github.com/fedora-modularity/libmodulemd
-    - ALSOINSTALL="clang-format gobject-introspection gtk-doc-tools libgirepository1.0-dev libglib2.0-dev libyaml-dev python-autopep8
-      valgrind"
+    - ALSOINSTALL="clang-format gobject-introspection gtk-doc-tools libgirepository1.0-dev libglib2.0-dev libyaml-dev pycodestyle
+      python-autopep8 valgrind"
     - BUILD="all install"
     - HACKS='sed -i s!usr/bin/sh!bin/sh! spec_tmpl.sh'
   - env:
@@ -306,8 +302,9 @@ matrix:
   - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
+    - COMMIT=de17081f
     - BUILDDEP=nautilus
-    - ALSOINSTALL="libgexiv2-dev libseccomp-dev"
+    - ALSOINSTALL="libgexiv2-dev libseccomp-dev libgstreamer-plugins-base1.0-dev"
     - BUILD="all install"
   - env:
     - NAME=nemo
@@ -438,7 +435,7 @@ matrix:
   - env:
     - NAME=wxformbuilder
     - REPO=https://github.com/wxFormBuilder/wxFormBuilder
-    - ALSOINSTALL="libwxgtk3.0-dev"
+    - ALSOINSTALL="libwxgtk3.0-dev libwxgtk-media3.0-dev"
     - BUILD="all install"
   - env:
     - NAME=xi-gtk
