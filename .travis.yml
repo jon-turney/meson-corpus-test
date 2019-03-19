@@ -195,7 +195,6 @@ matrix:
     - NAME=ish
     - REPO=https://github.com/tbodt/ish
     - ALSOINSTALL="clang libsqlite3-dev lld"
-    - BUILD="all install"
     - HACKS='apt-get purge -y gcc'
   - env:
     - NAME=json
@@ -287,7 +286,7 @@ matrix:
     - NAME=marker
     - REPO=https://github.com/fabiocolacio/Marker
     - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgtksourceview-3.0-dev libgtkspell3-3-dev libwebkit2gtk-4.0-dev"
-    - BUILD="all install"
+    - BUILD="all"
     - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=mesa
@@ -339,6 +338,7 @@ matrix:
     - BUILDDEP=ots
     - ALSOINSTALL="libfreetype6-dev"
     - BUILD="all install"
+    - HACKS='sed -i s#appleframeworks## meson.build ; git submodule update --init'
   - env:
     - NAME=outlier
     - REPO=https://github.com/kerolasa/outlier
@@ -386,7 +386,6 @@ matrix:
     - REPO=https://github.com/radare/radare2
     - BUILDDEP=radare2
     - BUILD="all install"
-    - HACKS="(cd shlr; ./capstone.sh https://github.com/aquynh/capstone.git next)"
   - env:
     - NAME=sshfs
     - REPO=https://github.com/libfuse/sshfs
@@ -412,8 +411,9 @@ matrix:
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
-    - ALSOINSTALL="libfreetype6-dev libsdl2-dev libsdl2-image-dev libpng-dev libwebp-dev python-docutils"
+    - ALSOINSTALL="libfreetype6-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libpng-dev libwebp-dev python-docutils"
     - BUILD="all install"
+    - HACKS='git submodule update --init'
   - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
