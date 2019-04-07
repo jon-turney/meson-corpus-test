@@ -315,6 +315,7 @@ matrix:
   - env:
     - NAME=oomd
     - REPO=https://github.com/facebookincubator/oomd
+    - COMMIT=05049df5a931411c996c53b048b3e054315481e1
     - ALSOINSTALL="libjsoncpp-dev"
     - BUILD="all install"
   - env:
@@ -403,6 +404,7 @@ matrix:
     - REPO=https://github.com/systemd/systemd
     - BUILDDEP=systemd
     - BUILD="all install"
+    - HACKS='sed -i s!.-Wl,--undefined.!! meson.build'
   - env:
     - NAME=szl
     - REPO=https://github.com/dimkr/szl
@@ -419,6 +421,7 @@ matrix:
     - REPO=https://github.com/valum-framework/valum
     - ALSOINSTALL="valac libsoup2.4-dev libssl-dev"
     - BUILD="all install"
+    - HACKS='sed -i s!master!4c0318d3a2a7f47158ae220cae07c72af469d2e1! subprojects/vsgi.wrap'
   - env:
     - NAME=wayland-and-weston
     - REPO=git://anongit.freedesktop.org/wayland/libinput
