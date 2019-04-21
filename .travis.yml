@@ -189,6 +189,7 @@ matrix:
   - env:
     - NAME=igt
     - REPO=git://anongit.freedesktop.org/xorg/app/intel-gpu-tools/
+    - COMMIT=0dc1d6e4d4305a62c64242ec65709e44f5036cf4
     - BUILDDEP=intel-gpu-tools
     - ALSOINSTALL="libssl-dev libdw-dev"
     - BUILD="all install"
