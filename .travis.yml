@@ -387,6 +387,7 @@ matrix:
   - env:
     - NAME=radare2
     - REPO=https://github.com/radare/radare2
+    - COMMIT=336c0e84fc53407b9a2ff2dcd97d7d59392fb0f0
     - BUILDDEP=radare2
     - BUILD="all install"
   - env:
