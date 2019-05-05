@@ -142,8 +142,9 @@ matrix:
   - env:
     - NAME=gnu-fribidi
     - REPO=https://github.com/fribidi/fribidi
-    - BUILDDEP=gnu-fribidi
+    - BUILDDEP=fribidi
     - BUILD="all install"
+    - CONFIG="-Ddocs=false"
   - env:
     - NAME=graphene
     - REPO=git://github.com/ebassi/graphene
@@ -207,7 +208,6 @@ matrix:
   - env:
     - NAME=janet
     - REPO=https://github.com/janet-lang/janet
-    - BUILDDEP=janet
     - BUILD="all install"
   - env:
     - NAME=json
@@ -282,7 +282,7 @@ matrix:
   - env:
     - NAME=libui
     - REPO=https://github.com/andlabs/libui
-    - BUILDDEP=libui
+    - ALSOINSTALL="libgtk-3-dev"
     - BUILD="all install"
   - env:
     - NAME=libva
