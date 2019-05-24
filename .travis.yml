@@ -309,7 +309,7 @@ matrix:
     - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=mesa
-    - REPO=git://anongit.freedesktop.org/mesa/mesa/
+    - REPO=https://gitlab.freedesktop.org/mesa/mesa/
     - COMMIT=cb03803253b026d5f4c1e0fef431a12df461e6d8
     - BUILDDEP=mesa
     - ALSOINSTALL="libegl1-mesa-dev libxvmc-dev"
