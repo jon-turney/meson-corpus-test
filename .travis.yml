@@ -43,6 +43,11 @@ matrix:
       intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-2-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev
       gtk-doc-tools gnome-settings-daemon-dev libasound2-dev"
   - env:
+    - NAME=bzip2
+    - REPO=https://gitlab.com/federicomenaquintero/bzip2
+    - BUILDDEP=bzip2
+    - BUILD="all install"
+  - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
     - BUILDDEP=casync
@@ -85,7 +90,7 @@ matrix:
   - env:
     - NAME=gamemode
     - REPO=https://github.com/FeralInteractive/gamemode
-    - ALSOINSTALL="libsystemd-dev systemd"
+    - ALSOINSTALL="libdbus-1-dev libsystemd-dev systemd"
     - BUILD="all install"
   - env:
     - NAME=geary
@@ -367,7 +372,7 @@ matrix:
     - NAME=pango
     - REPO=https://git.gnome.org/browse/pango/
     - BUILDDEP=pango1.0
-    - ALSOINSTALL="libfribidi-dev"
+    - ALSOINSTALL="libfribidi-dev libmount-dev"
     - BUILD="all install"
   - env:
     - NAME=parzip
@@ -416,6 +421,7 @@ matrix:
   - env:
     - NAME=sysprof
     - REPO=https://git.gnome.org/browse/sysprof
+    - COMMIT=46d3c553e5e9314aaab3cd49673d8344324d2f0a
     - BUILDDEP=sysprof
     - ALSOINSTALL="systemd policykit-1"
     - BUILD="all install"
