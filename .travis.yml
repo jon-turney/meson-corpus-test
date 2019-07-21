@@ -206,6 +206,11 @@ matrix:
     - ALSOINSTALL="libssl-dev libdw-dev"
     - BUILD="all install"
   - env:
+    - NAME=irssi
+    - REPO=https://github.com/irssi/irssi
+    - BUILDDEP=irssi
+    - BUILD="all install"
+  - env:
     - NAME=ish
     - REPO=https://github.com/tbodt/ish
     - ALSOINSTALL="clang libsqlite3-dev lld"
