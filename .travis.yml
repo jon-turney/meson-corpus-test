@@ -30,6 +30,11 @@ matrix:
     - BUILDDEP=aqemu
     - BUILD="all install"
   - env:
+    - NAME=aravis
+    - REPO=https://github.com/AravisProject/aravis
+    - BUILDDEP=aravis
+    - BUILD="all install"
+  - env:
     - NAME=bolt
     - REPO=https://gitlab.freedesktop.org/bolt/bolt
     - COMMIT=95388c0845340564c8c517b86134eede3bd880ba
