@@ -428,6 +428,11 @@ matrix:
     - BUILDDEP=radare2
     - BUILD="all install"
   - env:
+    - NAME=rxdock
+    - REPO=https://gitlab.com/rxdock/rxdock
+    - BUILDDEP=rxdock
+    - BUILD="all install"
+  - env:
     - NAME=sshfs
     - REPO=https://github.com/libfuse/sshfs
     - COMMIT=6cc86fc0bdaaeacfb1bd5e4336f2a2d1e5b189b8
