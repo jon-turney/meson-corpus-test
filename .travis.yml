@@ -32,7 +32,8 @@ matrix:
   - env:
     - NAME=aravis
     - REPO=https://github.com/AravisProject/aravis
-    - BUILDDEP=aravis
+    - ALSOINSTALL="gobject-introspection gtk-doc-tools libgirepository1.0-dev libglib2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
+      libgtk-3-dev libnotify-dev libusb-1.0-0-dev libxml2-dev"
     - BUILD="all install"
   - env:
     - NAME=bolt
@@ -79,7 +80,7 @@ matrix:
   - env:
     - NAME=emeus
     - REPO=https://github.com/ebassi/emeus
-    - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
+    - ALSOINSTALL="gtk-doc-tools libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
   - env:
     - NAME=feedreader
     - REPO=https://github.com/jangernert/FeedReader
@@ -198,11 +199,6 @@ matrix:
     - ALSOINSTALL="libgirepository1.0-dev libgtk-3-dev"
     - BUILD="all install"
   - env:
-    - NAME=helenos
-    - REPO=http://helenos.org
-    - BUILDDEP=helenos
-    - BUILD="all install"
-  - env:
     - NAME=hexchat
     - REPO=https://github.com/hexchat/hexchat
     - BUILDDEP=hexchat
@@ -279,6 +275,7 @@ matrix:
     - BUILDDEP=libgit2-glib
     - ALSOINSTALL="python-gi-dev"
     - BUILD="all install"
+    - HACKS='mkdir -p /usr/local/share/vala/vapi'
   - env:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
@@ -286,10 +283,10 @@ matrix:
   - env:
     - NAME=libmodulemd
     - REPO=https://github.com/fedora-modularity/libmodulemd
-    - ALSOINSTALL="clang-format gobject-introspection gtk-doc-tools libgirepository1.0-dev libglib2.0-dev libyaml-dev pycodestyle
-      python-autopep8 valgrind"
+    - ALSOINSTALL="clang-format gobject-introspection gtk-doc-tools libgirepository1.0-dev libglib2.0-dev libglib2.0-doc libmagic-dev
+      librpm-dev libyaml-dev libzstd-dev pycodestyle python-autopep8 valgrind"
     - BUILD="all install"
-    - HACKS='sed -i s!usr/bin/sh!bin/sh! spec_tmpl.sh'
+    - HACKS='sed -i s!usr/bin/sh!bin/sh! spec_tmpl.sh ; touch /usr/share/gtk-doc/html/glib/index.html ; touch /usr/share/gtk-doc/html/gobject/index.html'
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
@@ -332,11 +329,11 @@ matrix:
     - REPO=https://gitlab.freedesktop.org/mesa/mesa/
     - COMMIT=cb03803253b026d5f4c1e0fef431a12df461e6d8
     - BUILDDEP=mesa
-    - ALSOINSTALL="libegl1-mesa-dev libxvmc-dev"
+    - ALSOINSTALL="libegl1-mesa-dev libxvmc-dev python python-mako"
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
-    - ALSOINSTALL="libudev-dev libglib2.0-dev libsystemd-dev"
+    - ALSOINSTALL="libreadline-dev libudev-dev libglib2.0-dev libsystemd-dev"
   - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
@@ -386,6 +383,7 @@ matrix:
   - env:
     - NAME=pango
     - REPO=https://git.gnome.org/browse/pango/
+    - COMMIT=546f4c242d6f4fe312de3b7c918a848e5172e18d
     - BUILDDEP=pango1.0
     - ALSOINSTALL="libfribidi-dev libmount-dev"
     - BUILD="all install"
@@ -430,8 +428,6 @@ matrix:
   - env:
     - NAME=rxdock
     - REPO=https://gitlab.com/rxdock/rxdock
-    - BUILDDEP=rxdock
-    - BUILD="all install"
   - env:
     - NAME=sshfs
     - REPO=https://github.com/libfuse/sshfs
