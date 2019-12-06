@@ -277,6 +277,11 @@ matrix:
     - BUILD="all install"
     - HACKS='mkdir -p /usr/local/share/vala/vapi'
   - env:
+    - NAME=libglvnd
+    - REPO=https://gitlab.freedesktop.org/glvnd/libglvnd
+    - BUILDDEP=libglvnd
+    - BUILD="all install"
+  - env:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
     - ALSOINSTALL="valac libjson-glib-dev libsoup2.4-dev libgee-0.8-dev libarchive-dev gobject-introspection"
@@ -335,6 +340,11 @@ matrix:
     - REPO=https://github.com/albfan/miraclecast
     - ALSOINSTALL="libreadline-dev libudev-dev libglib2.0-dev libsystemd-dev"
   - env:
+    - NAME=mrsh
+    - REPO=https://github.com/emersion/mrsh
+    - BUILDDEP=mrsh
+    - BUILD="all install"
+  - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
     - COMMIT=de17081f
@@ -379,6 +389,11 @@ matrix:
   - env:
     - NAME=outlier
     - REPO=https://github.com/kerolasa/outlier
+    - BUILD="all install"
+  - env:
+    - NAME=pacman
+    - REPO=https://git.archlinux.org/pacman.git/tree/
+    - BUILDDEP=pacman
     - BUILD="all install"
   - env:
     - NAME=pango
