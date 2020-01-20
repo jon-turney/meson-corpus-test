@@ -393,7 +393,8 @@ matrix:
   - env:
     - NAME=pacman
     - REPO=git://git.archlinux.org/pacman.git
-    - BUILDDEP=['libarchive-dev', 'libssl-dev']
+    - BUILDDEP=pacman
+    - ALSOINSTALL="libarchive-dev libssl-dev"
     - BUILD="all install"
   - env:
     - NAME=pango
