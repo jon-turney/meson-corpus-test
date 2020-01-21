@@ -447,7 +447,6 @@ matrix:
   - env:
     - NAME=qboot
     - REPO=https://github.com/bonzini/qboot
-    - BUILDDEP=qboot
     - BUILD="all install"
   - env:
     - NAME=radare2
@@ -523,8 +522,8 @@ matrix:
     - BUILD="all install"
   - env:
     - NAME=zrythm
-    - REPO=https://git.zrythm.org/cgit/zrythm
-    - BUILDDEP=zrythm
+    - REPO=https://github.com/zrythm/zrythm.git
+    - ALSOINSTALL="libfftw3-dev libgtk-3-dev librubberband-dev libsamplerate0-dev libsndfile1-dev libyaml-dev xdg-utils"
     - BUILD="all install"
   - env:
     - NAME=zstandard
