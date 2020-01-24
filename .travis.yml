@@ -67,6 +67,7 @@ matrix:
   - env:
     - NAME=dav1d
     - REPO=https://code.videolan.org/videolan/dav1d
+    - COMMIT=e636a2f4d1748d8b6aeb391a3ceda94a05497cd5
     - ALSOINSTALL="nasm"
     - BUILD="all install"
   - env:
