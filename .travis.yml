@@ -242,6 +242,7 @@ matrix:
   - env:
     - NAME=ksh
     - REPO=https://github.com/att/ast
+    - BRANCH="--branch ksh2020"
     - BUILDDEP=ksh
     - BUILD="all install"
   - env:
