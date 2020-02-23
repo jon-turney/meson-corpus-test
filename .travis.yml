@@ -165,6 +165,7 @@ matrix:
   - env:
     - NAME=grilo
     - REPO=https://git.gnome.org/browse/grilo
+    - COMMIT=d0c7a8311beb01c4e674916b9e7b99774879e15d
     - BUILDDEP=grilo
     - BUILD="all install"
   - env:
