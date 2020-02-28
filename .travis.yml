@@ -251,7 +251,6 @@ matrix:
     - REPO=https://github.com/LeelaChessZero/lc0
     - ALSOINSTALL="libopenblas-dev"
     - BUILD="all install"
-    - HACKS='sed -i s!python!python3! checkdir.py'
   - env:
     - NAME=libcamera
     - REPO=git://linuxtv.org/libcamera.git
