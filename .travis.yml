@@ -65,6 +65,11 @@ matrix:
     - BUILDDEP=cinnamon-desktop
     - BUILD="all install"
   - env:
+    - NAME=cozy
+    - REPO=https://github.com/geigi/cozy
+    - BUILDDEP=cozy
+    - BUILD="all install"
+  - env:
     - NAME=dav1d
     - REPO=https://code.videolan.org/videolan/dav1d
     - COMMIT=e636a2f4d1748d8b6aeb391a3ceda94a05497cd5
@@ -88,6 +93,16 @@ matrix:
     - ALSOINSTALL="libcurl4-openssl-dev libgdk-pixbuf2.0-dev libgee-0.8-dev libgoa-1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
       libgumbo-dev libjson-glib-dev libnotify-dev libpeas-dev libsecret-1-dev libsqlite3-dev libwebkit2gtk-4.0-dev valac"
   - env:
+    - NAME=flecs
+    - REPO=https://github.com/SanderMertens/flecs
+    - BUILDDEP=flecs
+    - BUILD="all install"
+  - env:
+    - NAME=foliate
+    - REPO=https://github.com/johnfactotum/foliate
+    - BUILDDEP=foliate
+    - BUILD="all install"
+  - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
     - COMMIT=cff980cfda882939b5a3a5c2baadb657d5dbb051
@@ -110,6 +125,11 @@ matrix:
     - NAME=glib
     - REPO=https://gitlab.gnome.org/GNOME/glib
     - BUILDDEP=glib2.0
+  - env:
+    - NAME=glorytun
+    - REPO=https://github.com/angt/glorytun
+    - BUILDDEP=glorytun
+    - BUILD="all install"
   - env:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
@@ -214,6 +234,11 @@ matrix:
     - ALSOINSTALL="libssl-dev libdw-dev"
     - BUILD="all install"
   - env:
+    - NAME=inih
+    - REPO=https://github.com/benhoyt/inih
+    - BUILDDEP=inih
+    - BUILD="all install"
+  - env:
     - NAME=irssi
     - REPO=https://github.com/irssi/irssi
     - BUILDDEP=irssi
@@ -254,6 +279,7 @@ matrix:
   - env:
     - NAME=libcamera
     - REPO=git://linuxtv.org/libcamera.git
+    - COMMIT=cd0f7929ec0bdf3c98e552a6ce2e9147b8c6dd17
     - ALSOINSTALL="libudev-dev python3-yaml"
     - BUILD="all install"
   - env:
@@ -298,6 +324,11 @@ matrix:
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
+    - BUILD="all install"
+  - env:
+    - NAME=libratbag
+    - REPO=https://github.com/libratbag/libratbag
+    - BUILDDEP=libratbag
     - BUILD="all install"
   - env:
     - NAME=libspng
@@ -361,6 +392,11 @@ matrix:
     - ALSOINSTALL="libxapp-dev"
     - BUILD="all install"
   - env:
+    - NAME=ocherbook
+    - REPO=https://github.com/ccoffing/OcherBook
+    - BUILDDEP=ocherbook
+    - BUILD="all install"
+  - env:
     - NAME=oomd
     - REPO=https://github.com/facebookincubator/oomd
     - COMMIT=05049df5a931411c996c53b048b3e054315481e1
@@ -375,6 +411,11 @@ matrix:
     - NAME=openhmd
     - REPO=https://github.com/OpenHMD/OpenHMD
     - ALSOINSTALL="libhidapi-dev"
+    - BUILD="all install"
+  - env:
+    - NAME=opentitan
+    - REPO=https://github.com/lowRISC/opentitan
+    - BUILDDEP=opentitan
     - BUILD="all install"
   - env:
     - NAME=orc
@@ -425,6 +466,7 @@ matrix:
   - env:
     - NAME=pipewire
     - REPO=https://github.com/PipeWire/pipewire.git
+    - COMMIT=6eca935e61bd5dc740e2c60f184a247276f592ae
     - ALSOINSTALL="libasound2-dev libbluetooth-dev libdbus-1-dev libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
       libjack-dev libpulse-dev libsbc-dev libudev-dev libv4l-dev libvulkan-dev"
     - BUILD="all install"
@@ -460,6 +502,16 @@ matrix:
     - NAME=rxdock
     - REPO=https://gitlab.com/rxdock/rxdock
   - env:
+    - NAME=scrcpy
+    - REPO=https://github.com/Genymobile/scrcpy
+    - BUILDDEP=scrcpy
+    - BUILD="all install"
+  - env:
+    - NAME=sequeler
+    - REPO=https://github.com/Alecaddd/sequeler
+    - BUILDDEP=sequeler
+    - BUILD="all install"
+  - env:
     - NAME=sshfs
     - REPO=https://github.com/libfuse/sshfs
     - COMMIT=6cc86fc0bdaaeacfb1bd5e4336f2a2d1e5b189b8
@@ -490,11 +542,26 @@ matrix:
     - BUILD="all install"
     - HACKS='git submodule update --init'
   - env:
+    - NAME=tizonia
+    - REPO=https://github.com/tizonia/tizonia-openmax-il
+    - BUILDDEP=tizonia
+    - BUILD="all install"
+  - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
     - ALSOINSTALL="valac libsoup2.4-dev libssl-dev"
     - BUILD="all install"
     - HACKS='sed -i s!master!4c0318d3a2a7f47158ae220cae07c72af469d2e1! subprojects/vsgi.wrap'
+  - env:
+    - NAME=venom
+    - REPO=https://github.com/naxuroqa/Venom
+    - BUILDDEP=venom
+    - BUILD="all install"
+  - env:
+    - NAME=vmaf
+    - REPO=https://github.com/Netflix/vmaf
+    - BUILDDEP=vmaf
+    - BUILD="all install"
   - env:
     - NAME=wayland
     - REPO=https://github.com/wayland-project/wayland
