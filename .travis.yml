@@ -25,6 +25,12 @@ matrix:
     - REPO=https://github.com/plibither8/2048.cpp
     - BUILD="all install"
   - env:
+    - NAME=akira
+    - REPO=https://github.com/akiraux/Akira
+    - ALSOINSTALL="appstream-util desktop-file-utils gettext libarchive-dev libgoocanvas-2.0-dev libgranite-dev libgtk-3-dev libjson-glib-dev
+      libxml2-dev valac"
+    - BUILD="all install"
+  - env:
     - NAME=aqemu
     - REPO=https://github.com/tobimensch/aqemu
     - BUILDDEP=aqemu
@@ -32,32 +38,32 @@ matrix:
   - env:
     - NAME=aravis
     - REPO=https://github.com/AravisProject/aravis
-    - ALSOINSTALL="gobject-introspection gtk-doc-tools libgirepository1.0-dev libglib2.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
-      libgtk-3-dev libnotify-dev libusb-1.0-0-dev libxml2-dev"
+    - BUILDDEP=aravis
     - BUILD="all install"
   - env:
     - NAME=bolt
     - REPO=https://gitlab.freedesktop.org/bolt/bolt
-    - COMMIT=95388c0845340564c8c517b86134eede3bd880ba
-    - ALSOINSTALL="libglib2.0-dev libudev-dev udev libpolkit-gobject-1-dev systemd libsystemd-dev"
+    - BUILDDEP=bolt
     - BUILD="all install"
   - env:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
-    - COMMIT=e1017252a61b47d26cbb391488edc1d3a366f5a0
-    - ALSOINSTALL="valac libgtk-3-dev libwnck-3-dev libpeas-dev uuid-dev libibus-1.0-dev libgnome-desktop-3-dev libaccountsservice-dev
-      intltool libpulse-dev sassc libpolkit-agent-1-dev libmutter-2-dev libgnome-menu-3-dev libupower-glib-dev libgnome-bluetooth-dev
-      gtk-doc-tools gnome-settings-daemon-dev libasound2-dev"
+    - BUILDDEP=budgie-desktop
+    - BUILD="all install"
   - env:
     - NAME=bzip2
     - REPO=https://gitlab.com/federicomenaquintero/bzip2
     - BUILDDEP=bzip2
     - BUILD="all install"
   - env:
+    - NAME=cage
+    - REPO=https://github.com/Hjdskes/cage
+    - ALSOINSTALL="libwlroots-dev"
+    - BUILD="all install"
+  - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
     - BUILDDEP=casync
-    - ALSOINSTALL="libudev-dev udev"
     - BUILD="all install"
   - env:
     - NAME=cinnamon-desktop
@@ -67,109 +73,125 @@ matrix:
   - env:
     - NAME=cozy
     - REPO=https://github.com/geigi/cozy
-    - BUILDDEP=cozy
+    - ALSOINSTALL="libglib2.0-dev python3-distro python3-peewee python3-mutagen"
     - BUILD="all install"
   - env:
     - NAME=dav1d
     - REPO=https://code.videolan.org/videolan/dav1d
-    - COMMIT=e636a2f4d1748d8b6aeb391a3ceda94a05497cd5
     - ALSOINSTALL="nasm"
     - BUILD="all install"
   - env:
     - NAME=dbus-broker
     - REPO=https://github.com/bus1/dbus-broker
-    - ALSOINSTALL="python-docutils libdbus-1-dev libglib2.0-dev libsystemd-dev systemd"
+    - ALSOINSTALL="libdbus-1-dev libglib2.0-dev libsystemd-dev python-docutils systemd"
     - BUILD="all install"
   - env:
     - NAME=dpdk
     - REPO=git://dpdk.org/dpdk
+    - BUILDDEP=dpdk
+    - BUILD="all install"
+  - env:
+    - NAME=dxvk
+    - REPO=https://github.com/doitsujin/dxvk
+    - BUILDDEP=dxvk
+    - ALSOINSTALL="gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64"
+    - BUILD="all install"
+    - HACKS='update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix ; update-alternatives --set x86_64-w64-mingw32-g++
+      /usr/bin/x86_64-w64-mingw32-g++-posix'
+    - CONFIG="--cross-file build-win64.txt"
   - env:
     - NAME=emeus
     - REPO=https://github.com/ebassi/emeus
-    - ALSOINSTALL="gtk-doc-tools libglib2.0-dev libgtk-3-dev libgirepository1.0-dev"
+    - ALSOINSTALL="gtk-doc-tools libgirepository1.0-dev libglib2.0-dev libgtk-3-dev"
+    - BUILD="all install"
   - env:
     - NAME=feedreader
     - REPO=https://github.com/jangernert/FeedReader
-    - ALSOINSTALL="libcurl4-openssl-dev libgdk-pixbuf2.0-dev libgee-0.8-dev libgoa-1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
-      libgumbo-dev libjson-glib-dev libnotify-dev libpeas-dev libsecret-1-dev libsqlite3-dev libwebkit2gtk-4.0-dev valac"
+    - BUILDDEP=feedreader
+    - BUILD="all install"
   - env:
     - NAME=flecs
     - REPO=https://github.com/SanderMertens/flecs
-    - BUILDDEP=flecs
     - BUILD="all install"
   - env:
     - NAME=foliate
     - REPO=https://github.com/johnfactotum/foliate
-    - BUILDDEP=foliate
+    - ALSOINSTALL="gettext gjs libglib2.0-dev-bin"
+    - BUILD="all install"
+  - env:
+    - NAME=fractal
+    - REPO=https://gitlab.gnome.org/World/fractal.git
+    - ALSOINSTALL="cargo gettext libatk1.0-dev libcairo2-dev libdbus-1-dev libgdk-pixbuf2.0-dev libges-1.0-dev libgspell-1-dev libgstreamer-plugins-bad1.0-dev
+      libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libgtk-3-dev libgtksourceview-4-dev libhandy-0.0-dev libpango1.0-dev libssl-dev
+      rustc"
     - BUILD="all install"
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
-    - COMMIT=cff980cfda882939b5a3a5c2baadb657d5dbb051
     - BUILDDEP=fwupd
-    - ALSOINSTALL="gnu-efi libappstream-glib-dev libfwup-dev libjson-glib-dev help2man valac"
     - BUILD="all install"
   - env:
     - NAME=gamemode
     - REPO=https://github.com/FeralInteractive/gamemode
-    - ALSOINSTALL="libdbus-1-dev libsystemd-dev systemd"
+    - BUILDDEP=gamemode
     - BUILD="all install"
   - env:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
-    - COMMIT=a83a68ef3973b3630d1a8dd13b6b7a951378e593
     - BUILDDEP=geary
-    - ALSOINSTALL="itstool libfolks-dev libgoa-1.0-dev libjson-glib-dev libunwind-dev"
+    - ALSOINSTALL="libgsound-dev"
     - BUILD="all install"
   - env:
     - NAME=glib
     - REPO=https://gitlab.gnome.org/GNOME/glib
     - BUILDDEP=glib2.0
+    - BUILD="all install"
   - env:
     - NAME=glorytun
     - REPO=https://github.com/angt/glorytun
-    - BUILDDEP=glorytun
+    - ALSOINSTALL="libsodium-dev"
     - BUILD="all install"
+    - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
-    - BRANCH="--branch v3.31.1"
     - BUILDDEP=gnome-boxes
-    - ALSOINSTALL="libwebkit2gtk-4.0-dev freerdp2-dev"
+    - ALSOINSTALL="libhandy-0.0-dev"
     - BUILD="all install"
   - env:
     - NAME=gnome-builder
     - REPO=https://gitlab.gnome.org/GNOME/gnome-builder
-    - BRANCH="--branch 3.28.3"
+    - BRANCH="--branch 3.36.0"
     - BUILDDEP=gnome-builder
-    - CONFIG="-Dwith_spellcheck=false"
+    - BUILD="all install"
+    - HACKS='sed -i s!libide_lsp_sources,!libide_lsp_sources,libide_lsp_generated_headers,! src/libide/lsp/meson.build'
+    - CONFIG="-Dplugin_update_manager=false"
   - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
-    - COMMIT=47de9c9588651486fac8499ef849ee7375ebe2e6
     - BUILDDEP=gnome-mpv
     - BUILD="all install"
   - env:
     - NAME=gnome-recipes
     - REPO=https://gitlab.gnome.org/GNOME/recipes
     - BUILDDEP=gnome-recipes
-    - ALSOINSTALL="libgoa-1.0-dev libjson-glib-dev"
     - BUILD="all install"
   - env:
     - NAME=gnome-software
     - REPO=https://gitlab.gnome.org/GNOME/gnome-software
-    - COMMIT=12031b42109892e50b38f4037b923335fdfb0fd0
     - BUILDDEP=gnome-software
     - BUILD="all install"
+    - CONFIG="-Dmalcontent=false"
   - env:
     - NAME=gnome-twitch
     - REPO=https://github.com/vinszent/gnome-twitch
     - BUILDDEP=gnome-twitch
+    - BUILD="all install"
   - env:
     - NAME=gnome-usage
     - REPO=https://gitlab.gnome.org/GNOME/gnome-usage
-    - COMMIT=4272da4d89f3baccf821805fce72e2098579e9db
-    - ALSOINSTALL="libaccountsservice-dev libgtk-3-dev libgtop2-dev valac"
+    - BUILDDEP=gnome-usage
+    - ALSOINSTALL="libtracker-sparql-2.0-dev"
     - BUILD="all install"
   - env:
     - NAME=gnu-fribidi
@@ -185,35 +207,33 @@ matrix:
   - env:
     - NAME=grilo
     - REPO=https://git.gnome.org/browse/grilo
-    - COMMIT=d0c7a8311beb01c4e674916b9e7b99774879e15d
     - BUILDDEP=grilo
     - BUILD="all install"
   - env:
     - NAME=grilo-plugins
     - REPO=https://git.gnome.org/browse/grilo-plugins
-    - COMMIT=770b11088c1b99ec979015faf95078c1e0dfe69e
     - BUILDDEP=grilo-plugins
     - BUILD="all install"
   - env:
     - NAME=gstreamer
     - REPO=git://anongit.freedesktop.org/gstreamer/gstreamer/
     - BUILDDEP=gstreamer1.0
-    - BUILD="all"
+    - BUILD="all install"
   - env:
     - NAME=gtk+
     - REPO=https://gitlab.gnome.org/GNOME/gtk
-    - COMMIT=894a0c0f
-    - BUILDDEP=libgtk-3-dev
+    - BUILDDEP=gtk+3.0
+    - ALSOINSTALL="libgstreamer-plugins-bad1.0-dev libgraphene-1.0-dev"
+    - BUILD="all install"
   - env:
     - NAME=gtkdapp
     - REPO=https://gitlab.com/csoriano/GtkDApp
-    - ALSOINSTALL="libgtkd-3-dev gdc gsettings-desktop-schemas-dev libglib2.0-dev gettext"
+    - ALSOINSTALL="gdc gsettings-desktop-schemas-dev libgtk-3-dev libgtkd-3-dev librsvg2-dev"
   - env:
     - NAME=gvfs
     - REPO=https://git.gnome.org/browse/gvfs/
-    - COMMIT=3a7bb06be72fc62b4ec524afe67febf0f529066d
+    - BRANCH="--branch 1.37.1"
     - BUILDDEP=gvfs
-    - ALSOINSTALL="libbluray-dev libnfs-dev"
     - BUILD="all install"
   - env:
     - NAME=hardcode-tray
@@ -229,14 +249,11 @@ matrix:
   - env:
     - NAME=igt
     - REPO=git://anongit.freedesktop.org/xorg/app/intel-gpu-tools/
-    - COMMIT=0dc1d6e4d4305a62c64242ec65709e44f5036cf4
     - BUILDDEP=intel-gpu-tools
-    - ALSOINSTALL="libssl-dev libdw-dev"
     - BUILD="all install"
   - env:
     - NAME=inih
     - REPO=https://github.com/benhoyt/inih
-    - BUILDDEP=inih
     - BUILD="all install"
   - env:
     - NAME=irssi
@@ -246,8 +263,8 @@ matrix:
   - env:
     - NAME=ish
     - REPO=https://github.com/tbodt/ish
-    - ALSOINSTALL="clang libsqlite3-dev lld"
-    - HACKS='apt-get purge -y gcc'
+    - ALSOINSTALL="clang libsqlite3-dev lld python-is-python3"
+    - BUILD="all install"
   - env:
     - NAME=janet
     - REPO=https://github.com/janet-lang/janet
@@ -266,6 +283,20 @@ matrix:
     - REPO=https://github.com/open-source-parsers/jsoncpp
     - BUILD="all install"
   - env:
+    - NAME=kiwix-libraries
+    - REPO=https://github.com/kiwix/kiwix-lib
+    - BRANCH="--branch 5.0.0"
+    - ALSOINSTALL="libcurl4-openssl-dev libicu-dev libkainjow-mustache-dev libpugixml-dev libzim-dev"
+    - BUILD="all install"
+    - HACKS='ln -s /usr/include/kainjow/mustache.hpp /usr/include'
+  - env:
+    - NAME=knot-resolver
+    - REPO=https://gitlab.labs.nic.cz/knot/knot-resolver
+    - COMMIT=1bbe50b47cb41fd7459721fe08abea7cd2bf3888
+    - BUILDDEP=knot-resolver
+    - BUILD="all install"
+    - HACKS='git submodule update --init --recursive'
+  - env:
     - NAME=ksh
     - REPO=https://github.com/att/ast
     - BRANCH="--branch ksh2020"
@@ -279,8 +310,7 @@ matrix:
   - env:
     - NAME=libcamera
     - REPO=git://linuxtv.org/libcamera.git
-    - COMMIT=cd0f7929ec0bdf3c98e552a6ce2e9147b8c6dd17
-    - ALSOINSTALL="libudev-dev python3-yaml"
+    - ALSOINSTALL="python3-yaml"
     - BUILD="all install"
   - env:
     - NAME=libdrm
@@ -291,6 +321,7 @@ matrix:
     - NAME=libepoxy
     - REPO=https://github.com/anholt/libepoxy/
     - BUILDDEP=libepoxy
+    - BUILD="all install"
   - env:
     - NAME=libfuse
     - REPO=https://github.com/libfuse/libfuse
@@ -301,9 +332,7 @@ matrix:
     - NAME=libgit2-glib
     - REPO=https://git.gnome.org/browse/libgit2-glib
     - BUILDDEP=libgit2-glib
-    - ALSOINSTALL="python-gi-dev"
     - BUILD="all install"
-    - HACKS='mkdir -p /usr/local/share/vala/vapi'
   - env:
     - NAME=libglvnd
     - REPO=https://gitlab.freedesktop.org/glvnd/libglvnd
@@ -312,35 +341,27 @@ matrix:
   - env:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
-    - ALSOINSTALL="valac libjson-glib-dev libsoup2.4-dev libgee-0.8-dev libarchive-dev gobject-introspection"
+    - ALSOINSTALL="gobject-introspection libarchive-dev libgee-0.8-dev libgirepository1.0-dev libjson-glib-dev libsoup2.4-dev valac"
+    - BUILD="all install"
   - env:
     - NAME=libmodulemd
     - REPO=https://github.com/fedora-modularity/libmodulemd
-    - ALSOINSTALL="clang-format gobject-introspection gtk-doc-tools help2man libgirepository1.0-dev libglib2.0-dev libglib2.0-doc
-      libmagic-dev librpm-dev libyaml-dev libzstd-dev pycodestyle python-autopep8 valgrind"
+    - ALSOINSTALL="black clang-format gobject-introspection gtk-doc-tools help2man libgirepository1.0-dev libglib2.0-dev libglib2.0-doc
+      libmagic-dev librpm-dev libyaml-dev libzstd-dev pycodestyle python3-autopep8 valgrind"
     - BUILD="all install"
-    - HACKS='sed -i s!usr/bin/sh!bin/sh! spec_tmpl.sh ; touch /usr/share/gtk-doc/html/glib/index.html ; touch /usr/share/gtk-doc/html/gobject/index.html
-      ; pip3 install black'
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
     - BUILD="all install"
   - env:
-    - NAME=libratbag
-    - REPO=https://github.com/libratbag/libratbag
-    - BUILDDEP=libratbag
-    - BUILD="all install"
-  - env:
     - NAME=libspng
     - REPO=https://gitlab.com/randy408/libspng
-    - ALSOINSTALL="zlib1g-dev libpng-dev"
     - BUILD="all install"
   - env:
     - NAME=libui
     - REPO=https://github.com/andlabs/libui
     - ALSOINSTALL="libgtk-3-dev"
     - BUILD="all install"
-    - HACKS='sed -i s!cpp_eh=sc!cpp_eh=default! meson.build'
   - env:
     - NAME=libva
     - REPO=https://github.com/intel/libva
@@ -352,55 +373,42 @@ matrix:
     - BUILDDEP=zimlib
     - BUILD="all install"
   - env:
-    - NAME=lightdm-webkit2-greeter
-    - REPO=https://github.com/Antergos/lightdm-webkit2-greeter
-    - BRANCH="--branch stable"
-    - ALSOINSTALL="libdbus-glib-1-dev liblightdm-gobject-1-dev libgtk-3-dev libwebkit2gtk-4.0-dev"
-    - BUILD="all install"
-  - env:
     - NAME=marker
     - REPO=https://github.com/fabiocolacio/Marker
-    - ALSOINSTALL="libglib2.0-dev libgtk-3-dev libgtksourceview-3.0-dev libgtkspell3-3-dev libwebkit2gtk-4.0-dev"
-    - BUILD="all"
+    - ALSOINSTALL="libglib2.0-dev-bin libgtk-3-dev libgtksourceview-3.0-dev libwebkit2gtk-4.0-dev libgtkspell3-3-dev"
     - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=mesa
     - REPO=https://gitlab.freedesktop.org/mesa/mesa/
-    - COMMIT=cb03803253b026d5f4c1e0fef431a12df461e6d8
     - BUILDDEP=mesa
-    - ALSOINSTALL="libegl1-mesa-dev libxvmc-dev python python-mako"
+    - BUILD="all install"
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
-    - ALSOINSTALL="libreadline-dev libudev-dev libglib2.0-dev libsystemd-dev"
+    - ALSOINSTALL="libglib2.0-dev libreadline-dev libsystemd-dev libudev-dev"
+    - BUILD="all install"
   - env:
     - NAME=mrsh
     - REPO=https://github.com/emersion/mrsh
     - BUILD="all install"
   - env:
     - NAME=nautilus
-    - REPO=https://gitlab.gnome.org/GNOME/nautilus.git
-    - COMMIT=de17081f
+    - REPO=https://gitlab.gnome.org/GNOME/nautilus
     - BUILDDEP=nautilus
-    - ALSOINSTALL="libgexiv2-dev libseccomp-dev libgstreamer-plugins-base1.0-dev"
     - BUILD="all install"
   - env:
     - NAME=nemo
     - REPO=https://github.com/linuxmint/nemo
-    - COMMIT=80672f071742453ec0e84e4a46ec1ab28fe62379
     - BUILDDEP=nemo
-    - ALSOINSTALL="libxapp-dev"
     - BUILD="all install"
   - env:
     - NAME=ocherbook
     - REPO=https://github.com/ccoffing/OcherBook
-    - BUILDDEP=ocherbook
     - BUILD="all install"
   - env:
     - NAME=oomd
     - REPO=https://github.com/facebookincubator/oomd
-    - COMMIT=05049df5a931411c996c53b048b3e054315481e1
-    - ALSOINSTALL="libjsoncpp-dev"
+    - BUILDDEP=oomd
     - BUILD="all install"
   - env:
     - NAME=openh264
@@ -413,11 +421,6 @@ matrix:
     - ALSOINSTALL="libhidapi-dev"
     - BUILD="all install"
   - env:
-    - NAME=opentitan
-    - REPO=https://github.com/lowRISC/opentitan
-    - BUILDDEP=opentitan
-    - BUILD="all install"
-  - env:
     - NAME=orc
     - REPO=git://anongit.freedesktop.org/gstreamer/orc/
     - BUILDDEP=orc
@@ -426,9 +429,8 @@ matrix:
     - NAME=ots
     - REPO=https://github.com/khaledhosny/ots
     - BUILDDEP=ots
-    - ALSOINSTALL="libfreetype6-dev"
     - BUILD="all install"
-    - HACKS='sed -i s#appleframeworks## meson.build ; git submodule update --init'
+    - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=outlier
     - REPO=https://github.com/kerolasa/outlier
@@ -442,20 +444,16 @@ matrix:
   - env:
     - NAME=pango
     - REPO=https://git.gnome.org/browse/pango/
-    - COMMIT=546f4c242d6f4fe312de3b7c918a848e5172e18d
     - BUILDDEP=pango1.0
-    - ALSOINSTALL="libfribidi-dev libmount-dev"
     - BUILD="all install"
   - env:
     - NAME=parzip
     - REPO=https://github.com/jpakkane/parzip
-    - BRANCH="--branch 1.3.0"
-    - ALSOINSTALL="zlib1g-dev"
     - BUILD="all install"
   - env:
     - NAME=peek
     - REPO=https://github.com/phw/peek
-    - ALSOINSTALL="gettext libgtk-3-dev valac"
+    - BUILDDEP=peek
     - BUILD="all install"
   - env:
     - NAME=picolibc
@@ -465,12 +463,10 @@ matrix:
     - CONFIG="-v"
   - env:
     - NAME=pipewire
-    - REPO=https://github.com/PipeWire/pipewire.git
-    - COMMIT=6eca935e61bd5dc740e2c60f184a247276f592ae
-    - ALSOINSTALL="libasound2-dev libbluetooth-dev libdbus-1-dev libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
-      libjack-dev libpulse-dev libsbc-dev libudev-dev libv4l-dev libvulkan-dev"
+    - REPO=https://github.com/PipeWire/pipewire
+    - BUILDDEP=pipewire
+    - ALSOINSTALL="libbluetooth-dev libjack-jackd2-dev libvulkan-dev"
     - BUILD="all install"
-    - CONFIG="-Dpipewire-jack=false -Djack=false"
   - env:
     - NAME=pithos
     - REPO=https://github.com/pithos/pithos
@@ -478,14 +474,18 @@ matrix:
     - ALSOINSTALL="libglib2.0-dev"
     - BUILD="all install"
   - env:
+    - NAME=pitivi
+    - REPO=https://github.com/pitivi/pitivi/
+    - BUILDDEP=pitivi
+    - BUILD="all install"
+  - env:
     - NAME=playerctl
     - REPO=https://github.com/acrisci/playerctl
-    - ALSOINSTALL="gtk-doc-tools libgirepository1.0-dev libglib2.0-dev"
+    - BUILDDEP=playerctl
     - BUILD="all install"
   - env:
     - NAME=polari
     - REPO=https://gitlab.gnome.org/GNOME/polari
-    - COMMIT=c97477b23361855e22619546a297d7513163bb76
     - BUILDDEP=polari
     - BUILD="all install"
   - env:
@@ -495,72 +495,75 @@ matrix:
   - env:
     - NAME=radare2
     - REPO=https://github.com/radare/radare2
-    - COMMIT=336c0e84fc53407b9a2ff2dcd97d7d59392fb0f0
     - BUILDDEP=radare2
     - BUILD="all install"
   - env:
     - NAME=rxdock
     - REPO=https://gitlab.com/rxdock/rxdock
+    - BUILD="all install"
   - env:
     - NAME=scrcpy
     - REPO=https://github.com/Genymobile/scrcpy
     - BUILDDEP=scrcpy
     - BUILD="all install"
+    - HACKS='touch server/scrcpy-server'
+    - CONFIG="-Dprebuilt_server=server/scrcpy-server"
   - env:
     - NAME=sequeler
     - REPO=https://github.com/Alecaddd/sequeler
-    - BUILDDEP=sequeler
+    - ALSOINSTALL="gettext libgda-5.0-dev libgranite-dev libgtk-3-dev libgtksourceview-3.0-dev libsecret-1-dev libssh2-1-dev libxml2-dev
+      valac"
     - BUILD="all install"
   - env:
     - NAME=sshfs
     - REPO=https://github.com/libfuse/sshfs
-    - COMMIT=6cc86fc0bdaaeacfb1bd5e4336f2a2d1e5b189b8
     - BUILDDEP=sshfs
+    - ALSOINSTALL="libfuse3-dev"
     - BUILD="all install"
+  - env:
+    - NAME=sway
+    - REPO=https://github.com/swaywm/sway
+    - BUILDDEP=sway
   - env:
     - NAME=sysprof
     - REPO=https://git.gnome.org/browse/sysprof
-    - COMMIT=46d3c553e5e9314aaab3cd49673d8344324d2f0a
     - BUILDDEP=sysprof
-    - ALSOINSTALL="systemd policykit-1"
     - BUILD="all install"
   - env:
     - NAME=systemd
     - REPO=https://github.com/systemd/systemd
     - BUILDDEP=systemd
     - BUILD="all install"
-    - HACKS='sed -i s!.-Wl,--undefined.!! meson.build'
   - env:
     - NAME=szl
     - REPO=https://github.com/dimkr/szl
     - BUILD="all install"
-    - HACKS='git submodule update --init'
+    - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
-    - ALSOINSTALL="libfreetype6-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libpng-dev libwebp-dev python-docutils"
+    - ALSOINSTALL="libgl-dev libglx-dev libx11-dev libxext-dev python-docutils"
     - BUILD="all install"
-    - HACKS='git submodule update --init'
+    - HACKS='git submodule update --init --recursive'
   - env:
-    - NAME=tizonia
-    - REPO=https://github.com/tizonia/tizonia-openmax-il
-    - BUILDDEP=tizonia
+    - NAME=terminology
+    - REPO=https://github.com/billiob/terminology
+    - BUILDDEP=terminology
+    - BUILD="all install"
+  - env:
+    - NAME=tilix
+    - REPO=https://github.com/gnunn1/tilix
+    - BUILDDEP=tilix
     - BUILD="all install"
   - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
-    - ALSOINSTALL="valac libsoup2.4-dev libssl-dev"
-    - BUILD="all install"
-    - HACKS='sed -i s!master!4c0318d3a2a7f47158ae220cae07c72af469d2e1! subprojects/vsgi.wrap'
-  - env:
-    - NAME=venom
-    - REPO=https://github.com/naxuroqa/Venom
-    - BUILDDEP=venom
+    - ALSOINSTALL="libsoup2.4-dev libssl-dev valac"
     - BUILD="all install"
   - env:
     - NAME=vmaf
     - REPO=https://github.com/Netflix/vmaf
-    - BUILDDEP=vmaf
+    - SOURCEDIR=libvmaf
     - BUILD="all install"
   - env:
     - NAME=wayland
@@ -568,21 +571,24 @@ matrix:
     - BUILDDEP=wayland
     - BUILD="all install"
   - env:
+    - NAME=weston
+    - REPO=https://github.com/wayland-project/weston
+    - BUILDDEP=weston
+    - ALSOINSTALL="libpipewire-0.2-dev"
+    - BUILD="all install"
+  - env:
     - NAME=wlroots
     - REPO=https://github.com/swaywm/wlroots
-    - COMMIT=f1fcc685b62d5c37c3b99ce6bfeb11ac1fa59ea6
-    - ALSOINSTALL="libegl1-mesa-dev libgbm-dev libgles2-mesa-dev libinput-dev libpixman-1-dev libwayland-dev libxcb-composite0-dev
-      libxcb-image0-dev libxkbcommon-dev wayland-protocols"
+    - BUILDDEP=wlroots
     - BUILD="all install"
   - env:
     - NAME=wxformbuilder
     - REPO=https://github.com/wxFormBuilder/wxFormBuilder
-    - ALSOINSTALL="libwxgtk3.0-dev libwxgtk-media3.0-dev"
-    - BUILD="all install"
+    - ALSOINSTALL="libwxgtk3.0-gtk3-dev libwxgtk-media3.0-gtk3-dev"
   - env:
     - NAME=xi-gtk
     - REPO=https://github.com/eyelash/xi-gtk
-    - ALSOINSTALL="valac libgtk-3-dev libjson-glib-dev"
+    - ALSOINSTALL="libgtk-3-dev libjson-glib-dev valac"
     - BUILD="all install"
   - env:
     - NAME=xorg
@@ -590,21 +596,26 @@ matrix:
     - BUILDDEP=xorg-server
     - BUILD="all install"
   - env:
+    - NAME=zathura
+    - REPO=https://github.com/pwmt/zathura
+    - BUILDDEP=zathura
+    - BUILD="all install"
+  - env:
     - NAME=zrythm
     - REPO=https://github.com/zrythm/zrythm.git
-    - ALSOINSTALL="libfftw3-dev libgtk-3-dev librubberband-dev libsamplerate0-dev libsndfile1-dev libyaml-dev xdg-utils"
+    - ALSOINSTALL="gettext libfftw3-dev libgtk-3-dev libjack-jackd2-dev librubberband-dev libsamplerate0-dev libsndfile1-dev libyaml-dev
+      xdg-utils"
     - BUILD="all install"
   - env:
     - NAME=zstandard
     - REPO=https://github.com/facebook/zstd.git
-    - BRANCH="--branch v1.3.4"
     - BUILDDEP=zstd
-    - SOURCEDIR=contrib/meson
+    - SOURCEDIR=build/meson
     - BUILD="all install"
 python: 3.6
 script:
 - cat script
-- docker run jturney/mesoncorpusci /bin/sh -c "$(cat script)"
+- docker run --security-opt seccomp:unconfined jturney/mesoncorpusci /bin/sh -c "$(cat script)"
 services:
 - docker
 
