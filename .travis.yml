@@ -23,91 +23,91 @@ matrix:
   - env:
     - NAME=2048.cpp
     - REPO=https://github.com/plibither8/2048.cpp
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=akira
     - REPO=https://github.com/akiraux/Akira
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="appstream-util desktop-file-utils gettext libarchive-dev libgoocanvas-2.0-dev libgranite-dev libgtk-3-dev libjson-glib-dev
       libxml2-dev valac"
     - BUILD="all install"
   - env:
     - NAME=aqemu
     - REPO=https://github.com/tobimensch/aqemu
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=aqemu
     - BUILD="all install"
   - env:
     - NAME=aravis
     - REPO=https://github.com/AravisProject/aravis
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=aravis
     - BUILD="all install"
   - env:
     - NAME=bolt
     - REPO=https://gitlab.freedesktop.org/bolt/bolt
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=bolt
     - BUILD="all install"
   - env:
     - NAME=budgie-desktop
     - REPO=https://github.com/budgie-desktop/budgie-desktop
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=budgie-desktop
     - BUILD="all install"
   - env:
     - NAME=bzip2
     - REPO=https://gitlab.com/federicomenaquintero/bzip2
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=bzip2
     - BUILD="all install"
   - env:
     - NAME=cage
     - REPO=https://github.com/Hjdskes/cage
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libwlroots-dev"
     - BUILD="all install"
   - env:
     - NAME=casync
     - REPO=https://github.com/systemd/casync
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=casync
     - BUILD="all install"
   - env:
     - NAME=cinnamon-desktop
     - REPO=https://github.com/linuxmint/cinnamon-desktop
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=cinnamon-desktop
     - BUILD="all install"
   - env:
     - NAME=cozy
     - REPO=https://github.com/geigi/cozy
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libglib2.0-dev python3-distro python3-peewee python3-mutagen"
     - BUILD="all install"
   - env:
     - NAME=dav1d
     - REPO=https://code.videolan.org/videolan/dav1d
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="nasm"
     - BUILD="all install"
   - env:
     - NAME=dbus-broker
     - REPO=https://github.com/bus1/dbus-broker
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libdbus-1-dev libglib2.0-dev libsystemd-dev python-docutils systemd"
     - BUILD="all install"
   - env:
     - NAME=dpdk
     - REPO=git://dpdk.org/dpdk
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=dpdk
     - BUILD="all install"
   - env:
     - NAME=dxvk
     - REPO=https://github.com/doitsujin/dxvk
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=dxvk
     - ALSOINSTALL="gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64"
     - BUILD="all install"
@@ -117,30 +117,30 @@ matrix:
   - env:
     - NAME=emeus
     - REPO=https://github.com/ebassi/emeus
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="gtk-doc-tools libgirepository1.0-dev libglib2.0-dev libgtk-3-dev"
     - BUILD="all install"
   - env:
     - NAME=feedreader
     - REPO=https://github.com/jangernert/FeedReader
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=feedreader
     - BUILD="all install"
   - env:
     - NAME=flecs
     - REPO=https://github.com/SanderMertens/flecs
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=foliate
     - REPO=https://github.com/johnfactotum/foliate
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="gettext gjs libglib2.0-dev-bin"
     - BUILD="all install"
   - env:
     - NAME=fractal
     - REPO=https://gitlab.gnome.org/World/fractal.git
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="cargo gettext libatk1.0-dev libcairo2-dev libdbus-1-dev libgdk-pixbuf2.0-dev libges-1.0-dev libgspell-1-dev libgstreamer-plugins-bad1.0-dev
       libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libgtk-3-dev libgtksourceview-4-dev libhandy-0.0-dev libpango1.0-dev libssl-dev
       rustc"
@@ -148,46 +148,46 @@ matrix:
   - env:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=fwupd
     - BUILD="all install"
   - env:
     - NAME=gamemode
     - REPO=https://github.com/FeralInteractive/gamemode
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=gamemode
     - BUILD="all install"
   - env:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=geary
     - ALSOINSTALL="libgsound-dev"
     - BUILD="all install"
   - env:
     - NAME=glib
     - REPO=https://gitlab.gnome.org/GNOME/glib
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=glib2.0
     - BUILD="all install"
   - env:
     - NAME=glorytun
     - REPO=https://github.com/angt/glorytun
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libsodium-dev"
     - BUILD="all install"
     - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=gnome-boxes
     - ALSOINSTALL="libhandy-0.0-dev"
     - BUILD="all install"
   - env:
     - NAME=gnome-builder
     - REPO=https://gitlab.gnome.org/GNOME/gnome-builder
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BRANCH="--branch 3.36.0"
     - BUILDDEP=gnome-builder
     - BUILD="all install"
@@ -196,146 +196,146 @@ matrix:
   - env:
     - NAME=gnome-mpv
     - REPO=https://github.com/gnome-mpv/gnome-mpv
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=gnome-mpv
     - BUILD="all install"
   - env:
     - NAME=gnome-recipes
     - REPO=https://gitlab.gnome.org/GNOME/recipes
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=gnome-recipes
     - BUILD="all install"
   - env:
     - NAME=gnome-software
     - REPO=https://gitlab.gnome.org/GNOME/gnome-software
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=gnome-software
     - BUILD="all install"
     - CONFIG="-Dmalcontent=false"
   - env:
     - NAME=gnome-twitch
     - REPO=https://github.com/vinszent/gnome-twitch
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=gnome-twitch
     - BUILD="all install"
   - env:
     - NAME=gnome-usage
     - REPO=https://gitlab.gnome.org/GNOME/gnome-usage
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=gnome-usage
     - ALSOINSTALL="libtracker-sparql-2.0-dev"
     - BUILD="all install"
   - env:
     - NAME=gnu-fribidi
     - REPO=https://github.com/fribidi/fribidi
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=fribidi
     - BUILD="all install"
     - CONFIG="-Ddocs=false"
   - env:
     - NAME=graphene
     - REPO=git://github.com/ebassi/graphene
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=graphene
     - BUILD="all install"
   - env:
     - NAME=grilo
     - REPO=https://git.gnome.org/browse/grilo
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=grilo
     - BUILD="all install"
   - env:
     - NAME=grilo-plugins
     - REPO=https://git.gnome.org/browse/grilo-plugins
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=grilo-plugins
     - BUILD="all install"
   - env:
     - NAME=gstreamer
     - REPO=git://anongit.freedesktop.org/gstreamer/gstreamer/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=gstreamer1.0
     - BUILD="all install"
   - env:
     - NAME=gtk+
     - REPO=https://gitlab.gnome.org/GNOME/gtk
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=gtk+3.0
     - ALSOINSTALL="libgstreamer-plugins-bad1.0-dev libgraphene-1.0-dev"
     - BUILD="all install"
   - env:
     - NAME=gtkdapp
     - REPO=https://gitlab.com/csoriano/GtkDApp
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="gdc gsettings-desktop-schemas-dev libgtk-3-dev libgtkd-3-dev librsvg2-dev"
   - env:
     - NAME=gvfs
     - REPO=https://git.gnome.org/browse/gvfs/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BRANCH="--branch 1.37.1"
     - BUILDDEP=gvfs
     - BUILD="all install"
   - env:
     - NAME=hardcode-tray
     - REPO=https://github.com/bil-elmoussaoui/Hardcode-Tray
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libgirepository1.0-dev libgtk-3-dev"
     - BUILD="all install"
   - env:
     - NAME=hexchat
     - REPO=https://github.com/hexchat/hexchat
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=hexchat
     - ALSOINSTALL="libluajit-5.1-dev python3-cffi"
     - BUILD="all install"
   - env:
     - NAME=igt
     - REPO=git://anongit.freedesktop.org/xorg/app/intel-gpu-tools/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=intel-gpu-tools
     - BUILD="all install"
   - env:
     - NAME=inih
     - REPO=https://github.com/benhoyt/inih
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=irssi
     - REPO=https://github.com/irssi/irssi
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=irssi
     - BUILD="all install"
   - env:
     - NAME=ish
     - REPO=https://github.com/tbodt/ish
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="clang libsqlite3-dev lld python-is-python3"
     - BUILD="all install"
   - env:
     - NAME=janet
     - REPO=https://github.com/janet-lang/janet
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=json
     - REPO=https://github.com/nlohmann/json
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=json-glib
     - REPO=https://gitlab.gnome.org/GNOME/json-glib
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=json-glib
     - BUILD="all install"
   - env:
     - NAME=jsoncpp
     - REPO=https://github.com/open-source-parsers/jsoncpp
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=kiwix-libraries
     - REPO=https://github.com/kiwix/kiwix-lib
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BRANCH="--branch 5.0.0"
     - ALSOINSTALL="libcurl4-openssl-dev libicu-dev libkainjow-mustache-dev libpugixml-dev libzim-dev"
     - BUILD="all install"
@@ -343,7 +343,7 @@ matrix:
   - env:
     - NAME=knot-resolver
     - REPO=https://gitlab.labs.nic.cz/knot/knot-resolver
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - COMMIT=1bbe50b47cb41fd7459721fe08abea7cd2bf3888
     - BUILDDEP=knot-resolver
     - BUILD="all install"
@@ -351,253 +351,253 @@ matrix:
   - env:
     - NAME=ksh
     - REPO=https://github.com/att/ast
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BRANCH="--branch ksh2020"
     - BUILDDEP=ksh
     - BUILD="all install"
   - env:
     - NAME=lc0
     - REPO=https://github.com/LeelaChessZero/lc0
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libopenblas-dev"
     - BUILD="all install"
   - env:
     - NAME=libcamera
     - REPO=git://linuxtv.org/libcamera.git
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="python3-yaml"
     - BUILD="all install"
   - env:
     - NAME=libdrm
     - REPO=git://anongit.freedesktop.org/drm/libdrm/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=libdrm
     - BUILD="all install"
   - env:
     - NAME=libepoxy
     - REPO=https://github.com/anholt/libepoxy/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=libepoxy
     - BUILD="all install"
   - env:
     - NAME=libfuse
     - REPO=https://github.com/libfuse/libfuse
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=fuse
     - ALSOINSTALL="udev"
     - BUILD="all install"
   - env:
     - NAME=libgit2-glib
     - REPO=https://git.gnome.org/browse/libgit2-glib
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=libgit2-glib
     - BUILD="all install"
   - env:
     - NAME=libglvnd
     - REPO=https://gitlab.freedesktop.org/glvnd/libglvnd
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=libglvnd
     - BUILD="all install"
   - env:
     - NAME=libhttpseverywhere
     - REPO=https://git.gnome.org/browse/libhttpseverywhere
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="gobject-introspection libarchive-dev libgee-0.8-dev libgirepository1.0-dev libjson-glib-dev libsoup2.4-dev valac"
     - BUILD="all install"
   - env:
     - NAME=libmodulemd
     - REPO=https://github.com/fedora-modularity/libmodulemd
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="black clang-format gobject-introspection gtk-doc-tools help2man libgirepository1.0-dev libglib2.0-dev libglib2.0-doc
       libmagic-dev librpm-dev libyaml-dev libzstd-dev pycodestyle python3-autopep8 valgrind"
     - BUILD="all install"
   - env:
     - NAME=libosmscout
     - REPO=https://github.com/Framstag/libosmscout
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=libspng
     - REPO=https://gitlab.com/randy408/libspng
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=libui
     - REPO=https://github.com/andlabs/libui
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libgtk-3-dev"
     - BUILD="all install"
   - env:
     - NAME=libva
     - REPO=https://github.com/intel/libva
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=libva
     - BUILD="all install"
   - env:
     - NAME=libzim
     - REPO=https://github.com/openzim/libzim
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=zimlib
     - BUILD="all install"
   - env:
     - NAME=marker
     - REPO=https://github.com/fabiocolacio/Marker
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libglib2.0-dev-bin libgtk-3-dev libgtksourceview-3.0-dev libwebkit2gtk-4.0-dev libgtkspell3-3-dev"
     - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=mesa
     - REPO=https://gitlab.freedesktop.org/mesa/mesa/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=mesa
     - BUILD="all install"
   - env:
     - NAME=miraclecast
     - REPO=https://github.com/albfan/miraclecast
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libglib2.0-dev libreadline-dev libsystemd-dev libudev-dev"
     - BUILD="all install"
   - env:
     - NAME=mrsh
     - REPO=https://github.com/emersion/mrsh
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=nautilus
     - BUILD="all install"
   - env:
     - NAME=nemo
     - REPO=https://github.com/linuxmint/nemo
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=nemo
     - BUILD="all install"
   - env:
     - NAME=ocherbook
     - REPO=https://github.com/ccoffing/OcherBook
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=oomd
     - REPO=https://github.com/facebookincubator/oomd
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=oomd
     - BUILD="all install"
   - env:
     - NAME=openh264
     - REPO=https://github.com/cisco/openh264
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="nasm"
     - BUILD="all install"
   - env:
     - NAME=openhmd
     - REPO=https://github.com/OpenHMD/OpenHMD
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libhidapi-dev"
     - BUILD="all install"
   - env:
     - NAME=orc
     - REPO=git://anongit.freedesktop.org/gstreamer/orc/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=orc
     - BUILD="all install"
   - env:
     - NAME=ots
     - REPO=https://github.com/khaledhosny/ots
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=ots
     - BUILD="all install"
     - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=outlier
     - REPO=https://github.com/kerolasa/outlier
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=pacman
     - REPO=git://git.archlinux.org/pacman.git
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=pacman
     - ALSOINSTALL="libarchive-dev libssl-dev"
     - BUILD="all install"
   - env:
     - NAME=pango
     - REPO=https://git.gnome.org/browse/pango/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=pango1.0
     - BUILD="all install"
   - env:
     - NAME=parzip
     - REPO=https://github.com/jpakkane/parzip
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=peek
     - REPO=https://github.com/phw/peek
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=peek
     - BUILD="all install"
   - env:
     - NAME=picolibc
     - REPO=https://github.com/keith-packard/picolibc
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
     - HACKS='mkdir _build ; cd _build ; ../do-native-configure ; cd ..'
     - CONFIG="-v"
   - env:
     - NAME=pipewire
     - REPO=https://github.com/PipeWire/pipewire
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=pipewire
     - ALSOINSTALL="libbluetooth-dev libjack-jackd2-dev libvulkan-dev"
     - BUILD="all install"
   - env:
     - NAME=pithos
     - REPO=https://github.com/pithos/pithos
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=pithos
     - ALSOINSTALL="libglib2.0-dev"
     - BUILD="all install"
   - env:
     - NAME=pitivi
     - REPO=https://github.com/pitivi/pitivi/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=pitivi
     - BUILD="all install"
   - env:
     - NAME=playerctl
     - REPO=https://github.com/acrisci/playerctl
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=playerctl
     - BUILD="all install"
   - env:
     - NAME=polari
     - REPO=https://gitlab.gnome.org/GNOME/polari
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=polari
     - BUILD="all install"
   - env:
     - NAME=qboot
     - REPO=https://github.com/bonzini/qboot
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=radare2
     - REPO=https://github.com/radare/radare2
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=radare2
     - BUILD="all install"
   - env:
     - NAME=rxdock
     - REPO=https://gitlab.com/rxdock/rxdock
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
   - env:
     - NAME=scrcpy
     - REPO=https://github.com/Genymobile/scrcpy
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=scrcpy
     - BUILD="all install"
     - HACKS='touch server/scrcpy-server'
@@ -605,63 +605,63 @@ matrix:
   - env:
     - NAME=sequeler
     - REPO=https://github.com/Alecaddd/sequeler
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="gettext libgda-5.0-dev libgranite-dev libgtk-3-dev libgtksourceview-3.0-dev libsecret-1-dev libssh2-1-dev libxml2-dev
       valac"
     - BUILD="all install"
   - env:
     - NAME=sshfs
     - REPO=https://github.com/libfuse/sshfs
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=sshfs
     - ALSOINSTALL="libfuse3-dev"
     - BUILD="all install"
   - env:
     - NAME=sway
     - REPO=https://github.com/swaywm/sway
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=sway
   - env:
     - NAME=sysprof
     - REPO=https://git.gnome.org/browse/sysprof
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=sysprof
     - BUILD="all install"
   - env:
     - NAME=systemd
     - REPO=https://github.com/systemd/systemd
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=systemd
     - BUILD="all install"
   - env:
     - NAME=szl
     - REPO=https://github.com/dimkr/szl
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILD="all install"
     - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libgl-dev libglx-dev libx11-dev libxext-dev python-docutils"
     - BUILD="all install"
     - HACKS='git submodule update --init --recursive'
   - env:
     - NAME=terminology
     - REPO=https://github.com/billiob/terminology
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=terminology
     - BUILD="all install"
   - env:
     - NAME=tilix
     - REPO=https://github.com/gnunn1/tilix
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=tilix
     - BUILD="all install"
   - env:
     - NAME=tizonia
     - REPO=https://github.com/tizonia/tizonia-openmax-il
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BRANCH="--branch v0.21.0"
     - ALSOINSTALL="libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-thread-dev
       libcurl4-gnutls-dev libdbus-1-dev libfaad-dev libfishsound1-dev libflac-dev liblog4c-dev libmad0-dev libmediainfo-dev libmp3lame-dev
@@ -672,68 +672,68 @@ matrix:
   - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libsoup2.4-dev libssl-dev valac"
     - BUILD="all install"
   - env:
     - NAME=vmaf
     - REPO=https://github.com/Netflix/vmaf
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - SOURCEDIR=libvmaf
     - BUILD="all install"
   - env:
     - NAME=wayland
     - REPO=https://github.com/wayland-project/wayland
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=wayland
     - BUILD="all install"
   - env:
     - NAME=weston
     - REPO=https://github.com/wayland-project/weston
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=weston
     - ALSOINSTALL="libpipewire-0.2-dev"
     - BUILD="all install"
   - env:
     - NAME=wlroots
     - REPO=https://github.com/swaywm/wlroots
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=wlroots
     - BUILD="all install"
   - env:
     - NAME=wxformbuilder
     - REPO=https://github.com/wxFormBuilder/wxFormBuilder
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libwxgtk3.0-gtk3-dev libwxgtk-media3.0-gtk3-dev"
   - env:
     - NAME=xi-gtk
     - REPO=https://github.com/eyelash/xi-gtk
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="libgtk-3-dev libjson-glib-dev valac"
     - BUILD="all install"
   - env:
     - NAME=xorg
     - REPO=git://anongit.freedesktop.org/xorg/xserver/
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=xorg-server
     - BUILD="all install"
   - env:
     - NAME=zathura
     - REPO=https://github.com/pwmt/zathura
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=zathura
     - BUILD="all install"
   - env:
     - NAME=zrythm
     - REPO=https://github.com/zrythm/zrythm.git
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - ALSOINSTALL="gettext libfftw3-dev libgtk-3-dev libjack-jackd2-dev librubberband-dev libsamplerate0-dev libsndfile1-dev libyaml-dev
       xdg-utils"
     - BUILD="all install"
   - env:
     - NAME=zstandard
     - REPO=https://github.com/facebook/zstd.git
-    - MESON_COMMIT=pull/pull/6770/head/head
+    - MESON_COMMIT=pull/pull/6859/head/head
     - BUILDDEP=zstd
     - SOURCEDIR=build/meson
     - BUILD="all install"
