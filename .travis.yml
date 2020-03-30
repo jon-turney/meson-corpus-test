@@ -558,6 +558,7 @@ matrix:
   - env:
     - NAME=tizonia
     - REPO=https://github.com/tizonia/tizonia-openmax-il
+    - BRANCH="--branch v0.21.0"
     - ALSOINSTALL="libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-thread-dev
       libcurl4-gnutls-dev libdbus-1-dev libfaad-dev libfishsound1-dev libflac-dev liblog4c-dev libmad0-dev libmediainfo-dev libmp3lame-dev
       libmpg123-dev liboggz2-dev libopus-dev libopusfile-dev libpulse-dev libsdl1.2-dev libsndfile1-dev libsqlite3-dev libtag1-dev
