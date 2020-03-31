@@ -558,12 +558,10 @@ matrix:
   - env:
     - NAME=tizonia
     - REPO=https://github.com/tizonia/tizonia-openmax-il
-    - BRANCH="--branch v0.21.0"
     - ALSOINSTALL="libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-thread-dev
       libcurl4-gnutls-dev libdbus-1-dev libfaad-dev libfishsound1-dev libflac-dev liblog4c-dev libmad0-dev libmediainfo-dev libmp3lame-dev
       libmpg123-dev liboggz2-dev libopus-dev libopusfile-dev libpulse-dev libsdl1.2-dev libsndfile1-dev libsqlite3-dev libtag1-dev
       libvpx-dev uuid-dev"
-    - BUILD="all install"
     - CONFIG="-Dlibspotify=false"
   - env:
     - NAME=valum
@@ -613,8 +611,9 @@ matrix:
   - env:
     - NAME=zrythm
     - REPO=https://github.com/zrythm/zrythm.git
-    - ALSOINSTALL="gettext libfftw3-dev libgtk-3-dev libjack-jackd2-dev librubberband-dev libsamplerate0-dev libsndfile1-dev libyaml-dev
-      xdg-utils"
+    - BRANCH="--branch v0.8.200"
+    - ALSOINSTALL="gettext guile-2.2-dev libfftw3-dev libgtk-3-dev libjack-jackd2-dev librubberband-dev libsamplerate0-dev libsndfile1-dev
+      libyaml-dev xdg-utils"
     - BUILD="all install"
   - env:
     - NAME=zstandard
