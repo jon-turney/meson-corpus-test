@@ -565,6 +565,11 @@ matrix:
       libvpx-dev uuid-dev"
     - CONFIG="-Dlibspotify=false"
   - env:
+    - NAME=vala-language-server
+    - REPO=https://github.com/benwaffle/vala-language-server
+    - BUILDDEP=vala-language-server
+    - BUILD="all install"
+  - env:
     - NAME=valum
     - REPO=https://github.com/valum-framework/valum
     - ALSOINSTALL="libsoup2.4-dev libssl-dev valac"
