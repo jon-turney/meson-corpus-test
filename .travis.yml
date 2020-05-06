@@ -311,7 +311,7 @@ matrix:
   - env:
     - NAME=libcamera
     - REPO=git://linuxtv.org/libcamera.git
-    - ALSOINSTALL="python3-yaml"
+    - ALSOINSTALL="gnutls-dev python3-yaml"
     - BUILD="all install"
   - env:
     - NAME=libdrm
@@ -567,7 +567,7 @@ matrix:
   - env:
     - NAME=vala-language-server
     - REPO=https://github.com/benwaffle/vala-language-server
-    - BUILDDEP=vala-language-server
+    - ALSOINSTALL="libgee-0.8-dev libjsonrpc-glib-1.0-dev libvala-dev valac"
     - BUILD="all install"
   - env:
     - NAME=valum
@@ -602,8 +602,7 @@ matrix:
   - env:
     - NAME=x-test-suite
     - REPO=https://gitlab.freedesktop.org/xorg/test/xts
-    - BUILDDEP=x-test-suite
-    - BUILD="all install"
+    - ALSOINSTALL="libx11-dev libxaw7-dev libxext-dev libxi-dev libxmu-dev libxtst-dev x11-utils x11-xserver-utils xfonts-utils"
   - env:
     - NAME=xi-gtk
     - REPO=https://github.com/eyelash/xi-gtk
