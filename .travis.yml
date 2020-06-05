@@ -320,6 +320,11 @@ matrix:
     - BUILDDEP=libdrm
     - BUILD="all install"
   - env:
+    - NAME=libeconf
+    - REPO=https://github.com/openSUSE/libeconf
+    - BUILDDEP=libeconf
+    - BUILD="all install"
+  - env:
     - NAME=libepoxy
     - REPO=https://github.com/anholt/libepoxy/
     - BUILDDEP=libepoxy
