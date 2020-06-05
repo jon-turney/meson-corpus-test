@@ -121,9 +121,9 @@ matrix:
   - env:
     - NAME=fractal
     - REPO=https://gitlab.gnome.org/World/fractal.git
-    - ALSOINSTALL="cargo gettext libappstream-glib-dev libatk1.0-dev libcairo2-dev libdbus-1-dev libgdk-pixbuf2.0-dev libges-1.0-dev
-      libgspell-1-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libgtk-3-dev libgtksourceview-4-dev
-      libhandy-0.0-dev libpango1.0-dev libssl-dev rustc"
+    - ALSOINSTALL="appstream cargo gettext libatk1.0-dev libcairo2-dev libdbus-1-dev libgdk-pixbuf2.0-dev libges-1.0-dev libgspell-1-dev
+      libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libgtk-3-dev libgtksourceview-4-dev libhandy-0.0-dev
+      libpango1.0-dev libssl-dev rustc"
     - BUILD="all install"
   - env:
     - NAME=fwupd
@@ -322,7 +322,6 @@ matrix:
   - env:
     - NAME=libeconf
     - REPO=https://github.com/openSUSE/libeconf
-    - BUILDDEP=libeconf
     - BUILD="all install"
   - env:
     - NAME=libepoxy
