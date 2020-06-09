@@ -310,6 +310,11 @@ matrix:
     - ALSOINSTALL="libopenblas-dev"
     - BUILD="all install"
   - env:
+    - NAME=le
+    - REPO=https://github.com/kirushyk/le
+    - BUILDDEP=le
+    - BUILD="all install"
+  - env:
     - NAME=libcamera
     - REPO=git://linuxtv.org/libcamera.git
     - ALSOINSTALL="libboost-dev gnutls-dev python3-yaml"
