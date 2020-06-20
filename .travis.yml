@@ -525,6 +525,11 @@ matrix:
       valac"
     - BUILD="all install"
   - env:
+    - NAME=siril
+    - REPO=https://gitlab.com/free-astro/siril
+    - BUILDDEP=siril
+    - BUILD="all install"
+  - env:
     - NAME=sshfs
     - REPO=https://github.com/libfuse/sshfs
     - BUILDDEP=sshfs
