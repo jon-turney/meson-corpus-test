@@ -528,6 +528,7 @@ matrix:
     - NAME=siril
     - REPO=https://gitlab.com/free-astro/siril
     - BUILDDEP=siril
+    - ALSOINSTALL="cmake libexiv2-dev"
     - BUILD="all install"
   - env:
     - NAME=sshfs
