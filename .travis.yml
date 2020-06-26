@@ -191,7 +191,7 @@ matrix:
     - NAME=gnome-usage
     - REPO=https://gitlab.gnome.org/GNOME/gnome-usage
     - BUILDDEP=gnome-usage
-    - ALSOINSTALL="libtracker-sparql-2.0-dev"
+    - ALSOINSTALL="libgirepository1.0-dev libtracker-sparql-2.0-dev"
     - BUILD="all install"
   - env:
     - NAME=gnu-fribidi
