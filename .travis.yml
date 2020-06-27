@@ -381,6 +381,7 @@ matrix:
     - NAME=libzim
     - REPO=https://github.com/openzim/libzim
     - BUILDDEP=zimlib
+    - ALSOINSTALL="libzstd-dev"
     - BUILD="all install"
   - env:
     - NAME=marker
