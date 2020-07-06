@@ -544,6 +544,7 @@ matrix:
   - env:
     - NAME=sysprof
     - REPO=https://git.gnome.org/browse/sysprof
+    - BRANCH="--branch sysprof-3.36.0"
     - BUILDDEP=sysprof
     - BUILD="all install"
   - env:
