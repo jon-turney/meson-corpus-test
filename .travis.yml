@@ -58,6 +58,7 @@ matrix:
   - env:
     - NAME=cage
     - REPO=https://github.com/Hjdskes/cage
+    - COMMIT=79992f39f3f451cac8140bc1053f57e2355c4f3c
     - ALSOINSTALL="libwlroots-dev"
     - BUILD="all install"
   - env:
@@ -391,6 +392,7 @@ matrix:
   - env:
     - NAME=mesa
     - REPO=https://gitlab.freedesktop.org/mesa/mesa/
+    - COMMIT=1f37662c093ee168d0669d0ea0c7f169e272d0c7
     - BUILDDEP=mesa
     - BUILD="all install"
   - env:
@@ -449,6 +451,7 @@ matrix:
   - env:
     - NAME=pacman
     - REPO=git://git.archlinux.org/pacman.git
+    - BRANCH="--branch v5.2.2"
     - BUILDDEP=pacman
     - ALSOINSTALL="libarchive-dev libssl-dev"
     - BUILD="all install"
@@ -540,7 +543,9 @@ matrix:
   - env:
     - NAME=sway
     - REPO=https://github.com/swaywm/sway
+    - BRANCH="--branch 1.4"
     - BUILDDEP=sway
+    - BUILD="all install"
   - env:
     - NAME=sysprof
     - REPO=https://git.gnome.org/browse/sysprof
