@@ -454,6 +454,11 @@ matrix:
     - REPO=https://github.com/kerolasa/outlier
     - BUILD="all install"
   - env:
+    - NAME=owl-chess
+    - REPO=https://github.com/michaelbrockus/chess
+    - BUILDDEP=owl-chess
+    - BUILD="all install"
+  - env:
     - NAME=pacman
     - REPO=git://git.archlinux.org/pacman.git
     - BRANCH="--branch v5.2.2"
@@ -464,6 +469,11 @@ matrix:
     - NAME=pango
     - REPO=https://git.gnome.org/browse/pango/
     - BUILDDEP=pango1.0
+    - BUILD="all install"
+  - env:
+    - NAME=paper-rock-scissors
+    - REPO=https://github.com/michaelbrockus/paper_rock_scissors
+    - BUILDDEP=paper-rock-scissors
     - BUILD="all install"
   - env:
     - NAME=parzip
