@@ -384,6 +384,11 @@ matrix:
     - BUILDDEP=libva
     - BUILD="all install"
   - env:
+    - NAME=libvirt
+    - REPO=https://libvirt.org
+    - BUILDDEP=libvirt
+    - BUILD="all install"
+  - env:
     - NAME=libzim
     - REPO=https://github.com/openzim/libzim
     - BUILDDEP=zimlib
@@ -520,6 +525,11 @@ matrix:
   - env:
     - NAME=qboot
     - REPO=https://github.com/bonzini/qboot
+    - BUILD="all install"
+  - env:
+    - NAME=qemu
+    - REPO=https://qemu.org
+    - BUILDDEP=qemu
     - BUILD="all install"
   - env:
     - NAME=radare2
