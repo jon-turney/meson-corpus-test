@@ -469,6 +469,11 @@ matrix:
     - BUILDDEP=owl-chess
     - BUILD="all install"
   - env:
+    - NAME=p11-kit
+    - REPO=https://github.com/p11-glue/p11-kit
+    - BUILDDEP=p11-kit
+    - BUILD="all install"
+  - env:
     - NAME=pacman
     - REPO=git://git.archlinux.org/pacman.git
     - BRANCH="--branch v5.2.2"
