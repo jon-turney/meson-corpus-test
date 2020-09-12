@@ -107,8 +107,9 @@ matrix:
     - BUILD="all install"
   - env:
     - NAME=entangle
-    - REPO=https://entangle-photo.org/
+    - REPO=https://gitlab.com/entangle/entangle.git
     - BUILDDEP=entangle
+    - ALSOINSTALL="appstream"
     - BUILD="all install"
   - env:
     - NAME=feedreader
@@ -144,6 +145,7 @@ matrix:
   - env:
     - NAME=geary
     - REPO=https://git.gnome.org/browse/geary
+    - BRANCH="--branch 3.36.3.1"
     - BUILDDEP=geary
     - ALSOINSTALL="libgsound-dev"
     - BUILD="all install"
@@ -162,7 +164,7 @@ matrix:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
     - BUILDDEP=gnome-boxes
-    - ALSOINSTALL="libhandy-0.0-dev"
+    - ALSOINSTALL="libhandy-0.0-dev libgtksourceview-4-dev"
     - BUILD="all install"
   - env:
     - NAME=gnome-builder
@@ -196,6 +198,7 @@ matrix:
   - env:
     - NAME=gnome-usage
     - REPO=https://gitlab.gnome.org/GNOME/gnome-usage
+    - BRANCH="--branch v3.37.1"
     - BUILDDEP=gnome-usage
     - ALSOINSTALL="libgirepository1.0-dev libtracker-sparql-2.0-dev"
     - BUILD="all install"
@@ -229,7 +232,7 @@ matrix:
     - NAME=gtk+
     - REPO=https://gitlab.gnome.org/GNOME/gtk
     - BUILDDEP=gtk+3.0
-    - ALSOINSTALL="libgstreamer-plugins-bad1.0-dev libgraphene-1.0-dev"
+    - ALSOINSTALL="libgstreamer-plugins-bad1.0-dev libgraphene-1.0-dev libvulkan-dev"
     - BUILD="all install"
   - env:
     - NAME=gtkdapp
@@ -390,8 +393,9 @@ matrix:
     - BUILD="all install"
   - env:
     - NAME=libvirt
-    - REPO=https://libvirt.org
+    - REPO=https://libvirt.org/git/libvirt.git
     - BUILDDEP=libvirt
+    - ALSOINSTALL="libtirpc-dev"
     - BUILD="all install"
   - env:
     - NAME=libzim
@@ -422,6 +426,7 @@ matrix:
   - env:
     - NAME=nautilus
     - REPO=https://gitlab.gnome.org/GNOME/nautilus
+    - BRANCH="--branch 3.37.3"
     - BUILDDEP=nautilus
     - BUILD="all install"
   - env:
@@ -466,7 +471,7 @@ matrix:
   - env:
     - NAME=owl-chess
     - REPO=https://github.com/michaelbrockus/chess
-    - BUILDDEP=owl-chess
+    - ALSOINSTALL="rustc"
     - BUILD="all install"
   - env:
     - NAME=p11-kit
@@ -488,7 +493,6 @@ matrix:
   - env:
     - NAME=paper-rock-scissors
     - REPO=https://github.com/michaelbrockus/paper_rock_scissors
-    - BUILDDEP=paper-rock-scissors
     - BUILD="all install"
   - env:
     - NAME=parzip
@@ -503,7 +507,7 @@ matrix:
     - NAME=picolibc
     - REPO=https://github.com/keith-packard/picolibc
     - BUILD="all install"
-    - HACKS='mkdir _build ; cd _build ; ../do-native-configure ; cd ..'
+    - HACKS='mkdir _build && cd _build && ../scripts/do-native-configure && cd ..'
     - CONFIG="-v"
   - env:
     - NAME=pipewire
@@ -538,17 +542,14 @@ matrix:
     - BUILD="all install"
   - env:
     - NAME=qemu
-    - REPO=https://qemu.org
+    - REPO=https://git.qemu.org/git/qemu.git
     - BUILDDEP=qemu
-    - BUILD="all install"
+    - HACKS='mkdir _build && cd _build && ../configure && cd ..'
+    - CONFIG="-v"
   - env:
     - NAME=radare2
     - REPO=https://github.com/radare/radare2
     - BUILDDEP=radare2
-    - BUILD="all install"
-  - env:
-    - NAME=rxdock
-    - REPO=https://gitlab.com/rxdock/rxdock
     - BUILD="all install"
   - env:
     - NAME=scrcpy
@@ -600,6 +601,7 @@ matrix:
   - env:
     - NAME=taisei-project
     - REPO=https://github.com/taisei-project/taisei.git
+    - COMMIT=324dccb79ae0033a1613c4b994ac97c813e516a6
     - ALSOINSTALL="libgl-dev libglx-dev libx11-dev libxext-dev python-docutils"
     - BUILD="all install"
     - HACKS='git submodule update --init --recursive'
@@ -624,6 +626,7 @@ matrix:
   - env:
     - NAME=vala-language-server
     - REPO=https://github.com/benwaffle/vala-language-server
+    - BRANCH="--branch 0.48"
     - ALSOINSTALL="libgee-0.8-dev libjsonrpc-glib-1.0-dev libvala-dev valac"
     - BUILD="all install"
   - env:
@@ -634,6 +637,7 @@ matrix:
   - env:
     - NAME=vmaf
     - REPO=https://github.com/Netflix/vmaf
+    - ALSOINSTALL="nasm"
     - SOURCEDIR=libvmaf
     - BUILD="all install"
   - env:
@@ -673,6 +677,7 @@ matrix:
   - env:
     - NAME=zathura
     - REPO=https://github.com/pwmt/zathura
+    - BRANCH="--branch 0.4.7"
     - BUILDDEP=zathura
     - BUILD="all install"
   - env:
