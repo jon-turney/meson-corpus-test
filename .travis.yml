@@ -163,6 +163,7 @@ matrix:
   - env:
     - NAME=gnome-boxes
     - REPO=https://gitlab.gnome.org/GNOME/gnome-boxes
+    - BRANCH="--branch v3.38.0"
     - BUILDDEP=gnome-boxes
     - ALSOINSTALL="libhandy-0.0-dev libgtksourceview-4-dev"
     - BUILD="all install"
