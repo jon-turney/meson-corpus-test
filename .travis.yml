@@ -616,6 +616,7 @@ matrix:
     - NAME=terminology
     - REPO=https://github.com/billiob/terminology
     - BUILDDEP=terminology
+    - ALSOINSTALL="libeet-bin"
     - BUILD="all install"
   - env:
     - NAME=tilix
