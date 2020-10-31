@@ -94,6 +94,7 @@ matrix:
   - env:
     - NAME=dxvk
     - REPO=https://github.com/doitsujin/dxvk
+    - BRANCH="--branch v1.7.2"
     - BUILDDEP=dxvk
     - ALSOINSTALL="gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64"
     - BUILD="all install"
