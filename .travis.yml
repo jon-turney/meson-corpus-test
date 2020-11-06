@@ -138,6 +138,7 @@ matrix:
     - NAME=fwupd
     - REPO=https://github.com/hughsie/fwupd
     - BUILDDEP=fwupd
+    - ALSOINSTALL="libsystemd-dev"
     - BUILD="all install"
   - env:
     - NAME=gamemode
@@ -333,7 +334,7 @@ matrix:
   - env:
     - NAME=libcamera
     - REPO=git://linuxtv.org/libcamera.git
-    - ALSOINSTALL="libboost-dev gnutls-dev python3-yaml"
+    - ALSOINSTALL="libboost-dev gnutls-dev python3-jinja2 python3-yaml"
     - BUILD="all install"
   - env:
     - NAME=libdrm
