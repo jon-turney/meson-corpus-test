@@ -383,7 +383,7 @@ matrix:
     - BUILD="all install"
   - env:
     - NAME=libspng
-    - REPO=https://gitlab.com/randy408/libspng
+    - REPO=https://github.com/randy408/libspng
     - BUILD="all install"
   - env:
     - NAME=libui
