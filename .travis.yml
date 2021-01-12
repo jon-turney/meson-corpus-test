@@ -67,6 +67,11 @@ matrix:
     - BUILDDEP=casync
     - BUILD="all install"
   - env:
+    - NAME=chicken-libraries
+    - REPO=https://github.com/chicken-libraries
+    - BUILDDEP=chicken-libraries
+    - BUILD="all install"
+  - env:
     - NAME=cinnamon-desktop
     - REPO=https://github.com/linuxmint/cinnamon-desktop
     - BUILDDEP=cinnamon-desktop
