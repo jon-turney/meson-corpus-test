@@ -92,6 +92,11 @@ matrix:
     - ALSOINSTALL="libdbus-1-dev libglib2.0-dev libsystemd-dev python-docutils systemd"
     - BUILD="all install"
   - env:
+    - NAME=dosbox-staging
+    - REPO=https://github.com/dosbox-staging/dosbox-staging
+    - BUILDDEP=dosbox-staging
+    - BUILD="all install"
+  - env:
     - NAME=dpdk
     - REPO=git://dpdk.org/dpdk
     - BUILDDEP=dpdk
