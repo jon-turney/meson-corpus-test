@@ -562,6 +562,11 @@ matrix:
     - BUILDDEP=radare2
     - BUILD="all install"
   - env:
+    - NAME=rizin
+    - REPO=https://rizin.re
+    - BUILDDEP=rizin
+    - BUILD="all install"
+  - env:
     - NAME=rxdock
     - REPO=https://gitlab.com/rxdock/rxdock
     - BUILD="all install"
