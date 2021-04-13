@@ -646,6 +646,11 @@ matrix:
       libvpx-dev uuid-dev"
     - CONFIG="-Dlibspotify=false"
   - env:
+    - NAME=ufjf-mltk
+    - REPO=https://github.com/mateus558/UFJF-Machine-Learning-Toolkit
+    - BUILDDEP=ufjf-mltk
+    - BUILD="all install"
+  - env:
     - NAME=vala-language-server
     - REPO=https://github.com/benwaffle/vala-language-server
     - BRANCH="--branch 0.48"
