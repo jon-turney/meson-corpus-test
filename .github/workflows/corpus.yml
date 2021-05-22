@@ -1,5 +1,6 @@
 name: corpus
 on:
+  push:
   schedule:
     # run daily at 0200 UTC
   - cron: 0 2 * * *
@@ -534,6 +535,7 @@ jobs:
           CONFIG: -Dlibspotify=false
         - NAME: ufjf-mltk
           REPO: https://github.com/mateus558/UFJF-Machine-Learning-Toolkit
+          COMMIT: 22112321ba7ed6052c2021a47b57a866fdae4f0c
           BUILD: all install
         - NAME: vala-language-server
           REPO: https://github.com/benwaffle/vala-language-server
