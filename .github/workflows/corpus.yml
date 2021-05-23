@@ -2,8 +2,8 @@ name: corpus
 on:
   push:
   schedule:
-    # run daily at 0200 UTC
-  - cron: 0 2 * * *
+    # run daily at 1400 UTC
+  - cron: 0 14 * * *
   workflow_dispatch:
     inputs:
       meson_commit:
@@ -303,6 +303,7 @@ jobs:
           CONFIG: -Duseroot=false
         - NAME: libgit2-glib
           REPO: https://git.gnome.org/browse/libgit2-glib
+          BRANCH: --branch v0.99.0.1
           BUILDDEP: libgit2-glib
           BUILD: all install
         - NAME: libglvnd
