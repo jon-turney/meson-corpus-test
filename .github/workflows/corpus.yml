@@ -306,6 +306,7 @@ jobs:
           BRANCH: --branch v0.99.0.1
           BUILDDEP: libgit2-glib
           BUILD: all install
+          HACKS: mkdir -p /usr/local/share/vala/vapi
         - NAME: libglvnd
           REPO: https://gitlab.freedesktop.org/glvnd/libglvnd
           BUILDDEP: libglvnd
