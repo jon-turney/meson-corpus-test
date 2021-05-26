@@ -155,7 +155,7 @@ jobs:
           HACKS: sed -i s!libide_lsp_sources,!libide_lsp_sources,libide_lsp_generated_headers,! src/libide/lsp/meson.build
           CONFIG: -Dplugin_update_manager=false -Dplugin_clang=false
         - NAME: gnome-mpv
-          REPO: https://github.com/gnome-mpv/gnome-mpv
+          REPO: https://github.com/celluloid-player/celluloid.git
           BUILDDEP: gnome-mpv
           BUILD: all install
         - NAME: gnome-recipes
@@ -305,8 +305,7 @@ jobs:
           REPO: https://git.gnome.org/browse/libgit2-glib
           BRANCH: --branch v0.99.0.1
           BUILDDEP: libgit2-glib
-          BUILD: all install
-          HACKS: mkdir -p /usr/local/share/vala/vapi
+          BUILD: all
         - NAME: libglvnd
           REPO: https://gitlab.freedesktop.org/glvnd/libglvnd
           BUILDDEP: libglvnd
