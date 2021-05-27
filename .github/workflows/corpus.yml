@@ -156,6 +156,7 @@ jobs:
           CONFIG: -Dplugin_update_manager=false -Dplugin_clang=false
         - NAME: gnome-mpv
           REPO: https://github.com/celluloid-player/celluloid.git
+          BRANCH: --branch v0.21
           BUILDDEP: gnome-mpv
           BUILD: all install
         - NAME: gnome-recipes
@@ -201,6 +202,7 @@ jobs:
           BUILD: all install
         - NAME: gtk+
           REPO: https://gitlab.gnome.org/GNOME/gtk
+          BRANCH: --branch 4.2.1
           BUILDDEP: gtk+3.0
           ALSOINSTALL: libgstreamer-plugins-bad1.0-dev libgraphene-1.0-dev libvulkan-dev
           BUILD: all install
