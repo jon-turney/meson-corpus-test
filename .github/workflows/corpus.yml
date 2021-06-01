@@ -580,6 +580,7 @@ jobs:
           BUILD: all install
         - NAME: xorg
           REPO: https://gitlab.freedesktop.org/xorg/xserver
+          BRANCH: --branch xwayland-21.1.1
           BUILDDEP: xorg-server
           BUILD: all install
         - NAME: zathura
@@ -589,6 +590,7 @@ jobs:
           BUILD: all install
         - NAME: zrythm
           REPO: https://github.com/zrythm/zrythm.git
+          BRANCH: --branch v1.0.0-alpha.16.1.1
           ALSOINSTALL: cmake gettext guile-2.2-dev help2man libfftw3-dev libgtk-3-dev libgtksourceview-3.0-dev libjack-jackd2-dev
             librubberband-dev libsamplerate0-dev libsndfile1-dev libyaml-dev libzstd-dev xdg-utils
           BUILD: all install
