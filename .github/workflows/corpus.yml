@@ -458,7 +458,7 @@ jobs:
           REPO: https://github.com/bonzini/qboot
           BUILD: all install
         - NAME: qemu
-          REPO: https://git.qemu.org/git/qemu.git
+          REPO: https://gitlab.com/qemu-project/qemu
           BUILDDEP: qemu
           HACKS: mkdir _build && cd _build && ../configure && cd ..
           CONFIG: -v
