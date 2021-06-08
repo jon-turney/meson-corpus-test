@@ -206,6 +206,7 @@ jobs:
           BUILDDEP: gtk+3.0
           ALSOINSTALL: libgstreamer-plugins-bad1.0-dev libgraphene-1.0-dev libvulkan-dev
           BUILD: all install
+          HACKS: sed -i s!master!main! subprojects/glib.wrap
         - NAME: gtkdapp
           REPO: https://gitlab.com/csoriano/GtkDApp
           ALSOINSTALL: gdc gsettings-desktop-schemas-dev libgtk-3-dev libgtkd-3-dev librsvg2-dev
