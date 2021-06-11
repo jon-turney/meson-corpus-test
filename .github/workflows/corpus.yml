@@ -120,7 +120,7 @@ jobs:
         - NAME: fwupd
           REPO: https://github.com/hughsie/fwupd
           BUILDDEP: fwupd
-          ALSOINSTALL: libsystemd-dev libcurl4-openssl-dev
+          ALSOINSTALL: libcurl4-openssl-dev libsystemd-dev python3-toml python3-typogrify
           BUILD: all install
         - NAME: gamemode
           REPO: https://github.com/FeralInteractive/gamemode
@@ -621,21 +621,21 @@ jobs:
     steps:
     - name: Build with meson
       run: |-
-        sudo apt-get -y install ninja-build
+        sudo apt-get -y -q install ninja-build
         sudo curl https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry
         sudo chmod +x /usr/local/bin/retry
 
         sudo sed -i '/^#\sdeb-src /s/^#\s//' /etc/apt/sources.list
-        sudo apt-get -y update
+        sudo apt-get -y -q update
 
         if test -n "${BUILDDEP}"
         then
-          sudo apt-get -y build-dep ${BUILDDEP}
+          sudo apt-get -y -q build-dep ${BUILDDEP}
         fi
 
         if test -n "${ALSOINSTALL}"
         then
-          sudo apt-get -y install ${ALSOINSTALL}
+          sudo apt-get -y -q install ${ALSOINSTALL}
         fi
 
         MESON_COMMIT=${{ github.event.inputs.meson_commit }}
