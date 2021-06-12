@@ -120,7 +120,7 @@ jobs:
         - NAME: fwupd
           REPO: https://github.com/hughsie/fwupd
           BUILDDEP: fwupd
-          ALSOINSTALL: libcurl4-openssl-dev libsystemd-dev python3-toml python3-typogrify
+          ALSOINSTALL: libcurl4-openssl-dev libsystemd-dev python3-markdown python3-toml python3-typogrify
           BUILD: all install
         - NAME: gamemode
           REPO: https://github.com/FeralInteractive/gamemode
@@ -622,7 +622,7 @@ jobs:
     - name: Build with meson
       run: |-
         sudo apt-get -y -q install ninja-build
-        sudo curl https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry
+        sudo curl -sS https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry
         sudo chmod +x /usr/local/bin/retry
 
         sudo sed -i '/^#\sdeb-src /s/^#\s//' /etc/apt/sources.list
@@ -669,6 +669,8 @@ jobs:
         then
            DESTDIR=${GITHUB_WORKSPACE}/install ninja -C _build ${BUILD}
         fi
+      env:
+        DEBIAN_FRONTEND: noninteractive
 
     - name: Upload meson log
       if: ${{ failure() }}
