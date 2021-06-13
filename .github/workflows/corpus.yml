@@ -119,8 +119,9 @@ jobs:
           BUILD: all install
         - NAME: fwupd
           REPO: https://github.com/hughsie/fwupd
+          BRANCH: --branch 1.6.0
           BUILDDEP: fwupd
-          ALSOINSTALL: libcurl4-openssl-dev libsystemd-dev python3-markdown python3-toml python3-typogrify
+          ALSOINSTALL: libsystemd-dev libcurl4-openssl-dev
           BUILD: all install
         - NAME: gamemode
           REPO: https://github.com/FeralInteractive/gamemode
@@ -621,21 +622,21 @@ jobs:
     steps:
     - name: Build with meson
       run: |-
-        sudo apt-get -y -q install ninja-build
+        sudo apt-get -y -qq install ninja-build
         sudo curl -sS https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry
         sudo chmod +x /usr/local/bin/retry
 
         sudo sed -i '/^#\sdeb-src /s/^#\s//' /etc/apt/sources.list
-        sudo apt-get -y -q update
+        sudo apt-get -y -qq update
 
         if test -n "${BUILDDEP}"
         then
-          sudo apt-get -y -q build-dep ${BUILDDEP}
+          sudo apt-get -y -qq build-dep ${BUILDDEP}
         fi
 
         if test -n "${ALSOINSTALL}"
         then
-          sudo apt-get -y -q install ${ALSOINSTALL}
+          sudo apt-get -y -qq install ${ALSOINSTALL}
         fi
 
         MESON_COMMIT=${{ github.event.inputs.meson_commit }}
@@ -669,8 +670,6 @@ jobs:
         then
            DESTDIR=${GITHUB_WORKSPACE}/install ninja -C _build ${BUILD}
         fi
-      env:
-        DEBIAN_FRONTEND: noninteractive
 
     - name: Upload meson log
       if: ${{ failure() }}
