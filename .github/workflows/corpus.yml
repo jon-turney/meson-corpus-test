@@ -50,6 +50,9 @@ jobs:
           COMMIT: 79992f39f3f451cac8140bc1053f57e2355c4f3c
           ALSOINSTALL: libwlroots-dev
           BUILD: all install
+        - NAME: canfigger
+          REPO: https://github.com/andy5995/canfigger
+          BUILD: all install
         - NAME: casync
           REPO: https://github.com/systemd/casync
           BUILDDEP: casync
@@ -61,7 +64,7 @@ jobs:
         - NAME: cozy
           REPO: https://github.com/geigi/cozy
           BRANCH: --branch 0.7.5
-          ALSOINSTALL: gettext libglib2.0-dev python3-distro python3-mutagen python3-peewee
+          ALSOINSTALL: gettext libglib2.0-dev python3-distro python3-gi python3-mutagen python3-peewee
           BUILD: all install
         - NAME: dav1d
           REPO: https://code.videolan.org/videolan/dav1d
@@ -86,8 +89,8 @@ jobs:
           BUILDDEP: dxvk
           ALSOINSTALL: gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64
           BUILD: all install
-          HACKS: sudo update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix ; sudo update-alternatives
-            --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
+          HACKS: update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix ; update-alternatives --set
+            x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
           CONFIG: --cross-file build-win64.txt
         - NAME: emeus
           REPO: https://github.com/ebassi/emeus
@@ -264,7 +267,7 @@ jobs:
           BRANCH: --branch 5.0.0
           ALSOINSTALL: libcurl4-openssl-dev libicu-dev libkainjow-mustache-dev libpugixml-dev libzim-dev
           BUILD: all install
-          HACKS: sudo ln -s /usr/include/kainjow/mustache.hpp /usr/include
+          HACKS: ln -s /usr/include/kainjow/mustache.hpp /usr/include
         - NAME: knot-resolver
           REPO: https://gitlab.labs.nic.cz/knot/knot-resolver
           COMMIT: 1bbe50b47cb41fd7459721fe08abea7cd2bf3888
@@ -322,10 +325,11 @@ jobs:
         - NAME: libmodulemd
           REPO: https://github.com/fedora-modularity/libmodulemd
           ALSOINSTALL: black clang-format gobject-introspection gtk-doc-tools help2man libgirepository1.0-dev libglib2.0-dev libglib2.0-doc
-            libmagic-dev librpm-dev libyaml-dev libzstd-dev pycodestyle python3-autopep8 valgrind
+            libmagic-dev librpm-dev libyaml-dev libzstd-dev pycodestyle python3-autopep8 python3-gi valgrind
           BUILD: all install
         - NAME: libosmscout
           REPO: https://github.com/Framstag/libosmscout
+          ALSOINSTALL: libxml2-dev
           BUILD: all install
           CONFIG: -DenableMapCairo=false
         - NAME: libspng
@@ -427,6 +431,7 @@ jobs:
         - NAME: peek
           REPO: https://github.com/phw/peek
           BUILDDEP: peek
+          ALSOINSTALL: python-is-python3
           BUILD: all install
         - NAME: picolibc
           REPO: https://github.com/keith-packard/picolibc
@@ -510,6 +515,7 @@ jobs:
         - NAME: systemd
           REPO: https://github.com/systemd/systemd
           BUILDDEP: systemd
+          ALSOINSTALL: python3-jinja2
           BUILD: all install
         - NAME: szl
           REPO: https://github.com/dimkr/szl
@@ -606,6 +612,9 @@ jobs:
     name: ${{ matrix.NAME }}
 
     runs-on: ubuntu-20.04
+    # use an offical ubuntu docker image as a container so we are isolated from
+    # the tool updates github puts into it's VM images
+    container: ubuntu:focal
 
     env:
       NAME: ${{ matrix.NAME }}
@@ -618,36 +627,39 @@ jobs:
       BUILD: ${{ matrix.BUILD }}
       HACKS: ${{ matrix.HACKS }}
       CONFIG: ${{ matrix.CONFIG }}
+      DEBIAN_FRONTEND: noninteractive
 
     steps:
     - name: Build with meson
       run: |-
-        sudo apt-get -y -qq install ninja-build
-        sudo curl -sS https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry
-        sudo chmod +x /usr/local/bin/retry
+        sed -i '/^#\sdeb-src /s/^#\s//' /etc/apt/sources.list
+        apt-get -y update >/dev/null
 
-        sudo sed -i '/^#\sdeb-src /s/^#\s//' /etc/apt/sources.list
-        sudo apt-get -y -qq update
+        apt-get -y install build-essential curl git moreutils ninja-build pkg-config python3-pip >/dev/null
+        curl -sS https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry
+        chmod +x /usr/local/bin/retry
+
+        git config --global advice.detachedHead false
 
         if test -n "${BUILDDEP}"
         then
-          sudo apt-get -y -qq build-dep ${BUILDDEP}
+          chronic apt-get -y build-dep ${BUILDDEP}
         fi
 
         if test -n "${ALSOINSTALL}"
         then
-          sudo apt-get -y -qq install ${ALSOINSTALL}
+          chronic apt-get -y install ${ALSOINSTALL}
         fi
 
         MESON_COMMIT=${{ github.event.inputs.meson_commit }}
         if test -z "${MESON_COMMIT}"
         then
-          retry -- pip3 install git+https://github.com/mesonbuild/meson.git
+          retry -- pip3 --no-cache-dir install git+https://github.com/mesonbuild/meson.git
         else
           retry -- git clone https://github.com/mesonbuild/meson.git
           retry -- git -C meson fetch origin ${MESON_COMMIT}
           git -C meson checkout FETCH_HEAD
-          pip3 install ./meson
+          pip3 --no-cache-dir install ./meson
         fi
 
         if test -z "${COMMIT}"
