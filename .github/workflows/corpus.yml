@@ -332,6 +332,11 @@ jobs:
           ALSOINSTALL: libxml2-dev
           BUILD: all install
           CONFIG: -DenableMapCairo=false
+        - NAME: libratbag
+          REPO: https://github.com/libratbag/libratbag
+          BUILDDEP: libratbag
+          ALSOINSTALL: valgrind
+          BUILD: all install
         - NAME: libspng
           REPO: https://github.com/randy408/libspng
           BUILD: all install
