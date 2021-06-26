@@ -488,6 +488,7 @@ jobs:
             subprojects/eigen.wrap
         - NAME: scrcpy
           REPO: https://github.com/Genymobile/scrcpy
+          BRANCH: --branch v1.17
           BUILDDEP: scrcpy
           BUILD: all install
           HACKS: touch server/scrcpy-server
