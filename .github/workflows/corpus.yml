@@ -481,6 +481,10 @@ jobs:
         - NAME: rizin
           REPO: https://github.com/rizinorg/rizin.git
           BUILD: all install
+        - NAME: rmw
+          REPO: https://remove-to-waste.info
+          BUILDDEP: rmw
+          BUILD: all install
         - NAME: rxdock
           REPO: https://gitlab.com/rxdock/rxdock
           BUILD: all install
