@@ -482,8 +482,8 @@ jobs:
           REPO: https://github.com/rizinorg/rizin.git
           BUILD: all install
         - NAME: rmw
-          REPO: https://remove-to-waste.info
-          BUILDDEP: rmw
+          REPO: https://github.com/theimpossibleastronaut/rmw.git
+          ALSOINSTALL: gettext libncurses-dev
           BUILD: all install
         - NAME: rxdock
           REPO: https://gitlab.com/rxdock/rxdock
