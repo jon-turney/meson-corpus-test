@@ -417,7 +417,7 @@ jobs:
           BUILDDEP: p11-kit
           BUILD: all install
         - NAME: pacman
-          REPO: git://git.archlinux.org/pacman.git
+          REPO: https://gitlab.archlinux.org/pacman/pacman.git
           BRANCH: --branch v5.2.2
           BUILDDEP: pacman
           ALSOINSTALL: libarchive-dev libssl-dev
