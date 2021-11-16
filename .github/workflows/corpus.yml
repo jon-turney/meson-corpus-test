@@ -371,6 +371,10 @@ jobs:
           REPO: https://github.com/albfan/miraclecast
           ALSOINSTALL: libglib2.0-dev libreadline-dev libsystemd-dev libudev-dev
           BUILD: all install
+        - NAME: mpv
+          REPO: https://github.com/mpv-player/mpv
+          BUILDDEP: mpv
+          BUILD: all install
         - NAME: mrsh
           REPO: https://github.com/emersion/mrsh
           BUILD: all install
