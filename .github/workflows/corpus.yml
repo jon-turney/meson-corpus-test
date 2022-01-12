@@ -363,7 +363,7 @@ jobs:
           ALSOINSTALL: libglib2.0-dev-bin libgtk-3-dev libgtksourceview-3.0-dev libwebkit2gtk-4.0-dev libgtkspell3-3-dev
           HACKS: git submodule update --init --recursive
         - NAME: mesa
-          REPO: https://gitlab.freedesktop.org/mesa/mesa/
+          REPO: https://mesa3d.org/
           COMMIT: 1f37662c093ee168d0669d0ea0c7f169e272d0c7
           BUILDDEP: mesa
           BUILD: all install
