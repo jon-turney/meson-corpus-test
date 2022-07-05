@@ -36,6 +36,10 @@ jobs:
           REPO: https://gitlab.freedesktop.org/bolt/bolt
           BUILDDEP: bolt
           BUILD: all install
+        - NAME: bubblewrap
+          REPO: https://github.com/containers/bubblewrap
+          BUILDDEP: bubblewrap
+          BUILD: all install
         - NAME: budgie-desktop
           REPO: https://github.com/budgie-desktop/budgie-desktop
           BRANCH: --branch v10.5.2
@@ -56,6 +60,10 @@ jobs:
         - NAME: casync
           REPO: https://github.com/systemd/casync
           BUILDDEP: casync
+          BUILD: all install
+        - NAME: cglm
+          REPO: https://github.com/recp/cglm
+          BUILDDEP: cglm
           BUILD: all install
         - NAME: cinnamon-desktop
           REPO: https://github.com/linuxmint/cinnamon-desktop
@@ -367,6 +375,10 @@ jobs:
           COMMIT: 1f37662c093ee168d0669d0ea0c7f169e272d0c7
           BUILDDEP: mesa
           BUILD: all install
+        - NAME: miniz
+          REPO: https://github.com/richgel999/miniz
+          BUILDDEP: miniz
+          BUILD: all install
         - NAME: miraclecast
           REPO: https://github.com/albfan/miraclecast
           ALSOINSTALL: libglib2.0-dev libreadline-dev libsystemd-dev libudev-dev
@@ -388,6 +400,10 @@ jobs:
           BRANCH: --branch 4.6.5
           BUILDDEP: nemo
           BUILD: all install
+        - NAME: nvme-cli
+          REPO: https://github.com/linux-nvme/nvme-cli
+          BUILDDEP: nvme-cli
+          BUILD: all install
         - NAME: ocherbook
           REPO: https://github.com/ccoffing/OcherBook
           BUILD: all install
@@ -403,6 +419,10 @@ jobs:
         - NAME: openhmd
           REPO: https://github.com/OpenHMD/OpenHMD
           ALSOINSTALL: libhidapi-dev
+          BUILD: all install
+        - NAME: openrc
+          REPO: https://github.com/OpenRC/openrc
+          BUILDDEP: openrc
           BUILD: all install
         - NAME: orc
           REPO: https://gitlab.freedesktop.org/gstreamer/orc
@@ -452,6 +472,10 @@ jobs:
           BUILDDEP: pipewire
           ALSOINSTALL: libbluetooth-dev libjack-jackd2-dev libvulkan-dev
           BUILD: all install
+        - NAME: pistache
+          REPO: https://github.com/pistacheio/pistache
+          BUILDDEP: pistache
+          BUILD: all install
         - NAME: pithos
           REPO: https://github.com/pithos/pithos
           BUILDDEP: pithos
@@ -460,6 +484,10 @@ jobs:
         - NAME: pitivi
           REPO: https://github.com/pitivi/pitivi/
           BUILDDEP: pitivi
+          BUILD: all install
+        - NAME: planner
+          REPO: https://github.com/alainm23/planner
+          BUILDDEP: planner
           BUILD: all install
         - NAME: playerctl
           REPO: https://github.com/acrisci/playerctl
@@ -510,6 +538,10 @@ jobs:
           REPO: https://gitlab.com/free-astro/siril
           BUILDDEP: siril
           ALSOINSTALL: cmake libexiv2-dev libjson-glib-dev
+          BUILD: all install
+        - NAME: spot
+          REPO: https://github.com/xou816/spot
+          BUILDDEP: spot
           BUILD: all install
         - NAME: sshfs
           REPO: https://github.com/libfuse/sshfs
@@ -570,6 +602,10 @@ jobs:
         - NAME: valum
           REPO: https://github.com/valum-framework/valum
           ALSOINSTALL: libsoup2.4-dev libssl-dev valac
+          BUILD: all install
+        - NAME: vkquake
+          REPO: https://github.com/Novum/vkQuake
+          BUILDDEP: vkquake
           BUILD: all install
         - NAME: vmaf
           REPO: https://github.com/Netflix/vmaf
