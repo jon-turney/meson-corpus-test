@@ -18,6 +18,10 @@ jobs:
         - NAME: 2048.cpp
           REPO: https://github.com/plibither8/2048.cpp
           BUILD: all install
+        - NAME: adwaita-manager
+          REPO: https://github.com/AdwCustomizerTeam/AdwCustomizer
+          BUILDDEP: adwaita-manager
+          BUILD: all install
         - NAME: akira
           REPO: https://github.com/akiraux/Akira
           BRANCH: --branch v0.0.13
