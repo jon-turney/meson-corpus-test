@@ -36,6 +36,10 @@ jobs:
           REPO: https://github.com/AravisProject/aravis
           BUILDDEP: aravis
           BUILD: all install
+        - NAME: audacious
+          REPO: https://github.com/audacious-media-player
+          BUILDDEP: audacious
+          BUILD: all install
         - NAME: bolt
           REPO: https://gitlab.freedesktop.org/bolt/bolt
           BUILDDEP: bolt
