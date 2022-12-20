@@ -522,6 +522,10 @@ jobs:
           BRANCH: --branch 3.38.0
           BUILDDEP: polari
           BUILD: all install
+        - NAME: postgresql
+          REPO: https://www.postgresql.org/
+          BUILDDEP: postgresql
+          BUILD: all install
         - NAME: qboot
           REPO: https://github.com/bonzini/qboot
           BUILD: all install
