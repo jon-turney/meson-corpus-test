@@ -252,6 +252,10 @@ jobs:
           BUILDDEP: hexchat
           ALSOINSTALL: libluajit-5.1-dev python3-cffi
           BUILD: all install
+        - NAME: i3
+          REPO: https://i3wm.org
+          BUILDDEP: i3
+          BUILD: all install
         - NAME: igt
           REPO: https://gitlab.freedesktop.org/drm/igt-gpu-tools
           BUILDDEP: intel-gpu-tools
