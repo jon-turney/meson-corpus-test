@@ -575,6 +575,10 @@ jobs:
           BUILDDEP: siril
           ALSOINSTALL: cmake libexiv2-dev libjson-glib-dev
           BUILD: all install
+        - NAME: slapt-get
+          REPO: https://github.com/jaos/slapt-get
+          BUILDDEP: slapt-get
+          BUILD: all install
         - NAME: spot
           REPO: https://github.com/xou816/spot
           BUILDDEP: spot
