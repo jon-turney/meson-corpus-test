@@ -48,6 +48,10 @@ jobs:
           REPO: https://gitlab.freedesktop.org/bolt/bolt
           BUILDDEP: bolt
           BUILD: all install
+        - NAME: bsdutils
+          REPO: https://github.com/dcantrell/bsdutils
+          BUILDDEP: bsdutils
+          BUILD: all install
         - NAME: bubblewrap
           REPO: https://github.com/containers/bubblewrap
           BUILDDEP: bubblewrap
