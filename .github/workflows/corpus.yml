@@ -90,6 +90,10 @@ jobs:
           BRANCH: --branch 0.7.5
           ALSOINSTALL: gettext libglib2.0-dev python3-distro python3-gi python3-mutagen python3-peewee
           BUILD: all install
+        - NAME: criterion
+          REPO: https://github.com/Snaipe/Criterion
+          BUILDDEP: criterion
+          BUILD: all install
         - NAME: dav1d
           REPO: https://code.videolan.org/videolan/dav1d
           ALSOINSTALL: nasm
